@@ -59,6 +59,8 @@ public class GameManager : MonoBehaviour
     private int totalLandscapedPoints = 0;
     private int totalEcologicalPoints = 0;
 
+    [SerializeField] AudioManager audioManager;
+
     private void Start()
     {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
