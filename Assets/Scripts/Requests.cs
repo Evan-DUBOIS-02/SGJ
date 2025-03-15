@@ -5,18 +5,32 @@ using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum SelectedAnswer { None, A, B };
+
 public class Requests : MonoBehaviour
 {
-    [Header("Donnees requete")]
+    [Header("Description")]
+    [TextArea(7, 10)]
     public string description;
-    public string answerA;
-    public string answerB;
-    public enum SelectedAnswer {None, A, B};
 
+    [Header("Answer A")]
+    public string answerA;
     public List<GameObject> AListHide = new List<GameObject>();
     public List<GameObject> AListShow = new List<GameObject>();
+    public int AarchitecturalPoints;
+    public int AlandscapedPoints;
+    public int AecologicalPoints;
+
+    [Header("Answer B")]
+    public string answerB;
     public List<GameObject> BListHide = new List<GameObject>();
     public List<GameObject> BListShow = new List<GameObject>();
+    public int BarchitecturalPoints;
+    public int BlandscapedPoints;
+    public int BecologicalPoints;
+
+    [NonSerialized]
+    public SelectedAnswer sa = SelectedAnswer.None;
 
     public List<GameObject>[] SetSA(int answerId) //1 = answer A ; 2 = answerB
     {
@@ -31,11 +45,13 @@ public class Requests : MonoBehaviour
         {
             returnTAB[0].AddRange(AListHide);
             returnTAB[1].AddRange(AListShow);
+            sa = SelectedAnswer.A;
         }
         else if (answerId == 2)
         {
             returnTAB[0].AddRange(BListHide);
             returnTAB[1].AddRange(BListShow); 
+            sa = SelectedAnswer.B;
         }
 
         return returnTAB;  
