@@ -18,24 +18,6 @@ public class Requests : MonoBehaviour
     public List<GameObject> BListHide = new List<GameObject>();
     public List<GameObject> BListShow = new List<GameObject>();
 
-    private GameObject goDescription;
-    private GameObject goBtnA;
-    private GameObject goBtnB;
-
-    private void Start()
-    {
-        /*
-        GameObject[] childrens = GetComponentsInChildren<GameObject>();
-        goDescription = childrens[0];
-        goBtnA = childrens[1];
-        goBtnB = childrens[2];
-
-        goDescription.GetComponent<Text>().text = description;
-        goBtnA.GetComponent<Text>().text = answerA;
-        goBtnB.GetComponent<Text>().text = answerB;
-        */
-    }
-
     public List<GameObject>[] SetSA(int answerId) //1 = answer A ; 2 = answerB
     {
         // Initialisation du tableau de listes
