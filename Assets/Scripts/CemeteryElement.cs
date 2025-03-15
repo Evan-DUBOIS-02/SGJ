@@ -1,0 +1,9 @@
+using UnityEngine;
+
+public class CemeteryElement : MonoBehaviour
+{
+    public void TriggerActivation()
+    {
+        gameObject.SetActive(false);
+    }
+}
