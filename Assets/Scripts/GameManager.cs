@@ -159,6 +159,12 @@ public class GameManager : MonoBehaviour
             {
                 elem.ResetStatus();
             }
+            else
+            {
+                foreach (Transform t2 in t.transform)
+                    if (t2.gameObject.TryGetComponent<CemeteryElement>(out elem))
+                        elem.ResetStatus();
+            }
         }
         // reset request answers
         foreach(Requests r in listRequest)
