@@ -19,8 +19,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button buttonAUI;
     [SerializeField] private Button buttonBUI;
 
-    [Header("Requests")]
+    [Header("Requests/depedencies")]
     [SerializeField] private GameObject requestsParent;
+    [SerializeField] private GameObject depedenciesParent;
 
     [Header("Poping animation")]
     [SerializeField] private float waitingTimeBetweenElements = 0.5f;
@@ -52,6 +53,8 @@ public class GameManager : MonoBehaviour
     private Requests[] listRequest;
     private int currentRequest = 0;
 
+    private Depedencies[] listDepedency;
+
     private int totalArchitecturalPoints = 0;
     private int totalLandscapedPoints = 0;
     private int totalEcologicalPoints = 0;
@@ -59,6 +62,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         listRequest = requestsParent.GetComponentsInChildren<Requests>();
+        listDepedency = depedenciesParent.GetComponentsInChildren<Depedencies>();
 
         buttonMenuUI.gameObject.SetActive(false);
         buttonReloadUI.gameObject.SetActive(false);
@@ -92,6 +96,8 @@ public class GameManager : MonoBehaviour
         // UI fade out
         StartCoroutine(TextFade(1.0f, 0.0f));
         StartCoroutine(ButtonFade(1.0f, 0.0f));
+        // Depedencies
+        CheckDepedencies();
         // poping
         StartCoroutine(Poping(tabGO[0], tabGO[1], () => SwitchRequest()));
     }
@@ -111,8 +117,18 @@ public class GameManager : MonoBehaviour
         // UI fade out
         StartCoroutine(TextFade(1.0f, 0.0f));
         StartCoroutine(ButtonFade(1.0f, 0.0f));
+        // Depedencies
+        CheckDepedencies();
         // poping
         StartCoroutine(Poping(tabGO[0], tabGO[1], () => SwitchRequest()));
+    }
+
+    private void CheckDepedencies()
+    {
+        foreach(var dep in listDepedency)
+        {
+            dep.CheckDepedency();
+        }
     }
 
     public void PressReloadButton()
@@ -132,6 +148,7 @@ public class GameManager : MonoBehaviour
     {
         buttonMenuUI.gameObject.SetActive(false);
         buttonReloadUI.gameObject.SetActive(false);
+        // reset all cemetery elements
         foreach (Transform t in cemetery.transform)
         {
             CemeteryElement elem;
@@ -140,6 +157,12 @@ public class GameManager : MonoBehaviour
                 elem.ResetStatus();
             }
         }
+        // reset request answers
+        foreach(Requests r in listRequest)
+            r.ResetStatus();
+        // reset depedencies status
+        foreach(Depedencies d in listDepedency)
+            d.ResetStatus();
         currentRequest = 0;
         totalArchitecturalPoints = 0;
         totalLandscapedPoints = 0;

@@ -56,4 +56,9 @@ public class Requests : MonoBehaviour
 
         return returnTAB;  
     }
+
+    public void ResetStatus()
+    {
+        sa = SelectedAnswer.None;
+    }
 }
