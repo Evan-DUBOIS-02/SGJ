@@ -1143,6 +1143,7 @@ GameObject:
   - component: {fileID: 361065660}
   - component: {fileID: 361065659}
   - component: {fileID: 361065658}
+  - component: {fileID: 361065661}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -1264,6 +1265,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361065656}
   m_CullTransparentMesh: 1
+--- !u!114 &361065661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361065656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2066567900}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: GenerateSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &399475505
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,6 +1408,7 @@ GameObject:
   - component: {fileID: 419913278}
   - component: {fileID: 419913277}
   - component: {fileID: 419913276}
+  - component: {fileID: 419913279}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: Untagged
@@ -1499,6 +1530,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419913274}
   m_CullTransparentMesh: 1
+--- !u!114 &419913279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419913274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2066567900}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: GenerateSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &448914672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2087,6 +2147,7 @@ GameObject:
   - component: {fileID: 635926534}
   - component: {fileID: 635926533}
   - component: {fileID: 635926532}
+  - component: {fileID: 635926535}
   m_Layer: 5
   m_Name: ButtonA
   m_TagString: Untagged
@@ -2208,6 +2269,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635926530}
   m_CullTransparentMesh: 1
+--- !u!114 &635926535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 635926530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2066567900}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: GenerateSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &653095779
 GameObject:
   m_ObjectHideFlags: 0
@@ -4518,6 +4608,7 @@ GameObject:
   - component: {fileID: 1355938919}
   - component: {fileID: 1355938918}
   - component: {fileID: 1355938917}
+  - component: {fileID: 1355938920}
   m_Layer: 5
   m_Name: CreditsButton
   m_TagString: Untagged
@@ -4639,6 +4730,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355938915}
   m_CullTransparentMesh: 1
+--- !u!114 &1355938920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355938915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2066567900}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: GenerateSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1388429723
 GameObject:
   m_ObjectHideFlags: 0
@@ -4700,6 +4820,7 @@ GameObject:
   - component: {fileID: 1413238139}
   - component: {fileID: 1413238138}
   - component: {fileID: 1413238137}
+  - component: {fileID: 1413238140}
   m_Layer: 5
   m_Name: ButtonNewCemetery
   m_TagString: Untagged
@@ -4821,6 +4942,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413238135}
   m_CullTransparentMesh: 1
+--- !u!114 &1413238140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1413238135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2066567900}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: GenerateSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1449773251
 GameObject:
   m_ObjectHideFlags: 0
@@ -5125,6 +5275,7 @@ GameObject:
   - component: {fileID: 1491767269}
   - component: {fileID: 1491767268}
   - component: {fileID: 1491767267}
+  - component: {fileID: 1491767270}
   m_Layer: 5
   m_Name: ButtonMenu
   m_TagString: Untagged
@@ -5246,6 +5397,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491767265}
   m_CullTransparentMesh: 1
+--- !u!114 &1491767270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491767265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2066567900}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: GenerateSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1518376981
 GameObject:
   m_ObjectHideFlags: 0
@@ -5640,6 +5820,7 @@ GameObject:
   - component: {fileID: 1713759672}
   - component: {fileID: 1713759671}
   - component: {fileID: 1713759670}
+  - component: {fileID: 1713759673}
   m_Layer: 5
   m_Name: ButtonB
   m_TagString: Untagged
@@ -5761,6 +5942,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713759668}
   m_CullTransparentMesh: 1
+--- !u!114 &1713759673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713759668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2066567900}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: GenerateSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1716094507
 GameObject:
   m_ObjectHideFlags: 0
@@ -5804,6 +6014,7 @@ GameObject:
   - component: {fileID: 1719735411}
   - component: {fileID: 1719735410}
   - component: {fileID: 1719735409}
+  - component: {fileID: 1719735412}
   m_Layer: 5
   m_Name: PlayButton
   m_TagString: Untagged
@@ -5925,6 +6136,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1719735407}
   m_CullTransparentMesh: 1
+--- !u!114 &1719735412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719735407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2066567900}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: GenerateSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1728838921
 GameObject:
   m_ObjectHideFlags: 0
