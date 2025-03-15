@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
         LoadRequest();
     }
 
-    private void LoadRequest()
+    public void LoadRequest()
     {
         descriptionUI.text = listRequest[currentRequest].description;
         buttonATextUI.text = listRequest[currentRequest].answerA;
