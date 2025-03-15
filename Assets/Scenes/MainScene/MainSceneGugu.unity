@@ -3108,9 +3108,12 @@ MonoBehaviour:
   descriptionUI: {fileID: 13249329}
   buttonATextUI: {fileID: 659045834}
   buttonBTextUI: {fileID: 559824079}
+  buttonAUI: {fileID: 0}
+  buttonBUI: {fileID: 0}
   requestsParent: {fileID: 1872298299}
   waitingTimeBetweenElements: 0.5
   waitingTimeBetweenHideShow: 0.5
+  fadeDuration: 0
 --- !u!4 &1519263581
 Transform:
   m_ObjectHideFlags: 0
