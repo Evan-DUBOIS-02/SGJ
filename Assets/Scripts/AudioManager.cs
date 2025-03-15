@@ -37,14 +37,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] tabAudioClick;
     public AudioClip[] tabAudioMvt;
 
-    /*
-    [Header("SOUND GENERATOR")]
-
-    [SerializeField] private float minTimeBetweenSounds = 2.0f;
-    [SerializeField] private float maxTimeBetweenSounds = 10.0f;
-
-    [SerializeField] private float timeBetweenSound;
-    */
+    private int idLastAudioClick = -1;
+    private int idLastAudioMvt = -1;
 
     private void Start()
     {
@@ -86,12 +80,21 @@ public class AudioManager : MonoBehaviour
         if(typeOfSound == 2)
         {
             int soundRandom = Random.Range(0, tabAudioClick.Length);
+
+            while(soundRandom == idLastAudioClick)
+                soundRandom = Random.Range(0, tabAudioClick.Length);
+
+            idLastAudioClick = soundRandom;
             PlaySFX(tabAudioClick[soundRandom]);
         }
 
         else if(typeOfSound == 3)
         {
             int soundRandom = Random.Range(0, tabAudioMvt.Length);
+
+            while (soundRandom == idLastAudioMvt)
+                idLastAudioMvt = soundRandom;
+
             PlaySFX(tabAudioMvt[soundRandom]);
         }
     }
