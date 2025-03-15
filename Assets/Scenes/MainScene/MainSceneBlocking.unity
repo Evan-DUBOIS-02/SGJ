@@ -383,7 +383,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &103963400
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1060,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &330107850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,7 +1696,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 7311805427996837487, guid: 3258df5077668d64d9e8b357adeb4ef4, type: 3}
 --- !u!1 &399475505
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,7 +2429,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &613658996
 GameObject:
   m_ObjectHideFlags: 0
@@ -3421,7 +3417,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &779197619 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6cf0dccda2ac98943a26eaa6a0ba75d3, type: 3}
@@ -3555,7 +3550,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1001 &788708304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3897,7 +3891,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &873086751
 GameObject:
   m_ObjectHideFlags: 0
@@ -4330,7 +4323,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &963433925
 GameObject:
   m_ObjectHideFlags: 0
@@ -5156,7 +5148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &1284348676
 GameObject:
   m_ObjectHideFlags: 0
@@ -5414,7 +5405,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &1349242039
 GameObject:
   m_ObjectHideFlags: 0
@@ -6298,7 +6288,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 7311805427996837487, guid: 3258df5077668d64d9e8b357adeb4ef4, type: 3}
 --- !u!1 &1491767265
 GameObject:
   m_ObjectHideFlags: 0
@@ -6728,7 +6717,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 7311805427996837487, guid: 3258df5077668d64d9e8b357adeb4ef4, type: 3}
 --- !u!1 &1620117098
 GameObject:
   m_ObjectHideFlags: 0
@@ -6922,7 +6910,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &1713759668
 GameObject:
   m_ObjectHideFlags: 0
@@ -7539,7 +7526,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 0
-  vfx: {fileID: 7311805427996837487, guid: 3258df5077668d64d9e8b357adeb4ef4, type: 3}
 --- !u!1001 &1849940110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7668,7 +7654,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &1870036947
 GameObject:
   m_ObjectHideFlags: 0
@@ -7926,7 +7911,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &1872298299
 GameObject:
   m_ObjectHideFlags: 0
@@ -8440,7 +8424,22 @@ MonoBehaviour:
     doute qu\u2019on refasse des all\xE9es. \r\n\r\nQu\u2019est-ce qu\u2019on fait
     ?\r"
   answerA: "R\xE9nover les all\xE9es"
-  AListHide: []
+  AListHide:
+  - {fileID: 780929619}
+  - {fileID: 934858443}
+  - {fileID: 325895088}
+  - {fileID: 1213520288}
+  - {fileID: 1662771437}
+  - {fileID: 1871489083}
+  - {fileID: 852848386}
+  - {fileID: 2005577377}
+  - {fileID: 2118862695}
+  - {fileID: 1849940112}
+  - {fileID: 15347369}
+  - {fileID: 758918603}
+  - {fileID: 2056082107}
+  - {fileID: 1302859557}
+  - {fileID: 604916825}
   AListShow:
   - {fileID: 504917923}
   AarchitecturalPoints: 2
@@ -8614,7 +8613,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &2021105124
 GameObject:
   m_ObjectHideFlags: 0
@@ -8792,7 +8790,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &2066567899
 GameObject:
   m_ObjectHideFlags: 0
@@ -9158,7 +9155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
 --- !u!1 &2120139694
 GameObject:
   m_ObjectHideFlags: 0
