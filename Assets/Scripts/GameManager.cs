@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         listRequest = requestsParent.GetComponentsInChildren<Requests>();
         listDepedency = depedenciesParent.GetComponentsInChildren<Depedencies>();
 
@@ -102,7 +103,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(Poping(tabGO[0], tabGO[1], () => SwitchRequest()));
     }
 
-    public void PressButtonB() 
+    public void PressButtonB()
     {
         // disable buttons
         buttonAUI.enabled = false;
