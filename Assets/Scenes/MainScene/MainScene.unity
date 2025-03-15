@@ -178,7 +178,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bcf9ed6a9ee80ed4cbd49e265e5474f6, type: 2}
   m_sharedMaterial: {fileID: 8613784260704383832, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &13249330
@@ -436,7 +436,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Menu
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bcf9ed6a9ee80ed4cbd49e265e5474f6, type: 2}
   m_sharedMaterial: {fileID: 8613784260704383832, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &310013918
@@ -1423,7 +1423,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bcf9ed6a9ee80ed4cbd49e265e5474f6, type: 2}
   m_sharedMaterial: {fileID: 8613784260704383832, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1489,7 +1489,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &559824080
@@ -1561,6 +1561,73 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &627128266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 627128267}
+  - component: {fileID: 627128268}
+  m_Layer: 0
+  m_Name: Requests4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &627128267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627128266}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1872298300}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &627128268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627128266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfe8f2e323ed8043a085246c602841c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: "Vous recevez un courrier de la part d\u2019un usager.\r\n\r\nLa tombe
+    \xE0 c\xF4t\xE9 de la mienne est une vieille tombe compl\xE8tement abandonn\xE9e,
+    envahie par la v\xE9g\xE9tation. J\u2019ai peur que le lierre ne d\xE9borde,
+    et je suis s\xFBr d\u2019avoir vu un renardeau un soir. Je ne veux pas de salet\xE9s.
+    Enlevez-l\xE0 !\r\n\r\nVous avez en effet le droit de reprendre une tombe \xE0
+    l\u2019abandon et de laisser quelqu\u2019un installer une nouvelle tombe \xE0
+    la place. De nombreuses personnes seront contentes d\u2019avoir une place dans
+    cette partie du cimeti\xE8re. En m\xEAme temps, les tombes anciennes accueillent
+    des esp\xE8ces uniques, et ajoutent un certain charme. \r"
+  answerA: "Nettoyer l\u2019emplacement"
+  AListHide: []
+  AListShow: []
+  AarchitecturalPoints: 1
+  AlandscapedPoints: 1
+  AecologicalPoints: 0
+  answerB: Laisser le monument
+  BListHide:
+  - {fileID: 1263969654}
+  BListShow:
+  - {fileID: 1798999531}
+  BarchitecturalPoints: 0
+  BlandscapedPoints: 1
+  BecologicalPoints: 1
 --- !u!1 &635926530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,6 +1761,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635926530}
   m_CullTransparentMesh: 1
+--- !u!1 &653095779
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653095780}
+  - component: {fileID: 653095781}
+  m_Layer: 0
+  m_Name: Requests3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &653095780
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653095779}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1872298300}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &653095781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653095779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfe8f2e323ed8043a085246c602841c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: "Vous recevez un appel du maire. Des \xE9lecteurs se sont plaints
+    de l\u2019herbe, trop haute autour des tombes. C\u2019est difficile de les nettoyer,
+    et les personnes \xE2g\xE9es ont peur de tr\xE9bucher. Vous en parlez avec votre
+    jardinier. \r\n\r\nJ\u2019aimerais bien l\u2019y voir, le maire, tiens ! Entre
+    les tombes, c\u2019est compliqu\xE9 de passer. C\u2019est trop petit pour la
+    tondeuse ou la d\xE9broussailleuse. Avant, je passais le br\xFBleur, mais en
+    \xE9t\xE9, il fait trop chaud. Qu\u2019il embauche un autre jardinier !\r\n\r\nVous
+    pouvez demander au maire de recruter un autre agent, si le budget le permet.
+    Ou votre jardinier peut laisser l\u2019herbe pousser autour des tombes et faucher
+    \xE0 la fin de l\u2019\xE9t\xE9. Ce sera mieux pour les oiseaux, et am\xE8nera
+    un peu de vie au milieu des pierres.\r\r"
+  answerA: Embaucher un autre jardinier
+  AListHide: []
+  AListShow: []
+  AarchitecturalPoints: 1
+  AlandscapedPoints: 1
+  AecologicalPoints: 0
+  answerB: Faire du fauchage tardif
+  BListHide:
+  - {fileID: 1263969654}
+  BListShow:
+  - {fileID: 1798999531}
+  BarchitecturalPoints: 0
+  BlandscapedPoints: 1
+  BecologicalPoints: 2
 --- !u!1 &659045832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1753,7 +1889,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bcf9ed6a9ee80ed4cbd49e265e5474f6, type: 2}
   m_sharedMaterial: {fileID: 8613784260704383832, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1819,7 +1955,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &659045835
@@ -3771,10 +3907,25 @@ MonoBehaviour:
   waitingTimeBetweenElements: 0.5
   waitingTimeBetweenHideShow: 0.5
   fadeDuration: 1
-  architecturalEndingDescription: Architectural
-  landscapedEndingDescription: Landscaped
-  ecologicalEndingDescription: Ecological
-  hybridEndingDescription: Hybrid
+  architecturalEndingDescription: "Vous avez fait un cimeti\xE8re architectural !
+    \r\n\r\nLes cimeti\xE8res architecturaux privil\xE9gient la pierre et un paysage
+    d\xE9gag\xE9. Ils sont souvent d\xE9crits comme \u201Cpropres\u201D, ce qui veut
+    dire, sans faune et sans flore spontan\xE9e. La majorit\xE9 des cimeti\xE8res
+    en France sont des cimeti\xE8res architecturaux.\r"
+  landscapedEndingDescription: "Vous avez fait un cimeti\xE8re paysager ! \r\n\r\nLes
+    cimeti\xE8res paysagers int\xE8grent la pr\xE9sence de plantes \xE0 des fins
+    d\xE9coratives. Ils conservent un paysage d\xE9gag\xE9 mais pr\xE9sentent plus
+    d\u2019arbres et d\u2019herbe. Les cimeti\xE8res paysagers se d\xE9veloppent
+    \xE0 la fin du XXe si\xE8cle, pour faire revenir de la verdure dans des cimeti\xE8res
+    jug\xE9s trop gris.\r"
+  ecologicalEndingDescription: "Vous avez fait un cimeti\xE8re \xE9cologique ! \r\n\r\nLes
+    cimeti\xE8res \xE9cologiques sont une invention r\xE9cente. Leur objectif est
+    de conjuguer protection de l\u2019environnement et respect des d\xE9funts. Un
+    exemple connu est celui du cimeti\xE8re de Souch\xE9, \xE0 Niort.\r"
+  hybridEndingDescription: "Vous avez fait un cimeti\xE8re hybride ! \r\n\r\nChaque
+    cimeti\xE8re est unique. Le v\xF4tre int\xE8gre des \xE9l\xE9ments de diff\xE9rents
+    mod\xE8les, \xE0 la fois architectural et paysager, paysager et \xE9cologique.
+    Gouverner, c\u2019est choisir !\r"
   buttonReloadTextUI: {fileID: 1728838923}
   buttonMenuTextUI: {fileID: 310013917}
   buttonReloadUI: {fileID: 1413238137}
@@ -3946,25 +4097,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfe8f2e323ed8043a085246c602841c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: "Yop c'est toto mais le deuxi\xE8me du nom. Je vais juste essayer
-    de mettre un text un peu plus long."
-  answerA: "Moi c'est A mais le deuxi\xE8me"
+  description: "Une apr\xE8s-midi, un usager vous interpelle : \r\n\r\nLe pin qui
+    est \xE0 c\xF4t\xE9 de la tombe de ma m\xE8re est malade ! Il est tout sec, et
+    j\u2019aimerais bien qu\u2019il ne s\u2019effondre pas sur maman. D\xE9j\xE0
+    que j\u2019en avais marre de nettoyer les aiguilles qui chutent toute l\u2019ann\xE9e\u2026
+    Faites quelque chose !\u201D\r\n\r\nVous pouvez faire remplacer le pin malade
+    par un nouveau, pour garder un peu de verdure m\xEAme en hiver. Mais si vous
+    coupez le pin, les usagers et votre jardinier n\u2019auront plus \xE0 s\u2019emb\xEAter
+    avec les aiguilles. En plus, le bois mort pourrait \xEAtre utile aux petites
+    b\xEAtes...\r"
+  answerA: Couper le pin
   AListHide:
   - {fileID: 111742255}
   AListShow:
   - {fileID: 1270441249}
   - {fileID: 1545612476}
-  AarchitecturalPoints: 1
+  AarchitecturalPoints: 0
   AlandscapedPoints: 0
-  AecologicalPoints: 0
-  answerB: "Moi c'est B mais le deuxi\xE8me"
+  AecologicalPoints: 1
+  answerB: Replanter un pin
   BListHide:
   - {fileID: 1263969654}
   BListShow:
   - {fileID: 1798999531}
-  BarchitecturalPoints: 0
+  BarchitecturalPoints: 1
   BlandscapedPoints: 0
-  BecologicalPoints: 1
+  BecologicalPoints: 0
 --- !u!1 &1713759668
 GameObject:
   m_ObjectHideFlags: 0
@@ -4321,7 +4479,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: New cemetery
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: bcf9ed6a9ee80ed4cbd49e265e5474f6, type: 2}
   m_sharedMaterial: {fileID: 8613784260704383832, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4387,7 +4545,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1728838924
@@ -4516,6 +4674,9 @@ Transform:
   m_Children:
   - {fileID: 1989698630}
   - {fileID: 1620117099}
+  - {fileID: 653095780}
+  - {fileID: 627128267}
+  - {fileID: 2077039350}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!850595691 &1892800116
@@ -4806,8 +4967,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfe8f2e323ed8043a085246c602841c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: Yop c'est toto
-  answerA: Moi c'est A
+  description: "Un matin, le jardinier du cimeti\xE8re vient vous voir\u2026 \r\n\r\n\xC9coutez,
+    on a un petit souci\u2026 Les all\xE9es en gravier sont envahies par les herbes
+    folles. Depuis qu\u2019on n\u2018a plus le droit d\u2019utiliser des pesticides
+    sur la commune, c\u2019est compliqu\xE9 de tout entretenir. Et le gravier, \xE7a
+    ab\xEEme la tondeuse.\r\n\r\nSi on laissait l\u2019herbe pousser, \xE7a serait
+    plus facile pour que je tonde de temps en temps. Et \xE7a serait mieux pour les
+    insectes. En m\xEAme temps, \xE7a risque d\u2019\xEAtre plus compliqu\xE9 pour
+    les corbillards et pour les gens en fauteuil roulant. Ils pr\xE9f\xE9reront sans
+    doute qu\u2019on refasse des all\xE9es. \r\n\r\nQu\u2019est-ce qu\u2019on fait
+    ?\r"
+  answerA: "R\xE9nover les all\xE9es"
   AListHide:
   - {fileID: 1270441249}
   - {fileID: 1545612476}
@@ -4816,11 +4986,76 @@ MonoBehaviour:
   AarchitecturalPoints: 2
   AlandscapedPoints: 0
   AecologicalPoints: 0
-  answerB: Moi c'est B
+  answerB: "Laisser l\u2019herbe pousser"
   BListHide:
   - {fileID: 1798999531}
   BListShow:
   - {fileID: 1263969654}
+  BarchitecturalPoints: 0
+  BlandscapedPoints: 1
+  BecologicalPoints: 1
+--- !u!1 &2077039349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2077039350}
+  - component: {fileID: 2077039351}
+  m_Layer: 0
+  m_Name: Requests5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2077039350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077039349}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1872298300}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2077039351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077039349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfe8f2e323ed8043a085246c602841c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: "Au fond du cimeti\xE8re, il y a une partie en friche qui est inutilis\xE9e.
+    Cela fait un moment que vous vous demandez ce que vous pourriez en faire. \r\n\r\nVous
+    pourriez ouvrir un nouveau carr\xE9 de tombes, en pr\xE9vision du remplissage
+    du cimeti\xE8re. Cela \xE9vitera d\u2019avoir \xE0 reprendre des tombes anciennes
+    quand la place viendra \xE0 manquer, et de d\xE9ranger les morts. Alternativement,
+    vous pourriez installer une petite ruche, pour que les abeilles pollinisent les
+    fleurs du cimeti\xE8re.\r"
+  answerA: Installer de nouvelles tombes
+  AListHide: []
+  AListShow: []
+  AarchitecturalPoints: 1
+  AlandscapedPoints: 0
+  AecologicalPoints: 0
+  answerB: Installer une ruche
+  BListHide:
+  - {fileID: 1263969654}
+  BListShow:
+  - {fileID: 1798999531}
   BarchitecturalPoints: 0
   BlandscapedPoints: 1
   BecologicalPoints: 1
