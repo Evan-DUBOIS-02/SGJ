@@ -8,18 +8,15 @@ public class CemeteryElement : MonoBehaviour
     private Vector3 basePosition;
     public AudioClip audioClip;
 
+    private AudioManager audioManager;
     private void Start()
     {
         baseScale = transform.localScale;
         basePosition = transform.localPosition;
-    }
-
-    private AudioManager audioManager;
-
-    private void Start()
-    {
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
+
+
 
     public void TriggerActivation()
     {
