@@ -1852,7 +1852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6547516, g: 0.5458793, b: 0.8207547, a: 0.12156863}
+  m_Color: {r: 0.6547516, g: 0.5458793, b: 0.8207547, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2340,8 +2340,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.67295593, g: 0.6711526, b: 0.55656415, a: 1}
+    m_PressedColor: {r: 0.7924528, g: 0.730153, b: 0.730153, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -3950,11 +3950,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfe8f2e323ed8043a085246c602841c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: "Vous recevez un courrier de la part d\u2019un usager.\r\n\r\nLa tombe
-    \xE0 c\xF4t\xE9 de la mienne est une vieille tombe compl\xE8tement abandonn\xE9e,
+  description: "Vous recevez un courrier de la part d\u2019un usager.\r\n\r\n\"La
+    tombe \xE0 c\xF4t\xE9 de la mienne est une vieille tombe compl\xE8tement abandonn\xE9e,
     envahie par la v\xE9g\xE9tation. J\u2019ai peur que le lierre ne d\xE9borde,
     et je suis s\xFBr d\u2019avoir vu un renardeau un soir. Je ne veux pas de salet\xE9s.
-    Enlevez-l\xE0 !\r\n\r\nVous avez en effet le droit de reprendre une tombe \xE0
+    Enlevez-l\xE0 !\"\r\n\r\nVous avez en effet le droit de reprendre une tombe \xE0
     l\u2019abandon et de laisser quelqu\u2019un installer une nouvelle tombe \xE0
     la place. De nombreuses personnes seront contentes d\u2019avoir une place dans
     cette partie du cimeti\xE8re. En m\xEAme temps, les tombes anciennes accueillent
@@ -4483,10 +4483,10 @@ MonoBehaviour:
   description: "Vous recevez un appel du maire. Des \xE9lecteurs se sont plaints
     de l\u2019herbe, trop haute autour des tombes. C\u2019est difficile de les nettoyer,
     et les personnes \xE2g\xE9es ont peur de tr\xE9bucher. Vous en parlez avec votre
-    jardinier. \r\n\r\nJ\u2019aimerais bien l\u2019y voir, le maire, tiens ! Entre
+    jardinier. \r\n\r\n\"J\u2019aimerais bien l\u2019y voir, le maire, tiens ! Entre
     les tombes, c\u2019est compliqu\xE9 de passer. C\u2019est trop petit pour la
     tondeuse ou la d\xE9broussailleuse. Avant, je passais le br\xFBleur, mais en
-    \xE9t\xE9, il fait trop chaud. Qu\u2019il embauche un autre jardinier !\r\n\r\nVous
+    \xE9t\xE9, il fait trop chaud. Qu\u2019il embauche un autre jardinier !\"\r\n\r\nVous
     pouvez demander au maire de recruter un autre agent, si le budget le permet.
     Ou votre jardinier peut laisser l\u2019herbe pousser autour des tombes et faucher
     \xE0 la fin de l\u2019\xE9t\xE9. Ce sera mieux pour les oiseaux, et am\xE8nera
@@ -11223,7 +11223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfe8f2e323ed8043a085246c602841c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: "Une apr\xE8s-midi, un usager vous interpelle : \r\n\r\nLe pin qui
+  description: "Une apr\xE8s-midi, un usager vous interpelle : \r\n\r\n\"Le pin qui
     est \xE0 c\xF4t\xE9 de la tombe de ma m\xE8re est malade ! Il est tout sec, et
     j\u2019aimerais bien qu\u2019il ne s\u2019effondre pas sur maman. D\xE9j\xE0
     que j\u2019en avais marre de nettoyer les aiguilles qui chutent toute l\u2019ann\xE9e\u2026
@@ -13641,7 +13641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfe8f2e323ed8043a085246c602841c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  description: "Un matin, le jardinier du cimeti\xE8re vient vous voir\u2026 \r\n\r\n\xC9coutez,
+  description: "Un matin, le jardinier du cimeti\xE8re vient vous voir\u2026 \r\n\r\n\"\xC9coutez,
     on a un petit souci\u2026 Les all\xE9es en gravier sont envahies par les herbes
     folles. Depuis qu\u2019on n\u2018a plus le droit d\u2019utiliser des pesticides
     sur la commune, c\u2019est compliqu\xE9 de tout entretenir. Et le gravier, \xE7a
@@ -13650,7 +13650,7 @@ MonoBehaviour:
     insectes. En m\xEAme temps, \xE7a risque d\u2019\xEAtre plus compliqu\xE9 pour
     les corbillards et pour les gens en fauteuil roulant. Ils pr\xE9f\xE9reront sans
     doute qu\u2019on refasse des all\xE9es. \r\n\r\nQu\u2019est-ce qu\u2019on fait
-    ?\r"
+    ?\"\r"
   answerA: "R\xE9nover les all\xE9es"
   AListHide:
   - {fileID: 78816505}
@@ -13662,8 +13662,8 @@ MonoBehaviour:
   AarchitecturalPoints: 2
   AlandscapedPoints: 0
   AecologicalPoints: 0
-  AudioClipHideA: {fileID: 8300000, guid: d05eff706344a454ba775c1a9b438cb7, type: 3}
-  AudioClipShowA: {fileID: 8300000, guid: 2fb91113ad620a347bf4c13301703e80, type: 3}
+  AudioClipHideA: {fileID: 8300000, guid: 7a42d08b1a44b434381e56765a38b0e2, type: 3}
+  AudioClipShowA: {fileID: 8300000, guid: 874c89c1441dc114d9e99f4c0fcc30b1, type: 3}
   answerB: "Laisser l\u2019herbe pousser"
   BListHide:
   - {fileID: 971342740}
@@ -13672,8 +13672,8 @@ MonoBehaviour:
   BarchitecturalPoints: 0
   BlandscapedPoints: 1
   BecologicalPoints: 1
-  AudioClipHideB: {fileID: 8300000, guid: d05eff706344a454ba775c1a9b438cb7, type: 3}
-  AudioClipShowB: {fileID: 8300000, guid: 2fb91113ad620a347bf4c13301703e80, type: 3}
+  AudioClipHideB: {fileID: 8300000, guid: 7a42d08b1a44b434381e56765a38b0e2, type: 3}
+  AudioClipShowB: {fileID: 8300000, guid: 874c89c1441dc114d9e99f4c0fcc30b1, type: 3}
   idRequest: 1
 --- !u!1001 &1993915796
 PrefabInstance:
