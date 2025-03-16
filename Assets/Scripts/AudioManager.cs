@@ -9,7 +9,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AudioSource AMBSourceWood2;
     [SerializeField] AudioSource AMBSourceGrass1;
     [SerializeField] AudioSource AMBSourceGrass2;
-    [SerializeField] AudioSource AMBSourceRuche;
+    [SerializeField] AudioSource AMBSourceRuche1;
+    [SerializeField] AudioSource AMBSourceRuche2;
 
     [Header("------- Music -------")]
     public AudioClip MUSBackground;
@@ -19,6 +20,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip AMBTree2;
     public AudioClip AMBGrass1;
     public AudioClip AMBGrass2;
+    public AudioClip AMBRuche1;
+    public AudioClip AMBRuche2;
 
     /*
     [Header("------- Audio Clip UI -------")]
@@ -54,6 +57,11 @@ public class AudioManager : MonoBehaviour
         AMBSourceGrass2.clip = AMBGrass2;
         AMBSourceGrass1.Play();
         AMBSourceGrass2.Play();
+
+        AMBSourceRuche1.clip = AMBRuche1;
+        AMBSourceRuche2.clip = AMBRuche2;
+        AMBSourceRuche1.Play();
+        AMBSourceRuche2.Play();
 
         //timeBetweenSound = GenerateRandomTimeBtwSound();
     }
