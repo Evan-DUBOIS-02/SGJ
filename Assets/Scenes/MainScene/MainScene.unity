@@ -2775,7 +2775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
+  vfx: {fileID: 7311805427996837487, guid: 3258df5077668d64d9e8b357adeb4ef4, type: 3}
 --- !u!95 &768940391
 Animator:
   serializedVersion: 7
@@ -4959,7 +4959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
+  vfx: {fileID: 7311805427996837487, guid: 3258df5077668d64d9e8b357adeb4ef4, type: 3}
 --- !u!95 &1286218407
 Animator:
   serializedVersion: 7
@@ -6738,7 +6738,8 @@ MonoBehaviour:
     b\xEAtes...\r"
   answerA: Couper le pin
   AListHide: []
-  AListShow: []
+  AListShow:
+  - {fileID: 2018178585}
   AarchitecturalPoints: 0
   AlandscapedPoints: 0
   AecologicalPoints: 1
@@ -7633,7 +7634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 1
-  vfx: {fileID: 0}
+  vfx: {fileID: 7311805427996837487, guid: 3258df5077668d64d9e8b357adeb4ef4, type: 3}
 --- !u!95 &1834806986
 Animator:
   serializedVersion: 7
@@ -8556,16 +8557,18 @@ MonoBehaviour:
     doute qu\u2019on refasse des all\xE9es. \r\n\r\nQu\u2019est-ce qu\u2019on fait
     ?\r"
   answerA: "R\xE9nover les all\xE9es"
-  AListHide: []
-  AListShow: []
+  AListHide:
+  - {fileID: 971342740}
+  AListShow:
+  - {fileID: 641270873}
   AarchitecturalPoints: 2
   AlandscapedPoints: 0
   AecologicalPoints: 0
   answerB: "Laisser l\u2019herbe pousser"
   BListHide:
-  - {fileID: 0}
+  - {fileID: 971342740}
   BListShow:
-  - {fileID: 0}
+  - {fileID: 992754571}
   BarchitecturalPoints: 0
   BlandscapedPoints: 1
   BecologicalPoints: 1
@@ -8675,7 +8678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startStatus: 0
-  vfx: {fileID: 0}
+  vfx: {fileID: 7311805427996837487, guid: 3258df5077668d64d9e8b357adeb4ef4, type: 3}
 --- !u!95 &2018178587
 Animator:
   serializedVersion: 7
