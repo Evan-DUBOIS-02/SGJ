@@ -4,7 +4,7 @@ public class AudioManager : MonoBehaviour
 {
     [Header("------- Audio Source -------")]
     [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource SFXSource;
+    [SerializeField] public AudioSource SFXSource;
     [SerializeField] AudioSource AMBSourceWood1;
     [SerializeField] AudioSource AMBSourceWood2;
     [SerializeField] AudioSource AMBSourceGrass1;
@@ -45,6 +45,21 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        StartAmbiance();
+    }
+
+    public void StartAmbiance()
+    {
+        //RESTART
+        musicSource.Stop();
+        SFXSource.Stop();
+        AMBSourceGrass1.Stop();
+        AMBSourceGrass2.Stop();
+        AMBSourceWood1.Stop();
+        AMBSourceWood2.Stop();
+        AMBSourceRuche1.Stop();
+        AMBSourceRuche2.Stop();
+
         musicSource.clip = MUSBackground;
         musicSource.Play();
 
@@ -55,33 +70,10 @@ public class AudioManager : MonoBehaviour
 
         AMBSourceGrass1.clip = AMBGrass1;
         AMBSourceGrass2.clip = AMBGrass2;
-        AMBSourceGrass1.Play();
-        AMBSourceGrass2.Play();
 
         AMBSourceRuche1.clip = AMBRuche1;
         AMBSourceRuche2.clip = AMBRuche2;
-        AMBSourceRuche1.Play();
-        AMBSourceRuche2.Play();
-
-        //timeBetweenSound = GenerateRandomTimeBtwSound();
     }
-    /*
-    // Update is called once per frame
-    void Update()
-    {
-        timeBetweenSound -= Time.deltaTime;
-        if (timeBetweenSound <= 0)
-        {
-            GenerateSound(1);
-            timeBetweenSound = GenerateRandomTimeBtwSound();
-        }
-    }
-
-    public float GenerateRandomTimeBtwSound()
-    {
-        return Random.Range(minTimeBetweenSounds, maxTimeBetweenSounds);
-    }
-    */
 
     public void GenerateSound(int typeOfSound) //1 = Ambiance , 2 = Click , 3 = Movement
     {
@@ -110,5 +102,46 @@ public class AudioManager : MonoBehaviour
     public void PlaySFX(AudioClip clip)
     {
         SFXSource.PlayOneShot(clip);
+    }
+
+    public void ManageAmbiance(int requestId, int idAnswer) //idAnswer => 1 = A, 2 = B
+    {
+        switch (requestId)
+        {
+            case 1:
+                if(idAnswer == 2)
+                {
+                    AMBSourceGrass1.Play();
+                    AMBSourceGrass2.Play();
+                }
+                break;
+
+            case 2:
+                if(idAnswer == 1)
+                {
+                    AMBSourceWood1.Stop();
+                    AMBSourceWood2.Stop();
+                }
+                break;
+
+            case 3:
+                if(idAnswer == 1)
+                {
+                    AMBSourceGrass1.Stop();
+                    AMBSourceGrass2.Stop();
+                }
+                break;
+
+            case 5:
+                if(idAnswer == 2)
+                {
+                    AMBSourceRuche1.Play();
+                    AMBSourceRuche2.Play();
+                }
+                break;
+
+            default:
+                break;
+        }
     }
 }

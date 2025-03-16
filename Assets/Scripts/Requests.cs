@@ -20,6 +20,8 @@ public class Requests : MonoBehaviour
     public int AarchitecturalPoints;
     public int AlandscapedPoints;
     public int AecologicalPoints;
+    public AudioClip AudioClipHideA;
+    public AudioClip AudioClipShowA;
 
     [Header("Answer B")]
     public string answerB;
@@ -28,6 +30,17 @@ public class Requests : MonoBehaviour
     public int BarchitecturalPoints;
     public int BlandscapedPoints;
     public int BecologicalPoints;
+    public AudioClip AudioClipHideB;
+    public AudioClip AudioClipShowB;
+
+    [Header("Sons")]
+    private AudioManager audioManager;
+    [SerializeField] private int idRequest;
+
+    private void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+    }
 
     [NonSerialized]
     public SelectedAnswer sa = SelectedAnswer.None;
@@ -46,12 +59,14 @@ public class Requests : MonoBehaviour
             returnTAB[0].AddRange(AListHide);
             returnTAB[1].AddRange(AListShow);
             sa = SelectedAnswer.A;
+            audioManager.ManageAmbiance(idRequest, 1);
         }
         else if (answerId == 2)
         {
             returnTAB[0].AddRange(BListHide);
             returnTAB[1].AddRange(BListShow); 
             sa = SelectedAnswer.B;
+            audioManager.ManageAmbiance(idRequest, 2);
         }
 
         return returnTAB;  
@@ -60,5 +75,6 @@ public class Requests : MonoBehaviour
     public void ResetStatus()
     {
         sa = SelectedAnswer.None;
+        audioManager.StartAmbiance();
     }
 }

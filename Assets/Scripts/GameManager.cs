@@ -109,9 +109,11 @@ public class GameManager : MonoBehaviour
         // disable buttons
         buttonAUI.enabled = false;
         buttonBUI.enabled = false;
-        // getting GO hide/show
+        // getting GO hide/show / sound
         List<GameObject>[] tabGO = new List<GameObject>[2];
         tabGO = listRequest[currentRequest].SetSA(1);
+        AudioClip clipHide = listRequest[currentRequest].AudioClipHideA;
+        AudioClip clipShow = listRequest[currentRequest].AudioClipShowA;
         // Adding points
         totalArchitecturalPoints += listRequest[currentRequest].AarchitecturalPoints;
         totalLandscapedPoints += listRequest[currentRequest].AlandscapedPoints;
@@ -122,7 +124,7 @@ public class GameManager : MonoBehaviour
         // Depedencies
         CheckDepedencies();
         // poping
-        StartCoroutine(Poping(tabGO[0], tabGO[1], () => SwitchRequest()));
+        StartCoroutine(Poping(tabGO[0], tabGO[1], clipHide, clipShow, () => SwitchRequest()));
     }
 
     public void PressButtonB()
@@ -130,9 +132,11 @@ public class GameManager : MonoBehaviour
         // disable buttons
         buttonAUI.enabled = false;
         buttonBUI.enabled = false;
-        // getting GO hide/show
+        // getting GO hide/show / sound
         List<GameObject>[] tabGO = new List<GameObject>[2];
         tabGO = listRequest[currentRequest].SetSA(2);
+        AudioClip clipHide = listRequest[currentRequest].AudioClipHideB;
+        AudioClip clipShow = listRequest[currentRequest].AudioClipShowB;
         // Adding points
         totalArchitecturalPoints += listRequest[currentRequest].BarchitecturalPoints;
         totalLandscapedPoints += listRequest[currentRequest].BlandscapedPoints;
@@ -143,7 +147,7 @@ public class GameManager : MonoBehaviour
         // Depedencies
         CheckDepedencies();
         // poping
-        StartCoroutine(Poping(tabGO[0], tabGO[1], () => SwitchRequest()));
+        StartCoroutine(Poping(tabGO[0], tabGO[1], clipHide, clipShow, () => SwitchRequest()));
     }
 
     private void CheckDepedencies()
@@ -224,8 +228,11 @@ public class GameManager : MonoBehaviour
         buttonReloadUI.gameObject.SetActive(true);
     }
 
-    private IEnumerator Poping(List<GameObject> hide, List<GameObject> show, System.Action onComplete)
+    private IEnumerator Poping(List<GameObject> hide, List<GameObject> show, AudioClip clipHide, AudioClip clipShow, System.Action onComplete)
     {
+        if(clipHide != null)
+            audioManager.PlaySFX(clipHide);
+
         for (int i = 0; i < hide.Count; i++)
         {
             hide[i].GetComponent<Animator>().SetTrigger("PopDown");
@@ -233,6 +240,12 @@ public class GameManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(waitingTimeBetweenHideShow);
+
+        if(clipShow != null)
+        {
+            audioManager.SFXSource.Stop();
+            audioManager.PlaySFX(clipShow);
+        }
 
         for (int i = 0; i < show.Count; i++)
         {
