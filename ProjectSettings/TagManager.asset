@@ -6,6 +6,8 @@ TagManager:
   tags:
   - GameManager
   - AudioManager
+  - Birds
+  - Fly
   layers:
   - Default
   - TransparentFX

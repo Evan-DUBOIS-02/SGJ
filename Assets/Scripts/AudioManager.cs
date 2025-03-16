@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] public AudioSource AMBSourceGrass2;
     [SerializeField] public AudioSource AMBSourceRuche1;
     [SerializeField] public AudioSource AMBSourceRuche2;
+    [SerializeField] public AudioSource AMBSourceCorneille;
 
     [Header("------- Music -------")]
     public AudioClip MUSBackground;
@@ -23,6 +24,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip AMBGrass2;
     public AudioClip AMBRuche1;
     public AudioClip AMBRuche2;
+    public AudioClip AMBCorneille;
+    public AudioClip AMBFly;
 
     /*
     [Header("------- Audio Clip UI -------")]
@@ -72,6 +75,8 @@ public class AudioManager : MonoBehaviour
         AMBSourceRuche1.clip = AMBRuche1;
         AMBSourceRuche2.clip = AMBRuche2;
         //StartAmbiance();
+
+        AMBSourceCorneille.clip = AMBCorneille;
     }
 
     public void StartAmbiance()
@@ -103,7 +108,12 @@ public class AudioManager : MonoBehaviour
             StartCoroutine(FadeAmbiance(false, AMBSourceRuche2, timeToFadeOut, 0f));
         }
 
-        if(!AMBSourceWood1.isPlaying)
+        if (AMBSourceCorneille.isPlaying)
+        {
+            StartCoroutine(FadeAmbiance(false, AMBSourceCorneille, timeToFadeOut, 0f));
+        }
+
+        if (!AMBSourceWood1.isPlaying)
         {
             StartCoroutine(FadeAmbiance(true, AMBSourceWood1, timeToFadeIn, volumeFadeInAmbiance));
         }
@@ -134,18 +144,18 @@ public class AudioManager : MonoBehaviour
 
     public void GenerateSound(int typeOfSound) //1 = Ambiance , 2 = Click , 3 = Movement
     {
-        if(typeOfSound == 2)
+        if (typeOfSound == 2)
         {
             int soundRandom = Random.Range(0, tabAudioClick.Length);
 
-            while(soundRandom == idLastAudioClick)
+            while (soundRandom == idLastAudioClick)
                 soundRandom = Random.Range(0, tabAudioClick.Length);
 
             idLastAudioClick = soundRandom;
             PlaySFX(tabAudioClick[soundRandom]);
         }
 
-        else if(typeOfSound == 3)
+        else if (typeOfSound == 3)
         {
             int soundRandom = Random.Range(0, tabAudioMvt.Length);
 
@@ -163,7 +173,7 @@ public class AudioManager : MonoBehaviour
 
     public IEnumerator FadeAmbiance(bool fadeIn, AudioSource audioSource, float duration, float targetVolume)
     {
-        if(!fadeIn)
+        if (!fadeIn)
         {
             double lengthOfSource = (double)audioSource.clip.samples / audioSource.clip.frequency;
             yield return new WaitForSecondsRealtime((float)(lengthOfSource - duration));
@@ -171,7 +181,7 @@ public class AudioManager : MonoBehaviour
 
         float time = 0f;
         float startVol = audioSource.volume;
-        while(time < duration)
+        while (time < duration)
         {
             time += Time.deltaTime;
             audioSource.volume = Mathf.Lerp(startVol, targetVolume, time / duration);
@@ -186,7 +196,7 @@ public class AudioManager : MonoBehaviour
         switch (requestId)
         {
             case 1:
-                if(idAnswer == 2)
+                if (idAnswer == 2)
                 {
                     AMBSourceGrass1.Play();
                     AMBSourceGrass2.Play();
@@ -196,7 +206,7 @@ public class AudioManager : MonoBehaviour
                 break;
 
             case 2:
-                if(idAnswer == 1)
+                if (idAnswer == 1)
                 {
                     StartCoroutine(FadeAmbiance(false, AMBSourceWood1, timeToFadeOut, 0f));
                     AMBSourceWood1.Stop();
@@ -204,7 +214,7 @@ public class AudioManager : MonoBehaviour
                 break;
 
             case 3:
-                if(idAnswer == 1)
+                if (idAnswer == 1)
                 {
                     StartCoroutine(FadeAmbiance(false, AMBSourceGrass1, timeToFadeOut, 0f));
                     StartCoroutine(FadeAmbiance(false, AMBSourceGrass2, timeToFadeOut, 0f));
@@ -214,10 +224,11 @@ public class AudioManager : MonoBehaviour
                 break;
 
             case 5:
-                if(idAnswer == 2)
+                if (idAnswer == 2)
                 {
                     AMBSourceRuche1.Play();
-                    AMBSourceRuche2.Play();
+                    if(!AMBSourceRuche2.isPlaying)
+                        AMBSourceRuche2.Play();
                     StartCoroutine(FadeAmbiance(true, AMBSourceRuche1, timeToFadeIn, volumeFadeInAmbiance));
                     StartCoroutine(FadeAmbiance(true, AMBSourceRuche2, timeToFadeIn, volumeFadeInAmbiance));
                 }
@@ -225,6 +236,20 @@ public class AudioManager : MonoBehaviour
 
             default:
                 break;
+        }
+    }
+
+    public void ActivateSoundEvent(int id)
+    {
+        if (id == 0)
+        {
+            AMBSourceCorneille.Play();
+            StartCoroutine(FadeAmbiance(true, AMBSourceCorneille, timeToFadeIn, volumeFadeInAmbiance));
+        }
+        else if (id == 1)
+        {
+            AMBSourceRuche2.Play();
+            StartCoroutine(FadeAmbiance(true, AMBSourceRuche2, timeToFadeIn, volumeFadeInAmbiance));
         }
     }
 }
