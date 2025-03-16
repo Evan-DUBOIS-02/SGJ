@@ -94,23 +94,28 @@ public class AudioManager : MonoBehaviour
         if (AMBSourceGrass1.isPlaying)
         {
             StartCoroutine(FadeAmbiance(false, AMBSourceGrass1, timeToFadeOut, 0f));
+            AMBSourceGrass1.Stop();
         }
         if (AMBSourceGrass2.isPlaying)
         {
             StartCoroutine(FadeAmbiance(false, AMBSourceGrass2, timeToFadeOut, 0f));
+            AMBSourceGrass2.Stop();
         }
         if (AMBSourceRuche1.isPlaying)
         {
             StartCoroutine(FadeAmbiance(false, AMBSourceRuche1, timeToFadeOut, 0f));
+            AMBSourceRuche1.Stop();
         }
         if (AMBSourceRuche2.isPlaying)
         {
             StartCoroutine(FadeAmbiance(false, AMBSourceRuche2, timeToFadeOut, 0f));
+            AMBSourceRuche2.Stop();
         }
 
         if (AMBSourceCorneille.isPlaying)
         {
             StartCoroutine(FadeAmbiance(false, AMBSourceCorneille, timeToFadeOut, 0f));
+            AMBSourceCorneille.Stop();
         }
 
         if (!AMBSourceWood1.isPlaying)
