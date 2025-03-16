@@ -31,5 +31,7 @@ public class Depedencies : MonoBehaviour
     public void ResetStatus()
     {
         isEventTrigger = false;
+        foreach(var elem in elementToShow)
+            elem.GetComponent<CemeteryElement>().ResetStatus();
     }
 }

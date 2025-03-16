@@ -34,7 +34,7 @@ public class CemeteryElement : MonoBehaviour
         if (vfx != null)
         {
             Vector3 pos = transform.position;
-            pos.y = 0.4f;
+            pos.y = -1f;
             Destroy(Instantiate(vfx, pos, Quaternion.Euler(90, 0, 0)), 5f);
         }
     }
