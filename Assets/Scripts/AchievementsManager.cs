@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -196,7 +197,7 @@ public class AchievementsManager : MonoBehaviour
     }
     #endregion
 
-    public void CheckAllAchievements()
+    public IEnumerator CheckAllAchievements()
     {
         if (!corneilleUnlock && checkCorneille())
             // Affichage du succe in game
@@ -210,13 +211,16 @@ public class AchievementsManager : MonoBehaviour
         if (!FleursBUnlock && checkFleursB())
             // Affichage du succe in game
             Debug.Log("Fleurs B obtenu");
+
+        yield return null;
     }
 
     #region UI
     [Header("General UI")]
     [SerializeField] private GameObject notObtainUI;
+    [SerializeField] private GameObject achievementsPopUp;
 
-    private void HideAllInfo()
+    public void HideAllInfo()
     {
         notObtainUI.SetActive(false);
         corneilleUIInfo.SetActive(false);

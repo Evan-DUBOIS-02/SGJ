@@ -52,6 +52,7 @@ public class MainMenu : MonoBehaviour
         UIAchievements.SetActive(false);
         UIMainMenu.SetActive(true);
         cemetery.SetActive(true);
+        GetComponent<AchievementsManager>().HideAllInfo();
         foreach (Transform t in cemetery.transform)
         {
             if (!t.gameObject.activeSelf)
