@@ -322,11 +322,12 @@ public class GameManager : MonoBehaviour
             buttonBTextUI.color = new Color(buttonBTextColor.r, buttonBTextColor.g, buttonBTextColor.b, newAlpha);
             yield return null;
         }
-
         buttonAImage.color = new Color(buttonAColor.r, buttonAColor.g, buttonAColor.b, endAlpha);
         buttonBImage.color = new Color(buttonBColor.r, buttonBColor.g, buttonBColor.b, endAlpha);
         buttonATextUI.color = new Color(buttonATextColor.r, buttonATextColor.g, buttonATextColor.b, endAlpha);
         buttonBTextUI.color = new Color(buttonBTextColor.r, buttonBTextColor.g, buttonBTextColor.b, endAlpha);
+
+        
     }
 
     private IEnumerator EndingButtonFade(float startAlpha, float endAlpha)
