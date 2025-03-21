@@ -70,6 +70,26 @@ public class GameManager : MonoBehaviour
         buttonMenuUI.gameObject.SetActive(false);
         buttonReloadUI.gameObject.SetActive(false);
 
+        foreach(Transform t in cemetery.transform)
+        {
+            if(!t.gameObject.activeSelf) 
+                continue;
+
+            Animator elem;
+            if (t.gameObject.TryGetComponent<Animator>(out elem))
+            {
+                elem.SetTrigger("ByPassAnim");
+            }
+            else
+            {
+                foreach (Transform t2 in t.transform)
+                    if(!t2.gameObject.activeSelf)
+                        continue;
+                    else if (t2.gameObject.TryGetComponent<Animator>(out elem))
+                        elem.SetTrigger("ByPassAnim");
+            }
+        }
+
         LoadRequest();
     }
 
