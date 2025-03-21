@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class AchievementsManager : MonoBehaviour
@@ -102,13 +103,19 @@ public class AchievementsManager : MonoBehaviour
     [SerializeField] private GameObject ArchiUIInfo;
     private bool ArchiUnlock;
 
-    public void setArchiUnlock()
+    public IEnumerator setArchiUnlock()
     {
         if(!ArchiUnlock)
         {
             ArchiUnlock = true;
-            // + anim succe
             Debug.Log("Archi obtenu");
+            TMP_Text achievementText = achievementsPopUp.GetComponentInChildren<TMP_Text>();
+            Animator achievementAnimator = achievementsPopUp.GetComponentInChildren<Animator>();
+            while (!animationPopupAvailable)
+                yield return null;
+            achievementText.text = "Succes obtenu - Cimetière architectural";
+            achievementAnimator.SetTrigger("Popup");
+            animationPopupAvailable = false;
         }
     }
 
@@ -127,13 +134,19 @@ public class AchievementsManager : MonoBehaviour
     [SerializeField] private GameObject paysagerUIInfo;
     private bool paysagerUnlock;
 
-    public void setPaysagerUnlock()
+    public IEnumerator setPaysagerUnlock()
     {
         if (!paysagerUnlock)
         {
             paysagerUnlock = true;
-            // + anim succe
-            Debug.Log("paysager obtenu");
+            Debug.Log("Paysager obtenu");
+            TMP_Text achievementText = achievementsPopUp.GetComponentInChildren<TMP_Text>();
+            Animator achievementAnimator = achievementsPopUp.GetComponentInChildren<Animator>();
+            while (!animationPopupAvailable)
+                yield return null;
+            achievementText.text = "Succes obtenu - Cimetière paysager";
+            achievementAnimator.SetTrigger("Popup");
+            animationPopupAvailable = false;
         }
     }
 
@@ -152,13 +165,19 @@ public class AchievementsManager : MonoBehaviour
     [SerializeField] private GameObject ecoloUIInfo;
     private bool ecoloUnlock;
 
-    public void setEcoloUnlock()
+    public IEnumerator setEcoloUnlock()
     {
         if (!ecoloUnlock)
         {
             ecoloUnlock = true;
-            // + anim succe
-            Debug.Log("ecolo obtenu");
+            Debug.Log("Ecolo obtenu");
+            TMP_Text achievementText = achievementsPopUp.GetComponentInChildren<TMP_Text>();
+            Animator achievementAnimator = achievementsPopUp.GetComponentInChildren<Animator>();
+            while (!animationPopupAvailable)
+                yield return null;
+            achievementText.text = "Succes obtenu - Cimetière écologique";
+            achievementAnimator.SetTrigger("Popup");
+            animationPopupAvailable = false;
         }
     }
 
@@ -177,13 +196,19 @@ public class AchievementsManager : MonoBehaviour
     [SerializeField] private GameObject hybridUIInfo;
     private bool hybridUnlock;
 
-    public void setHybridUnlock()
+    public IEnumerator setHybridUnlock()
     {
         if (!hybridUnlock)
         {
             hybridUnlock = true;
-            // + anim succe
-            Debug.Log("hybrid obtenu");
+            Debug.Log("Hybrid obtenu");
+            TMP_Text achievementText = achievementsPopUp.GetComponentInChildren<TMP_Text>();
+            Animator achievementAnimator = achievementsPopUp.GetComponentInChildren<Animator>();
+            while (!animationPopupAvailable)
+                yield return null;
+            achievementText.text = "Succes obtenu - Cimetière hybride";
+            achievementAnimator.SetTrigger("Popup");
+            animationPopupAvailable = false;
         }
     }
 
@@ -199,26 +224,52 @@ public class AchievementsManager : MonoBehaviour
 
     public IEnumerator CheckAllAchievements()
     {
-        if (!corneilleUnlock && checkCorneille())
-            // Affichage du succe in game
-            Debug.Log("Corneille obtenu");
-        if(!insectesUnlock && checkInsectes())
-            // Affichage du succe in game
-            Debug.Log("Insectes obtenu");
-        if (!FleursAUnlock && checkFleursA())
-            // Affichage du succe in game
-            Debug.Log("Fleurs A obtenu");
-        if (!FleursBUnlock && checkFleursB())
-            // Affichage du succe in game
-            Debug.Log("Fleurs B obtenu");
+        TMP_Text achievementText = achievementsPopUp.GetComponentInChildren<TMP_Text>();
+        Animator achievementAnimator = achievementsPopUp.GetComponentInChildren<Animator>();
 
-        yield return null;
+        if (!corneilleUnlock && checkCorneille())
+        {
+            Debug.Log("Coneille obtenu");
+            achievementText.text = "Succes obtenu - Corneille";
+            achievementAnimator.SetTrigger("Popup");
+            animationPopupAvailable = false;
+            while (!animationPopupAvailable)
+                yield return null;
+        }
+        if (!insectesUnlock && checkInsectes())
+        {
+            Debug.Log("Insectes obtenu");
+            achievementText.text = "Succes obtenu - Insectes";
+            achievementAnimator.SetTrigger("Popup");
+            animationPopupAvailable = false;
+            while (!animationPopupAvailable)
+                yield return null;
+        }
+        if (!FleursAUnlock && checkFleursA())
+        {
+            Debug.Log("Fleurs A obtenu");
+            achievementText.text = "Succes obtenu - Fleurs naturelles";
+            achievementAnimator.SetTrigger("Popup");
+            animationPopupAvailable = false;
+            while (!animationPopupAvailable)
+                yield return null;
+        }
+        if (!FleursBUnlock && checkFleursB())
+        {
+            Debug.Log("Fleurs B obtenu");
+            achievementText.text = "Succes obtenu - Fleurs en hommage";
+            achievementAnimator.SetTrigger("Popup");
+            animationPopupAvailable = false;
+            while (!animationPopupAvailable)
+                yield return null;
+        }
     }
 
     #region UI
     [Header("General UI")]
     [SerializeField] private GameObject notObtainUI;
     [SerializeField] private GameObject achievementsPopUp;
+    public bool animationPopupAvailable = true;
 
     public void HideAllInfo()
     {

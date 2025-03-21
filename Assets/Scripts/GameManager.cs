@@ -207,7 +207,7 @@ public class GameManager : MonoBehaviour
     private void SwitchRequest()
     {
         // Achievements
-        achievementsManager.CheckAllAchievements();
+        StartCoroutine(achievementsManager.CheckAllAchievements());
 
         currentRequest++;
         if (currentRequest >= listRequest.Length)
@@ -221,24 +221,24 @@ public class GameManager : MonoBehaviour
         if (totalArchitecturalPoints > totalEcologicalPoints && totalArchitecturalPoints > totalLandscapedPoints)
         {
             descriptionUI.text = architecturalEndingDescription;
-            achievementsManager.setArchiUnlock();
+            StartCoroutine(achievementsManager.setArchiUnlock());
         }
 
         else if (totalLandscapedPoints > totalEcologicalPoints && totalLandscapedPoints > totalArchitecturalPoints)
         {
             descriptionUI.text = landscapedEndingDescription;
-            achievementsManager.setPaysagerUnlock();
+            StartCoroutine(achievementsManager.setPaysagerUnlock());
         }
 
         else if (totalEcologicalPoints > totalLandscapedPoints && totalEcologicalPoints > totalArchitecturalPoints)
         {
             descriptionUI.text = ecologicalEndingDescription;
-            achievementsManager.setEcoloUnlock();
+            StartCoroutine(achievementsManager.setEcoloUnlock());
         }
         else
         {
             descriptionUI.text = hybridEndingDescription;
-            achievementsManager.setHybridUnlock();
+            StartCoroutine(achievementsManager.setHybridUnlock());
         }
 
         StartCoroutine(TextFade(0.0f, 1.0f));
