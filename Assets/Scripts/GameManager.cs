@@ -61,8 +61,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] AudioManager audioManager;
 
+    private AchievementsManager achievementsManager;
     private void Start()
     {
+        achievementsManager = GetComponent<AchievementsManager>();
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         listRequest = requestsParent.GetComponentsInChildren<Requests>();
         listDepedency = depedenciesParent.GetComponentsInChildren<Depedencies>();
@@ -204,6 +206,9 @@ public class GameManager : MonoBehaviour
 
     private void SwitchRequest()
     {
+        // Achievements
+        achievementsManager.CheckAllAchievements();
+
         currentRequest++;
         if (currentRequest >= listRequest.Length)
             LoadEndScene();
@@ -214,13 +219,27 @@ public class GameManager : MonoBehaviour
     private void LoadEndScene()
     {
         if (totalArchitecturalPoints > totalEcologicalPoints && totalArchitecturalPoints > totalLandscapedPoints)
+        {
             descriptionUI.text = architecturalEndingDescription;
+            achievementsManager.setArchiUnlock();
+        }
+
         else if (totalLandscapedPoints > totalEcologicalPoints && totalLandscapedPoints > totalArchitecturalPoints)
+        {
             descriptionUI.text = landscapedEndingDescription;
+            achievementsManager.setPaysagerUnlock();
+        }
+
         else if (totalEcologicalPoints > totalLandscapedPoints && totalEcologicalPoints > totalArchitecturalPoints)
+        {
             descriptionUI.text = ecologicalEndingDescription;
+            achievementsManager.setEcoloUnlock();
+        }
         else
+        {
             descriptionUI.text = hybridEndingDescription;
+            achievementsManager.setHybridUnlock();
+        }
 
         StartCoroutine(TextFade(0.0f, 1.0f));
         StartCoroutine(EndingButtonFade(0.0f, 1.0f));
