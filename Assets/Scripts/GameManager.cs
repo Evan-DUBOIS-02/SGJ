@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TMPro;
-using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.UI;
 using static System.Net.Mime.MediaTypeNames;
@@ -324,6 +323,18 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator ButtonFade(float startAlpha, float endAlpha)
     {
+        if(startAlpha == 1)
+        {
+            buttonAUI.GetComponent<Button>().interactable = false;
+            buttonBUI.GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            buttonAUI.GetComponent<Button>().interactable = true;
+            buttonBUI.GetComponent<Button>().interactable = true;
+            buttonAUI.gameObject.SetActive(true);
+            buttonBUI.gameObject.SetActive(true);
+        }
         float elapsedTime = 0f;
 
         // Button A background color
@@ -359,6 +370,11 @@ public class GameManager : MonoBehaviour
         {
             buttonAUI.enabled = true;
             buttonBUI.enabled = true;
+        }
+        else
+        {
+            buttonAUI.gameObject.SetActive(false);
+            buttonBUI.gameObject.SetActive(false);
         }
     }
 
