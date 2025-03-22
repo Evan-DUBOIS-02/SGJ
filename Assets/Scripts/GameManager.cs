@@ -170,6 +170,7 @@ public class GameManager : MonoBehaviour
 
     private void ReloadData()
     {
+        achievementsManager.HideAllInGameIcon();
         // Reset menu button color
         buttonMenuUI.gameObject.SetActive(false);
         buttonMenuUI.gameObject.GetComponent<UnityEngine.UI.Image>().color = new Color(1, 1, 1, 0);
@@ -210,7 +211,8 @@ public class GameManager : MonoBehaviour
     private void SwitchRequest()
     {
         // Achievements
-        StartCoroutine(achievementsManager.CheckAllAchievements());
+        // StartCoroutine(achievementsManager.CheckAllAchievements());
+        achievementsManager.CheckAllAchievementsIcon();
 
         currentRequest++;
         if (currentRequest >= listRequest.Length)
@@ -224,24 +226,28 @@ public class GameManager : MonoBehaviour
         if (totalArchitecturalPoints > totalEcologicalPoints && totalArchitecturalPoints > totalLandscapedPoints)
         {
             descriptionUI.text = architecturalEndingDescription;
-            StartCoroutine(achievementsManager.setArchiUnlock());
+            // StartCoroutine(achievementsManager.setArchiUnlock());
+            achievementsManager.setArchiUnlockIcon();
         }
 
         else if (totalLandscapedPoints > totalEcologicalPoints && totalLandscapedPoints > totalArchitecturalPoints)
         {
             descriptionUI.text = landscapedEndingDescription;
-            StartCoroutine(achievementsManager.setPaysagerUnlock());
+            // StartCoroutine(achievementsManager.setPaysagerUnlock());
+            achievementsManager.setPaysagerUnlockIcon();
         }
 
         else if (totalEcologicalPoints > totalLandscapedPoints && totalEcologicalPoints > totalArchitecturalPoints)
         {
             descriptionUI.text = ecologicalEndingDescription;
-            StartCoroutine(achievementsManager.setEcoloUnlock());
+            // StartCoroutine(achievementsManager.setEcoloUnlock());
+            achievementsManager.setEcoloUnlockIcon();
         }
         else
         {
             descriptionUI.text = hybridEndingDescription;
-            StartCoroutine(achievementsManager.setHybridUnlock());
+            // StartCoroutine(achievementsManager.setHybridUnlock());
+            achievementsManager.setHybridUnlockIcon();
         }
 
         StartCoroutine(TextFade(0.0f, 1.0f, true));
