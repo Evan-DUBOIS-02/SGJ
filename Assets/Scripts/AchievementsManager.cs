@@ -108,7 +108,6 @@ public class AchievementsManager : MonoBehaviour
         if(!ArchiUnlock)
         {
             ArchiUnlock = true;
-            Debug.Log("Archi obtenu");
             TMP_Text achievementText = achievementsPopUp.GetComponentInChildren<TMP_Text>();
             Animator achievementAnimator = achievementsPopUp.GetComponentInChildren<Animator>();
             while (!animationPopupAvailable)
@@ -139,7 +138,6 @@ public class AchievementsManager : MonoBehaviour
         if (!paysagerUnlock)
         {
             paysagerUnlock = true;
-            Debug.Log("Paysager obtenu");
             TMP_Text achievementText = achievementsPopUp.GetComponentInChildren<TMP_Text>();
             Animator achievementAnimator = achievementsPopUp.GetComponentInChildren<Animator>();
             while (!animationPopupAvailable)
@@ -170,7 +168,6 @@ public class AchievementsManager : MonoBehaviour
         if (!ecoloUnlock)
         {
             ecoloUnlock = true;
-            Debug.Log("Ecolo obtenu");
             TMP_Text achievementText = achievementsPopUp.GetComponentInChildren<TMP_Text>();
             Animator achievementAnimator = achievementsPopUp.GetComponentInChildren<Animator>();
             while (!animationPopupAvailable)
@@ -201,7 +198,6 @@ public class AchievementsManager : MonoBehaviour
         if (!hybridUnlock)
         {
             hybridUnlock = true;
-            Debug.Log("Hybrid obtenu");
             TMP_Text achievementText = achievementsPopUp.GetComponentInChildren<TMP_Text>();
             Animator achievementAnimator = achievementsPopUp.GetComponentInChildren<Animator>();
             while (!animationPopupAvailable)
@@ -229,7 +225,6 @@ public class AchievementsManager : MonoBehaviour
 
         if (!corneilleUnlock && checkCorneille())
         {
-            Debug.Log("Coneille obtenu");
             achievementText.text = "Succes obtenu - Corneille";
             achievementAnimator.SetTrigger("Popup");
             animationPopupAvailable = false;
@@ -238,7 +233,6 @@ public class AchievementsManager : MonoBehaviour
         }
         if (!insectesUnlock && checkInsectes())
         {
-            Debug.Log("Insectes obtenu");
             achievementText.text = "Succes obtenu - Insectes";
             achievementAnimator.SetTrigger("Popup");
             animationPopupAvailable = false;
@@ -247,7 +241,6 @@ public class AchievementsManager : MonoBehaviour
         }
         if (!FleursAUnlock && checkFleursA())
         {
-            Debug.Log("Fleurs A obtenu");
             achievementText.text = "Succes obtenu - Fleurs naturelles";
             achievementAnimator.SetTrigger("Popup");
             animationPopupAvailable = false;
@@ -256,7 +249,6 @@ public class AchievementsManager : MonoBehaviour
         }
         if (!FleursBUnlock && checkFleursB())
         {
-            Debug.Log("Fleurs B obtenu");
             achievementText.text = "Succes obtenu - Fleurs en hommage";
             achievementAnimator.SetTrigger("Popup");
             animationPopupAvailable = false;

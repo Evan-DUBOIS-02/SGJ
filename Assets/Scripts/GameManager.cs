@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TMPro;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 using UnityEngine.UI;
 using static System.Net.Mime.MediaTypeNames;
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     [Header("UI fade animation")]
     [SerializeField] private float fadeDuration;
+    private bool isFadingOut = false;
 
     [Header("Ending text")]
     [TextArea(7, 10)]
@@ -92,18 +94,12 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        LoadRequest();
+        // LoadRequest();
     }
 
     public void LoadRequest()
     {
-        descriptionUI.text = listRequest[currentRequest].description;
-        buttonATextUI.text = listRequest[currentRequest].answerA;
-        buttonBTextUI.text = listRequest[currentRequest].answerB;
-        StartCoroutine(TextFade(0.0f, 1.0f));
-        StartCoroutine(ButtonFade(0.0f, 1.0f));
-        buttonAUI.enabled = true;
-        buttonBUI.enabled = true;
+        StartCoroutine(TextFade(0.0f, 1.0f, false));
     }
 
     public void PressButtonA()
@@ -121,7 +117,7 @@ public class GameManager : MonoBehaviour
         totalLandscapedPoints += listRequest[currentRequest].AlandscapedPoints;
         totalEcologicalPoints += listRequest[currentRequest].AecologicalPoints;
         // UI fade out
-        StartCoroutine(TextFade(1.0f, 0.0f));
+        StartCoroutine(TextFade(1.0f, 0.0f, false));
         StartCoroutine(ButtonFade(1.0f, 0.0f));
         // Depedencies
         CheckDepedencies();
@@ -144,7 +140,7 @@ public class GameManager : MonoBehaviour
         totalLandscapedPoints += listRequest[currentRequest].BlandscapedPoints;
         totalEcologicalPoints += listRequest[currentRequest].BecologicalPoints;
         // UI fade out
-        StartCoroutine(TextFade(1.0f, 0.0f));
+        StartCoroutine(TextFade(1.0f, 0.0f, false));
         StartCoroutine(ButtonFade(1.0f, 0.0f));
         // Depedencies
         CheckDepedencies();
@@ -175,8 +171,16 @@ public class GameManager : MonoBehaviour
 
     private void ReloadData()
     {
+        // Reset menu button color
         buttonMenuUI.gameObject.SetActive(false);
+        buttonMenuUI.gameObject.GetComponent<UnityEngine.UI.Image>().color = new Color(1, 1, 1, 0);
+        buttonMenuTextUI.color = new Color(1, 1, 1, 0);
+
+        // Reset reload button
         buttonReloadUI.gameObject.SetActive(false);
+        buttonReloadUI.gameObject.GetComponent<UnityEngine.UI.Image>().color = new Color(1, 1, 1, 0);
+        buttonReloadTextUI.color = new Color(1, 1, 1, 0);
+
         // reset all cemetery elements
         foreach (Transform t in cemetery.transform)
         {
@@ -241,10 +245,7 @@ public class GameManager : MonoBehaviour
             StartCoroutine(achievementsManager.setHybridUnlock());
         }
 
-        StartCoroutine(TextFade(0.0f, 1.0f));
-        StartCoroutine(EndingButtonFade(0.0f, 1.0f));
-        buttonMenuUI.gameObject.SetActive(true);
-        buttonReloadUI.gameObject.SetActive(true);
+        StartCoroutine(TextFade(0.0f, 1.0f, true));
     }
 
     private IEnumerator Poping(List<GameObject> hide, List<GameObject> show, AudioClip clipHide, AudioClip clipShow, System.Action onComplete)
@@ -276,8 +277,27 @@ public class GameManager : MonoBehaviour
     }
 
     #region elements fading
-    private IEnumerator TextFade(float startAlpha, float endAlpha)
+    private IEnumerator TextFade(float startAlpha, float endAlpha, bool endScene)
     {
+        // On fade out
+        if (startAlpha == 1)
+            isFadingOut = true;
+        // On fade in
+        else if(startAlpha == 0)
+        {
+            // si on est deja en fade out, on attend
+            if (isFadingOut)
+                while (isFadingOut)
+                    yield return null;
+            // On change les textes
+            if(currentRequest < listRequest.Length)
+            {
+                descriptionUI.text = listRequest[currentRequest].description;
+                buttonATextUI.text = listRequest[currentRequest].answerA;
+                buttonBTextUI.text = listRequest[currentRequest].answerB;
+            }
+        }
+
         float elapsedTime = 0f;
 
         // Description text color
@@ -292,6 +312,14 @@ public class GameManager : MonoBehaviour
         }
 
         descriptionUI.color = new Color(descriptionColor.r, descriptionColor.g, descriptionColor.b, endAlpha);
+
+        if (startAlpha == 1)
+            isFadingOut = false;
+
+        if (endAlpha == 1 && !endScene)
+            StartCoroutine(ButtonFade(0, 1));
+        else if(endAlpha == 1 && endScene)
+            StartCoroutine(EndingButtonFade(0, 1));
     }
 
     private IEnumerator ButtonFade(float startAlpha, float endAlpha)
@@ -327,10 +355,20 @@ public class GameManager : MonoBehaviour
         buttonBImage.color = new Color(buttonBColor.r, buttonBColor.g, buttonBColor.b, endAlpha);
         buttonATextUI.color = new Color(buttonATextColor.r, buttonATextColor.g, buttonATextColor.b, endAlpha);
         buttonBTextUI.color = new Color(buttonBTextColor.r, buttonBTextColor.g, buttonBTextColor.b, endAlpha);
+        if(endAlpha == 1)
+        {
+            buttonAUI.enabled = true;
+            buttonBUI.enabled = true;
+        }
     }
 
     private IEnumerator EndingButtonFade(float startAlpha, float endAlpha)
     {
+        buttonMenuUI.enabled = false;
+        buttonReloadUI.enabled = false;
+        buttonMenuUI.gameObject.SetActive(true);
+        buttonReloadUI.gameObject.SetActive(true);
+
         float elapsedTime = 0f;
 
         // Button Reload background color
@@ -338,7 +376,7 @@ public class GameManager : MonoBehaviour
         Color buttonReloadColor = buttonReloadImage.color;
 
         // Button Reload text color
-        Color buttonReloadTextColor = buttonATextUI.color;
+        Color buttonReloadTextColor = buttonReloadTextUI.color;
 
         // Button B background color
         UnityEngine.UI.Image buttonMenuImage = buttonMenuUI.gameObject.GetComponent<UnityEngine.UI.Image>();
@@ -362,6 +400,9 @@ public class GameManager : MonoBehaviour
         buttonMenuImage.color = new Color(buttonMenuColor.r, buttonMenuColor.g, buttonMenuColor.b, endAlpha);
         buttonReloadTextUI.color = new Color(buttonReloadTextColor.r, buttonReloadTextColor.g, buttonReloadTextColor.b, endAlpha);
         buttonMenuTextUI.color = new Color(buttonMenuTextColor.r, buttonMenuTextColor.g, buttonMenuTextColor.b, endAlpha);
+
+        buttonMenuUI.enabled = true;
+        buttonReloadUI.enabled = true;
     }
     #endregion
 }
