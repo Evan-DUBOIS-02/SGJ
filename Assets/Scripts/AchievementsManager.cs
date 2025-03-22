@@ -1,8 +1,7 @@
-using NUnit.Framework;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AchievementsManager : MonoBehaviour
 {
@@ -10,6 +9,7 @@ public class AchievementsManager : MonoBehaviour
     [Header("Corneille")]
     [SerializeField] private GameObject _birdWestGO;
     [SerializeField] private GameObject corneilleUIInfo;
+    [SerializeField] private Sprite corneilleSprite;
     private bool corneilleUnlock;
 
     private bool checkCorneille()
@@ -33,6 +33,7 @@ public class AchievementsManager : MonoBehaviour
     [Header("Insectes")]
     [SerializeField] private GameObject _fliesVFXGO;
     [SerializeField] private GameObject insectesUIInfo;
+    [SerializeField] private Sprite insectesSprite;
     private bool insectesUnlock;
 
     private bool checkInsectes()
@@ -56,6 +57,7 @@ public class AchievementsManager : MonoBehaviour
     [Header("FleursA")]
     [SerializeField] private GameObject _FleursAGO;
     [SerializeField] private GameObject FleursAUIInfo;
+    [SerializeField] private Sprite fleursASprite;
     private bool FleursAUnlock;
 
     private bool checkFleursA()
@@ -79,6 +81,7 @@ public class AchievementsManager : MonoBehaviour
     [Header("FleursB")]
     [SerializeField] private GameObject _FleursBGO;
     [SerializeField] private GameObject FleursBUIInfo;
+    [SerializeField] private Sprite fleursBSprite;
     private bool FleursBUnlock;
 
     private bool checkFleursB()
@@ -101,6 +104,7 @@ public class AchievementsManager : MonoBehaviour
     #region archi
     [Header("Archi")]
     [SerializeField] private GameObject ArchiUIInfo;
+    [SerializeField] private Sprite archiSprite;
     private bool ArchiUnlock;
 
     public IEnumerator setArchiUnlock()
@@ -113,6 +117,7 @@ public class AchievementsManager : MonoBehaviour
             while (!animationPopupAvailable)
                 yield return null;
             achievementText.text = "Succes obtenu - Cimetière architectural";
+            icon.sprite = archiSprite;
             achievementAnimator.SetTrigger("Popup");
             animationPopupAvailable = false;
         }
@@ -131,6 +136,7 @@ public class AchievementsManager : MonoBehaviour
     #region paysager
     [Header("paysager")]
     [SerializeField] private GameObject paysagerUIInfo;
+    [SerializeField] private Sprite paysagerSprite;
     private bool paysagerUnlock;
 
     public IEnumerator setPaysagerUnlock()
@@ -143,6 +149,7 @@ public class AchievementsManager : MonoBehaviour
             while (!animationPopupAvailable)
                 yield return null;
             achievementText.text = "Succes obtenu - Cimetière paysager";
+            icon.sprite = paysagerSprite;
             achievementAnimator.SetTrigger("Popup");
             animationPopupAvailable = false;
         }
@@ -161,6 +168,7 @@ public class AchievementsManager : MonoBehaviour
     #region ecolo
     [Header("ecolo")]
     [SerializeField] private GameObject ecoloUIInfo;
+    [SerializeField] private Sprite ecoloSprite;
     private bool ecoloUnlock;
 
     public IEnumerator setEcoloUnlock()
@@ -173,6 +181,7 @@ public class AchievementsManager : MonoBehaviour
             while (!animationPopupAvailable)
                 yield return null;
             achievementText.text = "Succes obtenu - Cimetière écologique";
+            icon.sprite = ecoloSprite;
             achievementAnimator.SetTrigger("Popup");
             animationPopupAvailable = false;
         }
@@ -191,6 +200,7 @@ public class AchievementsManager : MonoBehaviour
     #region hybrid
     [Header("hybrid")]
     [SerializeField] private GameObject hybridUIInfo;
+    [SerializeField] private Sprite hybridSprite;
     private bool hybridUnlock;
 
     public IEnumerator setHybridUnlock()
@@ -203,6 +213,7 @@ public class AchievementsManager : MonoBehaviour
             while (!animationPopupAvailable)
                 yield return null;
             achievementText.text = "Succes obtenu - Cimetière hybride";
+            icon.sprite = hybridSprite;
             achievementAnimator.SetTrigger("Popup");
             animationPopupAvailable = false;
         }
@@ -226,6 +237,7 @@ public class AchievementsManager : MonoBehaviour
         if (!corneilleUnlock && checkCorneille())
         {
             achievementText.text = "Succes obtenu - Corneille";
+            icon.sprite = corneilleSprite;
             achievementAnimator.SetTrigger("Popup");
             animationPopupAvailable = false;
             while (!animationPopupAvailable)
@@ -233,7 +245,8 @@ public class AchievementsManager : MonoBehaviour
         }
         if (!insectesUnlock && checkInsectes())
         {
-            achievementText.text = "Succes obtenu - Insectes";
+            achievementText.text = "Succes obtenu - Insectes & hérisson";
+            icon.sprite = insectesSprite;
             achievementAnimator.SetTrigger("Popup");
             animationPopupAvailable = false;
             while (!animationPopupAvailable)
@@ -242,6 +255,7 @@ public class AchievementsManager : MonoBehaviour
         if (!FleursAUnlock && checkFleursA())
         {
             achievementText.text = "Succes obtenu - Fleurs naturelles";
+            icon.sprite = fleursASprite;
             achievementAnimator.SetTrigger("Popup");
             animationPopupAvailable = false;
             while (!animationPopupAvailable)
@@ -250,6 +264,7 @@ public class AchievementsManager : MonoBehaviour
         if (!FleursBUnlock && checkFleursB())
         {
             achievementText.text = "Succes obtenu - Fleurs en hommage";
+            icon.sprite = fleursBSprite;
             achievementAnimator.SetTrigger("Popup");
             animationPopupAvailable = false;
             while (!animationPopupAvailable)
@@ -261,6 +276,7 @@ public class AchievementsManager : MonoBehaviour
     [Header("General UI")]
     [SerializeField] private GameObject notObtainUI;
     [SerializeField] private GameObject achievementsPopUp;
+    [SerializeField] private Image icon;
     public bool animationPopupAvailable = true;
 
     public void HideAllInfo()
