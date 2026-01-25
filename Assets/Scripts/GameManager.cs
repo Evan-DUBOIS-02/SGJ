@@ -6,7 +6,10 @@ using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 using static System.Net.Mime.MediaTypeNames;
+using Button = UnityEngine.UI.Button;
+
 public class GameManager : MonoBehaviour
 {
     [Header("Cemetery")]
@@ -58,6 +61,11 @@ public class GameManager : MonoBehaviour
     private int totalArchitecturalPoints = 0;
     private int totalLandscapedPoints = 0;
     private int totalEcologicalPoints = 0;
+
+    [NonSerialized]
+    public bool isFrench = true;
+    [NonSerialized]
+    public bool isEnglish = false;
 
     [SerializeField] AudioManager audioManager;
 

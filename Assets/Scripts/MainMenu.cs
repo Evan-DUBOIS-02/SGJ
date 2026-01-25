@@ -1,3 +1,4 @@
+using DefaultNamespace;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
@@ -8,11 +9,13 @@ public class MainMenu : MonoBehaviour
 
     private GameManager gameManager;
     private AudioManager audioManager;
+    private TextReferencer  textReferencer;
 
     private void Start()
     {
         gameManager = GetComponent<GameManager>();
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
+        textReferencer = GetComponent<TextReferencer>();
     }
     public void StartGame()
     {
@@ -40,5 +43,19 @@ public class MainMenu : MonoBehaviour
     {
         audioManager.GenerateSound(2);
         Application.Quit();
+    }
+
+    public void SetToFrenchMode()
+    {
+        gameManager.isFrench = true;
+        gameManager.isEnglish = false;
+        textReferencer.SwitchAllTextToFrench();
+    }
+
+    public void SetToEnglishMode()
+    {
+        gameManager.isFrench = false;
+        gameManager.isEnglish = true;
+        textReferencer.SwitchAllTextToEnglish();
     }
 }
