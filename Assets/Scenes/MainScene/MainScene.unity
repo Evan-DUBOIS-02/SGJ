@@ -341,6 +341,7 @@ GameObject:
   - component: {fileID: 30777435}
   - component: {fileID: 30777437}
   - component: {fileID: 30777436}
+  - component: {fileID: 30777438}
   m_Layer: 5
   m_Name: Titre
   m_TagString: Untagged
@@ -466,6 +467,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30777434}
   m_CullTransparentMesh: 1
+--- !u!114 &30777438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30777434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Cimeti\xE8re \xE9cologique"
+  english: "Cimeti\xE8re \xE9cologique (EN)"
 --- !u!1001 &38535123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -729,6 +744,78 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 776670bfa01bf794aa80dc1dee949886, type: 3}
   m_PrefabInstance: {fileID: 62981063}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &72704375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 72704376}
+  - component: {fileID: 72704377}
+  m_Layer: 0
+  m_Name: Request2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &72704376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72704375}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1860941830}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &72704377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72704375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfe8f2e323ed8043a085246c602841c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: "One afternoon, someone calls out to you:\r\n\r\nThe pine near my
+    mother\u2019s grave is sick! It\u2019s dry as hell, and I\u2019m sure it\u2019s
+    gonna fall on my dear mamma. It was already annoying enough to keep it clean
+    from the needles all year long\u2026 Do something!\u201D\r\n\r\nYou could replace
+    the old pine, keep a tree around for a green atmosphere. But if you simply cut
+    it, it will be less of a hassle to clean the walk. And dead wood is excellent
+    for biodiversity.\r"
+  answerA: Cut the pine
+  AListHide:
+  - {fileID: 948894462}
+  AListShow:
+  - {fileID: 534081001}
+  AarchitecturalPoints: 0
+  AlandscapedPoints: 0
+  AecologicalPoints: 1
+  AudioClipHideA: {fileID: 8300000, guid: 7cbd675fb2ee1304297c51fbf22964e2, type: 3}
+  AudioClipShowA: {fileID: 8300000, guid: e0870e09d0bb3b542a72303b2f1a8c4b, type: 3}
+  answerB: Replace the pine
+  BListHide:
+  - {fileID: 948894462}
+  BListShow:
+  - {fileID: 601162438}
+  BarchitecturalPoints: 1
+  BlandscapedPoints: 0
+  BecologicalPoints: 0
+  AudioClipHideB: {fileID: 8300000, guid: 7cbd675fb2ee1304297c51fbf22964e2, type: 3}
+  AudioClipShowB: {fileID: 8300000, guid: e0870e09d0bb3b542a72303b2f1a8c4b, type: 3}
+  idRequest: 2
 --- !u!1 &78816505 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8aa11bd38b62425468c633794b182574, type: 3}
@@ -1103,6 +1190,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &90435045
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 90435046}
+  m_Layer: 0
+  m_Name: ==[REQUESTS - EN]==
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &90435046
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 90435045}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -39.646976, y: 10.844528, z: -27.789145}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &93051834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,6 +1904,7 @@ GameObject:
   - component: {fileID: 194485974}
   - component: {fileID: 194485976}
   - component: {fileID: 194485975}
+  - component: {fileID: 194485977}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -1913,6 +2032,160 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 194485973}
   m_CullTransparentMesh: 1
+--- !u!114 &194485977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194485973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Chaque cimeti\xE8re est unique. Le v\xF4tre int\xE8gre des \xE9l\xE9ments
+    de diff\xE9rents mod\xE8les, \xE0 la fois architectural et paysager, paysager
+    et \xE9cologique. Gouverner, c\u2019est choisir ! \r\n"
+  english: "Chaque cimeti\xE8re est unique. Le v\xF4tre int\xE8gre des \xE9l\xE9ments
+    de diff\xE9rents mod\xE8les, \xE0 la fois architectural et paysager, paysager
+    et \xE9cologique. Gouverner, c\u2019est choisir ! \r\n(EN)"
+--- !u!1 &202422741
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 202422742}
+  - component: {fileID: 202422744}
+  - component: {fileID: 202422743}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &202422742
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202422741}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1403323539}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &202422743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202422741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: FR
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
+  m_sharedMaterial: {fileID: 8613784260704383832, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4290376703
+  m_fontColor: {r: 1, g: 0.9529412, b: 0.7254902, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 72
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &202422744
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202422741}
+  m_CullTransparentMesh: 1
 --- !u!1 &210517172 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a93a33b6f816fec478a3e8e5ca00c798, type: 3}
@@ -1971,6 +2244,7 @@ GameObject:
   - component: {fileID: 215096532}
   - component: {fileID: 215096534}
   - component: {fileID: 215096533}
+  - component: {fileID: 215096535}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -2098,6 +2372,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 215096531}
   m_CullTransparentMesh: 1
+--- !u!114 &215096535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215096531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Vous avez fait venir un chat ! Ils appr\xE9cient autant les monuments
+    o\xF9 ils se pr\xE9lassent en journ\xE9e\u2026 que  les visiteurs qui les nourrissent
+    !"
+  english: "Vous avez fait venir un chat ! Ils appr\xE9cient autant les monuments
+    o\xF9 ils se pr\xE9lassent en journ\xE9e\u2026 que  les visiteurs qui les nourrissent
+    ! (EN)"
 --- !u!1 &221311935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 776670bfa01bf794aa80dc1dee949886, type: 3}
@@ -2247,6 +2539,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &246289702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246289703}
+  - component: {fileID: 246289704}
+  m_Layer: 0
+  m_Name: Request4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &246289703
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246289702}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1860941830}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &246289704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246289702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfe8f2e323ed8043a085246c602841c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: "You receive a complaint in the mail\u2026\r\n\r\n\u201CThe grave
+    next to mine is completely overrun with ivy and grass. I\u2019m sure I saw a
+    fox in there, and I don\u2019t want any animal on my grave. Get rid of it !\u201D\r\n\r\nUnder
+    French legislation, you indeed have the right to reuse old graves. Many people
+    would be happy to have a spot in this old cemetery. But ancient graves do have
+    unique historic and ecological value. \r"
+  answerA: Reuse the grave
+  AListHide:
+  - {fileID: 419401987}
+  AListShow:
+  - {fileID: 806336640}
+  AarchitecturalPoints: 1
+  AlandscapedPoints: 1
+  AecologicalPoints: 0
+  AudioClipHideA: {fileID: 8300000, guid: 4024a288d34526d41954bdc3aa364a38, type: 3}
+  AudioClipShowA: {fileID: 8300000, guid: b628930a824b1c44b93209b6d03b8f6a, type: 3}
+  answerB: Leave the grave as it is
+  BListHide: []
+  BListShow:
+  - {fileID: 1667564507}
+  - {fileID: 989100181}
+  - {fileID: 2015848301}
+  - {fileID: 1641693545}
+  - {fileID: 358283631}
+  - {fileID: 89364203}
+  - {fileID: 1498448113}
+  - {fileID: 1408190879}
+  - {fileID: 1227564618}
+  BarchitecturalPoints: 0
+  BlandscapedPoints: 1
+  BecologicalPoints: 1
+  AudioClipHideB: {fileID: 0}
+  AudioClipShowB: {fileID: 8300000, guid: a64b0ae30c1994c40829214d87a8947e, type: 3}
+  idRequest: 4
 --- !u!1 &256790593
 GameObject:
   m_ObjectHideFlags: 0
@@ -2844,7 +3214,7 @@ GameObject:
   m_Component:
   - component: {fileID: 333055262}
   m_Layer: 0
-  m_Name: Depedencies
+  m_Name: DepedenciesFR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2870,6 +3240,63 @@ Transform:
   - {fileID: 1874908637}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &337716189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 337716190}
+  - component: {fileID: 337716191}
+  m_Layer: 0
+  m_Name: dependency4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &337716190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337716189}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 704002081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &337716191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 337716189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65217f96cdccb264ba301618f14c74b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestA: {fileID: 936234013}
+  selectedAnswerA: 2
+  requestB: {fileID: 561764731}
+  selectedAnswerB: 2
+  elementToShow:
+  - {fileID: 120802127}
+  - {fileID: 1368593844}
+  - {fileID: 1656455296}
+  - {fileID: 793743767}
+  - {fileID: 1351853379}
+  - {fileID: 828140692}
+  - {fileID: 1680428494}
+  - {fileID: 1345078059}
 --- !u!1 &340538047
 GameObject:
   m_ObjectHideFlags: 0
@@ -2881,6 +3308,7 @@ GameObject:
   - component: {fileID: 340538048}
   - component: {fileID: 340538050}
   - component: {fileID: 340538049}
+  - component: {fileID: 340538051}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3006,6 +3434,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340538047}
   m_CullTransparentMesh: 1
+--- !u!114 &340538051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340538047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: Quitter
+  english: Exit
 --- !u!1 &352524468
 GameObject:
   m_ObjectHideFlags: 0
@@ -3103,6 +3545,8 @@ RectTransform:
   - {fileID: 103963401}
   - {fileID: 873086752}
   - {fileID: 330107851}
+  - {fileID: 1403323539}
+  - {fileID: 1619752523}
   - {fileID: 1719735408}
   - {fileID: 485794802}
   - {fileID: 419913275}
@@ -3559,6 +4003,7 @@ GameObject:
   - component: {fileID: 408294470}
   - component: {fileID: 408294472}
   - component: {fileID: 408294471}
+  - component: {fileID: 408294473}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3684,6 +4129,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408294469}
   m_CullTransparentMesh: 1
+--- !u!114 &408294473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408294469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Succ\xE8s"
+  english: Achievements
 --- !u!1001 &414171081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4064,6 +4523,7 @@ GameObject:
   - component: {fileID: 420369906}
   - component: {fileID: 420369908}
   - component: {fileID: 420369907}
+  - component: {fileID: 420369909}
   m_Layer: 5
   m_Name: Titre
   m_TagString: Untagged
@@ -4189,6 +4649,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420369905}
   m_CullTransparentMesh: 1
+--- !u!114 &420369909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420369905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Cimeti\xE8re architectural"
+  english: "Cimeti\xE8re architectural (EN)"
 --- !u!1 &423864244
 GameObject:
   m_ObjectHideFlags: 0
@@ -5670,6 +6144,7 @@ GameObject:
   - component: {fileID: 553646076}
   - component: {fileID: 553646078}
   - component: {fileID: 553646077}
+  - component: {fileID: 553646079}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -5796,6 +6271,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553646075}
   m_CullTransparentMesh: 1
+--- !u!114 &553646079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553646075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Vous avez fait venir des fleurs ! En ville, la strate dite herbac\xE9e
+    est souvent absente. L\u2019herbe, \xE7a se soigne !"
+  english: "Vous avez fait venir des fleurs ! En ville, la strate dite herbac\xE9e
+    est souvent absente. L\u2019herbe, \xE7a se soigne ! (EN)"
 --- !u!1 &553840717
 GameObject:
   m_ObjectHideFlags: 0
@@ -5963,6 +6454,80 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559824077}
   m_CullTransparentMesh: 1
+--- !u!1 &561764729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 561764730}
+  - component: {fileID: 561764731}
+  m_Layer: 0
+  m_Name: Request5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &561764730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561764729}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1860941830}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &561764731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561764729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfe8f2e323ed8043a085246c602841c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: "Near the back wall, there is a spot that\u2019s unused. You\u2019ve
+    been wondering what to do with it. \r\n\r\nYou could simply put a new grave here,
+    as you will have to do when the cemetery eventually fills up. That would prevent
+    having to reuse graves when space runs out. Alternatively, you could install
+    a beehive, so that the flowers in the cemetery can be pollinated. \r"
+  answerA: Install a new grave
+  AListHide:
+  - {fileID: 516066057}
+  - {fileID: 1774936129}
+  - {fileID: 2028480323}
+  AListShow:
+  - {fileID: 83111829}
+  AarchitecturalPoints: 1
+  AlandscapedPoints: 0
+  AecologicalPoints: 0
+  AudioClipHideA: {fileID: 8300000, guid: a64b0ae30c1994c40829214d87a8947e, type: 3}
+  AudioClipShowA: {fileID: 8300000, guid: b628930a824b1c44b93209b6d03b8f6a, type: 3}
+  answerB: Put a bee hive
+  BListHide: []
+  BListShow:
+  - {fileID: 1481642990}
+  - {fileID: 2061465694}
+  - {fileID: 551573922}
+  - {fileID: 1583587871}
+  BarchitecturalPoints: 0
+  BlandscapedPoints: 1
+  BecologicalPoints: 1
+  AudioClipHideB: {fileID: 0}
+  AudioClipShowB: {fileID: 8300000, guid: a0ff4030145903f4e851983c67cb78ee, type: 3}
+  idRequest: 5
 --- !u!1 &567188946 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 776670bfa01bf794aa80dc1dee949886, type: 3}
@@ -6112,6 +6677,7 @@ GameObject:
   - component: {fileID: 592486488}
   - component: {fileID: 592486490}
   - component: {fileID: 592486489}
+  - component: {fileID: 592486491}
   m_Layer: 5
   m_Name: Titre
   m_TagString: Untagged
@@ -6237,6 +6803,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 592486487}
   m_CullTransparentMesh: 1
+--- !u!114 &592486491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592486487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: Corneille
+  english: Corneille (EN)
 --- !u!1 &598800452 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a93a33b6f816fec478a3e8e5ca00c798, type: 3}
@@ -7859,6 +8439,42 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &704002080
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 704002081}
+  m_Layer: 0
+  m_Name: DepedenciesEN
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &704002081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704002080}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -39.646976, y: 10.844528, z: -27.789145}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1934180987}
+  - {fileID: 1785246291}
+  - {fileID: 1917301507}
+  - {fileID: 337716190}
+  - {fileID: 924173729}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &731454324
 GameObject:
   m_ObjectHideFlags: 0
@@ -9424,6 +10040,7 @@ GameObject:
   - component: {fileID: 873086752}
   - component: {fileID: 873086754}
   - component: {fileID: 873086753}
+  - component: {fileID: 873086755}
   m_Layer: 5
   m_Name: Intro
   m_TagString: Untagged
@@ -9550,6 +10167,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873086751}
   m_CullTransparentMesh: 1
+--- !u!114 &873086755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873086751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Vous \xEAtes le nouveau conservateur d\u2019un petit cimeti\xE8re. Suivez
+    vos envies et celles des usagers pour fa\xE7onner un lieu unique."
+  english: You are the new manager of a tiny French cemetery. Shape a unique cemetery
+    through a series of singular dilemmas!
 --- !u!1001 &873323056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9673,7 +10306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 877384866}
   m_Layer: 0
-  m_Name: ==[REQUESTS]==
+  m_Name: ==[REQUESTS - FR]==
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9841,6 +10474,7 @@ GameObject:
   - component: {fileID: 882840600}
   - component: {fileID: 882840602}
   - component: {fileID: 882840601}
+  - component: {fileID: 882840603}
   m_Layer: 5
   m_Name: Titre
   m_TagString: Untagged
@@ -9966,6 +10600,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 882840599}
   m_CullTransparentMesh: 1
+--- !u!114 &882840603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882840599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: Fleurs naturelles
+  english: Fleurs naturelles (EN)
 --- !u!1001 &891843835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10203,6 +10851,7 @@ GameObject:
   - component: {fileID: 906223994}
   - component: {fileID: 906223996}
   - component: {fileID: 906223995}
+  - component: {fileID: 906223997}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -10330,11 +10979,174 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 906223993}
   m_CullTransparentMesh: 1
+--- !u!114 &906223997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906223993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Les cimeti\xE8res \xE9cologiques sont une invention r\xE9cente. Leur objectif
+    est de conjuguer protection de l\u2019environnement et respect des d\xE9funts.
+    \n\nUn exemple connu est celui du cimeti\xE8re de Souch\xE9, \xE0 Niort. \r\n"
+  english: "Les cimeti\xE8res \xE9cologiques sont une invention r\xE9cente. Leur
+    objectif est de conjuguer protection de l\u2019environnement et respect des d\xE9funts.
+    \n\nUn exemple connu est celui du cimeti\xE8re de Souch\xE9, \xE0 Niort. \r\n(EN)"
 --- !u!1 &916899457 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 776670bfa01bf794aa80dc1dee949886, type: 3}
   m_PrefabInstance: {fileID: 1993915796}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &924173728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 924173729}
+  - component: {fileID: 924173730}
+  m_Layer: 0
+  m_Name: dependency5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &924173729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924173728}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 704002081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &924173730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924173728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65217f96cdccb264ba301618f14c74b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestA: {fileID: 246289704}
+  selectedAnswerA: 1
+  requestB: {fileID: 561764731}
+  selectedAnswerB: 1
+  elementToShow:
+  - {fileID: 2107992699}
+  - {fileID: 1405885169}
+--- !u!1 &936234011
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 936234012}
+  - component: {fileID: 936234013}
+  m_Layer: 0
+  m_Name: Request3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &936234012
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936234011}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1860941830}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &936234013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936234011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfe8f2e323ed8043a085246c602841c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: "You get a call from the mayor. Apparently, some constituents have
+    complained about the grass being too tall for old people to access their loved
+    one\u2019s graves. You mention it to your gardener. \r\n\r\n\u201CWell, I\u2019d
+    like to see the mayor try and cut all that damn grass! The lawn mower doesn\u2019t
+    really fit between graves, I\u2019d have to do all that by hand. I used to have
+    a burner, but it\u2019s too hot now in the summer. Just hire someone else!\u201D\r\n\r\nYou
+    could recruit another gardener, but the mayor will not be happy about the expense.
+    Or maybe you could simply have your gardener cut the grass later during the year,
+    and let the birds and insects frolic around a bit longer. \r"
+  answerA: Hire another gardener
+  AListHide:
+  - {fileID: 78816505}
+  - {fileID: 978287450}
+  - {fileID: 1755785619}
+  - {fileID: 1516016625}
+  - {fileID: 1672962811}
+  - {fileID: 516066057}
+  - {fileID: 1774936129}
+  - {fileID: 2028480323}
+  - {fileID: 211694296}
+  - {fileID: 494751849}
+  - {fileID: 463557221}
+  - {fileID: 1127675534}
+  - {fileID: 1118468877}
+  - {fileID: 952615843}
+  AListShow: []
+  AarchitecturalPoints: 1
+  AlandscapedPoints: 1
+  AecologicalPoints: 0
+  AudioClipHideA: {fileID: 8300000, guid: c6a1bf4060fae53459e67b075587b4bc, type: 3}
+  AudioClipShowA: {fileID: 0}
+  answerB: Introduce late mowing
+  BListHide: []
+  BListShow:
+  - {fileID: 374518233}
+  - {fileID: 1365641501}
+  - {fileID: 567188946}
+  - {fileID: 1999677226}
+  - {fileID: 859740601}
+  - {fileID: 966342718}
+  - {fileID: 315137042}
+  - {fileID: 221311935}
+  - {fileID: 2010874937}
+  - {fileID: 916899457}
+  BarchitecturalPoints: 0
+  BlandscapedPoints: 1
+  BecologicalPoints: 2
+  AudioClipHideB: {fileID: 0}
+  AudioClipShowB: {fileID: 8300000, guid: a64b0ae30c1994c40829214d87a8947e, type: 3}
+  idRequest: 3
 --- !u!1 &943444389
 GameObject:
   m_ObjectHideFlags: 0
@@ -10627,6 +11439,7 @@ GameObject:
   - component: {fileID: 963433926}
   - component: {fileID: 963433928}
   - component: {fileID: 963433927}
+  - component: {fileID: 963433929}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -10752,6 +11565,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963433925}
   m_CullTransparentMesh: 1
+--- !u!114 &963433929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963433925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: Commencer
+  english: Start
 --- !u!1 &966342718 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 776670bfa01bf794aa80dc1dee949886, type: 3}
@@ -12883,6 +13710,7 @@ GameObject:
   - component: {fileID: 1196528452}
   - component: {fileID: 1196528454}
   - component: {fileID: 1196528453}
+  - component: {fileID: 1196528455}
   m_Layer: 5
   m_Name: ListesParticipants
   m_TagString: Untagged
@@ -13010,6 +13838,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196528451}
   m_CullTransparentMesh: 1
+--- !u!114 &1196528455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196528451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Louise Dall\u2019aglio - Scientifique\n\nLucas Vially - Game Designer\n\nAugustin
+    Guyot - Programmeur\n\nEvan Dubois - Programmeur\n\nTristan Walger - Sound Designer\n\nL\xE9a
+    Tassoni - Artiste\n\nMarie Le Mezec - Artiste"
+  english: "Louise Dall\u2019aglio - Scientist\n\nLucas Vially - Game Designer\n\nAugustin
+    Guyot - Developer\n\nEvan Dubois - Developer\n\nTristan Walger - Sound Designer\n\nL\xE9a
+    Tassoni - Artist\n\nMarie Le Mezec - Artist"
 --- !u!1001 &1204447980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13586,6 +14432,7 @@ GameObject:
   - component: {fileID: 1293371902}
   - component: {fileID: 1293371904}
   - component: {fileID: 1293371903}
+  - component: {fileID: 1293371905}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -13712,6 +14559,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293371901}
   m_CullTransparentMesh: 1
+--- !u!114 &1293371905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293371901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Vous avez fait venir des corneilles ! Elles appr\xE9cient les arbres,
+    et jettent des escargots sur le sol bitum\xE9 pour casser leurs carapaces."
+  english: "Vous avez fait venir des corneilles ! Elles appr\xE9cient les arbres,
+    et jettent des escargots sur le sol bitum\xE9 pour casser leurs carapaces. (EN)"
 --- !u!1 &1299163987
 GameObject:
   m_ObjectHideFlags: 0
@@ -14487,6 +15350,7 @@ GameObject:
   - component: {fileID: 1387392268}
   - component: {fileID: 1387392270}
   - component: {fileID: 1387392269}
+  - component: {fileID: 1387392271}
   m_Layer: 5
   m_Name: Titre
   m_TagString: Untagged
@@ -14612,6 +15476,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387392267}
   m_CullTransparentMesh: 1
+--- !u!114 &1387392271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387392267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Cimeti\xE8re paysager"
+  english: "Cimeti\xE8re paysager (EN)"
 --- !u!1 &1397584541
 GameObject:
   m_ObjectHideFlags: 0
@@ -14623,6 +15501,7 @@ GameObject:
   - component: {fileID: 1397584542}
   - component: {fileID: 1397584544}
   - component: {fileID: 1397584543}
+  - component: {fileID: 1397584545}
   m_Layer: 5
   m_Name: Titre
   m_TagString: Untagged
@@ -14747,6 +15626,183 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1397584541}
+  m_CullTransparentMesh: 1
+--- !u!114 &1397584545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1397584541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: Chat
+  english: Cat
+--- !u!1 &1403323538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1403323539}
+  - component: {fileID: 1403323543}
+  - component: {fileID: 1403323542}
+  - component: {fileID: 1403323541}
+  - component: {fileID: 1403323540}
+  m_Layer: 5
+  m_Name: FrButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1403323539
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403323538}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 202422742}
+  m_Father: {fileID: 352524472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -266, y: 1006}
+  m_SizeDelta: {x: 180, y: 118.70001}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1403323540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403323538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2066567900}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: GenerateSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1403323541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403323538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.67295593, g: 0.6711526, b: 0.55656415, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1403323542}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1519263582}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SwitchToFrenchMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1403323542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403323538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1940477113, guid: 4e11d1391a5c40d4bb6f4302bd8098bc, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 0.84
+--- !u!222 &1403323543
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403323538}
   m_CullTransparentMesh: 1
 --- !u!1 &1405885169 stripped
 GameObject:
@@ -16337,6 +17393,7 @@ GameObject:
   - component: {fileID: 1519263580}
   - component: {fileID: 1519263582}
   - component: {fileID: 1519263583}
+  - component: {fileID: 1519263584}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -16362,30 +17419,47 @@ MonoBehaviour:
   buttonBTextUI: {fileID: 559824079}
   buttonAUI: {fileID: 635926532}
   buttonBUI: {fileID: 1713759670}
-  requestsParent: {fileID: 1872298299}
-  depedenciesParent: {fileID: 333055261}
+  requestsParentFR: {fileID: 1872298299}
+  depedenciesParentFR: {fileID: 333055261}
+  requestsParentEN: {fileID: 1860941829}
+  depedenciesParentEN: {fileID: 704002080}
   waitingTimeBetweenElements: 0.5
   waitingTimeBetweenHideShow: 0.5
   fadeDuration: 2
-  architecturalEndingDescription: "Vous avez con\xE7u un cimeti\xE8re architectural
+  architecturalEndingDescriptionFR: "Vous avez con\xE7u un cimeti\xE8re architectural
     ! \r\n\r\nLes cimeti\xE8res architecturaux privil\xE9gient la pierre et un paysage
     d\xE9gag\xE9. Ils sont souvent d\xE9crits comme \u201Cpropres\u201D, ce qui veut
     dire sans faune et sans flore spontan\xE9e. La majorit\xE9 des cimeti\xE8res
-    en France sont des cimeti\xE8res architecturaux.\r\r"
-  landscapedEndingDescription: "Vous avez con\xE7u un cimeti\xE8re paysager ! \r\n\r\nLes
+    en France sont des cimeti\xE8res architecturaux. \r"
+  landscapedEndingDescriptionFR: "Vous avez con\xE7u un cimeti\xE8re paysager ! \r\n\r\nLes
     cimeti\xE8res paysagers int\xE8grent la pr\xE9sence de plantes \xE0 des fins
     d\xE9coratives. Ils conservent un paysage d\xE9gag\xE9 mais pr\xE9sentent plus
     d\u2019arbres et d\u2019herbe. Les cimeti\xE8res paysagers se d\xE9veloppent
     \xE0 la fin du XXe si\xE8cle, pour faire revenir de la verdure dans des cimeti\xE8res
-    jug\xE9s trop gris.\r\r"
-  ecologicalEndingDescription: "Vous avez con\xE7u un cimeti\xE8re \xE9cologique
+    jug\xE9s trop gris. \r"
+  ecologicalEndingDescriptionFR: "Vous avez con\xE7u un cimeti\xE8re \xE9cologique
     ! \r\n\r\nLes cimeti\xE8res \xE9cologiques sont une invention r\xE9cente. Leur
     objectif est de conjuguer protection de l\u2019environnement et respect des d\xE9funts.
-    Un exemple connu est celui du cimeti\xE8re de Souch\xE9, \xE0 Niort.\r\r"
-  hybridEndingDescription: "Vous avez con\xE7u un cimeti\xE8re hybride ! \r\n\r\nChaque
+    Un exemple connu est celui du cimeti\xE8re de Souch\xE9, \xE0 Niort. \r"
+  hybridEndingDescriptionFR: "Vous avez con\xE7u un cimeti\xE8re hybride ! \r\n\r\nChaque
     cimeti\xE8re est unique. Le v\xF4tre int\xE8gre des \xE9l\xE9ments de diff\xE9rents
     mod\xE8les, \xE0 la fois architectural et paysager, paysager et \xE9cologique.
-    Gouverner, c\u2019est choisir !\r\r"
+    Gouverner, c\u2019est choisir ! \r"
+  architecturalEndingDescriptionEN: "You created an architectural cemetery!\r\n\r\nArchitectural
+    cemeteries, most commonly found in southern Europe, are dominated by stone and
+    leave little place for nature. They are often described as \u201Cclean\u201D,
+    which means devoid of spontaneous fauna and flora. Most French cemeteries are
+    architectural cemeteries. \r"
+  landscapedEndingDescriptionEN: "You created a landscape cemetery!\r\n\r\nLandscape
+    cemeteries use plants in order to create a harmonious setting. They\u2019re often
+    found in the United Kingdom and the United States, but are fairly recent in France.\r"
+  ecologicalEndingDescriptionEN: "You created an ecological cemetery!\r\n\r\nEcological
+    cemeteries are a recent evolution in cemetery architecture. They try to implement
+    more eco-friendly management practices while remaining respectful to the people
+    buried in the cemetery. \r"
+  hybridEndingDescriptionEN: "You created a hybrid cemetery!\r\n\r\nTo each their
+    own: your cemetery doesn\u2019t fall in any easily defined category. It incorporates
+    elements of architectural, landscape and ecological cemeteries.\r"
   buttonReloadTextUI: {fileID: 1728838923}
   buttonMenuTextUI: {fileID: 310013917}
   buttonReloadUI: {fileID: 1413238137}
@@ -16473,6 +17547,18 @@ MonoBehaviour:
   achievementsPopUp: {fileID: 688097921}
   icon: {fileID: 432988013}
   animationPopupAvailable: 1
+--- !u!114 &1519263584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519263579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7f44d2bec8446cea0bf8fadf185fa2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1534130110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17503,6 +18589,7 @@ GameObject:
   - component: {fileID: 1585026443}
   - component: {fileID: 1585026445}
   - component: {fileID: 1585026444}
+  - component: {fileID: 1585026446}
   m_Layer: 5
   m_Name: Titre
   m_TagString: Untagged
@@ -17627,6 +18714,183 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585026442}
+  m_CullTransparentMesh: 1
+--- !u!114 &1585026446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585026442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: Fleurs en hommage
+  english: Fleurs en hommage (EN)
+--- !u!1 &1619752522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1619752523}
+  - component: {fileID: 1619752527}
+  - component: {fileID: 1619752526}
+  - component: {fileID: 1619752525}
+  - component: {fileID: 1619752524}
+  m_Layer: 5
+  m_Name: EnButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1619752523
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619752522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 1881316583}
+  m_Father: {fileID: 352524472}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -116, y: 1006}
+  m_SizeDelta: {x: 180, y: 118.70001}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1619752524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619752522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2066567900}
+          m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+          m_MethodName: GenerateSound
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1619752525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619752522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.67295593, g: 0.6711526, b: 0.55656415, a: 1}
+    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1619752526}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1519263582}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: SwitchToEnglishMode
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1619752526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619752522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -1940477113, guid: 4e11d1391a5c40d4bb6f4302bd8098bc, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 0.84
+--- !u!222 &1619752527
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619752522}
   m_CullTransparentMesh: 1
 --- !u!1 &1620117098
 GameObject:
@@ -18296,6 +19560,7 @@ GameObject:
   - component: {fileID: 1694124893}
   - component: {fileID: 1694124895}
   - component: {fileID: 1694124894}
+  - component: {fileID: 1694124896}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -18424,6 +19689,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1694124892}
   m_CullTransparentMesh: 1
+--- !u!114 &1694124896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694124892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Les cimeti\xE8res architecturaux privil\xE9gient la pierre et un paysage
+    d\xE9gag\xE9. Ils sont souvent d\xE9crits comme \u201Cpropres\u201D, ce qui veut
+    dire sans faune et sans flore spontan\xE9e. \n\nLa majorit\xE9 des cimeti\xE8res
+    en France sont des cimeti\xE8res architecturaux. \r\n"
+  english: "Les cimeti\xE8res architecturaux privil\xE9gient la pierre et un paysage
+    d\xE9gag\xE9. Ils sont souvent d\xE9crits comme \u201Cpropres\u201D, ce qui veut
+    dire sans faune et sans flore spontan\xE9e. \n\nLa majorit\xE9 des cimeti\xE8res
+    en France sont des cimeti\xE8res architecturaux. \r\n(EN)"
 --- !u!1 &1697418280
 GameObject:
   m_ObjectHideFlags: 0
@@ -18647,6 +19932,7 @@ GameObject:
   - component: {fileID: 1707004765}
   - component: {fileID: 1707004767}
   - component: {fileID: 1707004766}
+  - component: {fileID: 1707004768}
   m_Layer: 5
   m_Name: Titre
   m_TagString: Untagged
@@ -18772,6 +20058,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1707004764}
   m_CullTransparentMesh: 1
+--- !u!114 &1707004768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707004764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Insectes et h\xE9risson"
+  english: "Insectes et h\xE9risson (EN)"
 --- !u!1 &1713759668
 GameObject:
   m_ObjectHideFlags: 0
@@ -19140,6 +20440,7 @@ GameObject:
   - component: {fileID: 1728838922}
   - component: {fileID: 1728838924}
   - component: {fileID: 1728838923}
+  - component: {fileID: 1728838925}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -19265,6 +20566,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728838921}
   m_CullTransparentMesh: 1
+--- !u!114 &1728838925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728838921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Nouveau Cimeti\xE8re"
+  english: New cemetery
 --- !u!1 &1755785619 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8aa11bd38b62425468c633794b182574, type: 3}
@@ -19318,6 +20633,7 @@ GameObject:
   - component: {fileID: 1760531297}
   - component: {fileID: 1760531299}
   - component: {fileID: 1760531298}
+  - component: {fileID: 1760531300}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -19444,6 +20760,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760531296}
   m_CullTransparentMesh: 1
+--- !u!114 &1760531300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760531296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Vous avez fait venir des fleurs sur les tombes ! Il s\u2019agit souvent
+    de chrysanth\xE8mes ou de compositions d\xE9pos\xE9es en hommage aux d\xE9funts. "
+  english: "Vous avez fait venir des fleurs sur les tombes ! Il s\u2019agit souvent
+    de chrysanth\xE8mes ou de compositions d\xE9pos\xE9es en hommage aux d\xE9funts.
+    (EN)"
 --- !u!1001 &1763170258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19595,6 +20928,57 @@ MonoBehaviour:
   startStatus: 1
   vfx: {fileID: 0}
   audioClip: {fileID: 0}
+--- !u!1 &1785246290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1785246291}
+  - component: {fileID: 1785246292}
+  m_Layer: 0
+  m_Name: dependency2
+  m_TagString: Fly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1785246291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785246290}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 704002081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1785246292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785246290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65217f96cdccb264ba301618f14c74b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestA: {fileID: 2073739415}
+  selectedAnswerA: 2
+  requestB: {fileID: 72704377}
+  selectedAnswerB: 1
+  elementToShow:
+  - {fileID: 1224721738}
+  - {fileID: 414171083}
 --- !u!1 &1791795354
 GameObject:
   m_ObjectHideFlags: 0
@@ -19967,6 +21351,42 @@ MonoBehaviour:
   startStatus: 1
   vfx: {fileID: 0}
   audioClip: {fileID: 0}
+--- !u!1 &1860941829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1860941830}
+  m_Layer: 0
+  m_Name: RequestsEN
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1860941830
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860941829}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2073739414}
+  - {fileID: 72704376}
+  - {fileID: 936234012}
+  - {fileID: 246289703}
+  - {fileID: 561764730}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1870036947
 GameObject:
   m_ObjectHideFlags: 0
@@ -20106,7 +21526,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1872298300}
   m_Layer: 0
-  m_Name: Requests
+  m_Name: RequestsFR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20183,6 +21603,142 @@ MonoBehaviour:
   elementToShow:
   - {fileID: 2107992699}
   - {fileID: 1405885169}
+--- !u!1 &1881316582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1881316583}
+  - component: {fileID: 1881316585}
+  - component: {fileID: 1881316584}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1881316583
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881316582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1619752523}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1881316584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881316582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: EN
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
+  m_sharedMaterial: {fileID: 8613784260704383832, guid: e702532e70d079b439d14b3c6c4927da, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4290376703
+  m_fontColor: {r: 1, g: 0.9529412, b: 0.7254902, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 72
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1881316585
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881316582}
+  m_CullTransparentMesh: 1
 --- !u!1 &1889374168
 GameObject:
   m_ObjectHideFlags: 0
@@ -20383,6 +21939,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
+--- !u!1 &1917301506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1917301507}
+  - component: {fileID: 1917301508}
+  m_Layer: 0
+  m_Name: dependency3
+  m_TagString: Fly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1917301507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917301506}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 704002081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1917301508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917301506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65217f96cdccb264ba301618f14c74b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestA: {fileID: 936234013}
+  selectedAnswerA: 1
+  requestB: {fileID: 246289704}
+  selectedAnswerB: 2
+  elementToShow:
+  - {fileID: 703383519}
 --- !u!1 &1923495977
 GameObject:
   m_ObjectHideFlags: 0
@@ -20519,6 +22125,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923495977}
   m_CullTransparentMesh: 1
+--- !u!1 &1934180986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1934180987}
+  - component: {fileID: 1934180988}
+  m_Layer: 0
+  m_Name: dependency1
+  m_TagString: Birds
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1934180987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934180986}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 704002081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1934180988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1934180986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65217f96cdccb264ba301618f14c74b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestA: {fileID: 2073739415}
+  selectedAnswerA: 1
+  requestB: {fileID: 72704377}
+  selectedAnswerB: 2
+  elementToShow:
+  - {fileID: 684761817}
 --- !u!1001 &1938896239
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21044,6 +22700,7 @@ GameObject:
   - component: {fileID: 1971387630}
   - component: {fileID: 1971387632}
   - component: {fileID: 1971387631}
+  - component: {fileID: 1971387633}
   m_Layer: 5
   m_Name: Titre
   m_TagString: Untagged
@@ -21169,6 +22826,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971387629}
   m_CullTransparentMesh: 1
+--- !u!114 &1971387633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971387629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Succes v\xE9rouill\xE9"
+  english: "Succes v\xE9rouill\xE9 (EN)"
 --- !u!1 &1971813922
 GameObject:
   m_ObjectHideFlags: 0
@@ -21309,6 +22980,7 @@ GameObject:
   - component: {fileID: 1972958749}
   - component: {fileID: 1972958751}
   - component: {fileID: 1972958750}
+  - component: {fileID: 1972958752}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -21434,6 +23106,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972958748}
   m_CullTransparentMesh: 1
+--- !u!114 &1972958752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972958748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Tu n'as pas encore d\xE9couvert ce succes."
+  english: "Tu n'as pas encore d\xE9couvert ce succes. (EN)"
 --- !u!1 &1978781855
 GameObject:
   m_ObjectHideFlags: 0
@@ -21822,6 +23508,7 @@ GameObject:
   - component: {fileID: 2015673987}
   - component: {fileID: 2015673989}
   - component: {fileID: 2015673988}
+  - component: {fileID: 2015673990}
   m_Layer: 5
   m_Name: Titre
   m_TagString: Untagged
@@ -21947,6 +23634,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015673986}
   m_CullTransparentMesh: 1
+--- !u!114 &2015673990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015673986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Cimeti\xE8re hybride"
+  english: "Cimeti\xE8re hybride (EN)"
 --- !u!1001 &2015848299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22168,6 +23869,7 @@ GameObject:
   - component: {fileID: 2031512618}
   - component: {fileID: 2031512620}
   - component: {fileID: 2031512619}
+  - component: {fileID: 2031512621}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -22295,6 +23997,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2031512617}
   m_CullTransparentMesh: 1
+--- !u!114 &2031512621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031512617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Vous avez fait venir des insectes et un h\xE9risson ! Fournissant nourriture
+    et habitat, le bois mort et l\u2019herbe sont essentiels \xE0 la sant\xE9 des
+    petits animaux !"
+  english: "Vous avez fait venir des insectes et un h\xE9risson ! Fournissant nourriture
+    et habitat, le bois mort et l\u2019herbe sont essentiels \xE0 la sant\xE9 des
+    petits animaux ! (EN)"
 --- !u!1001 &2048754015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22462,6 +24182,7 @@ GameObject:
   - component: {fileID: 2064696122}
   - component: {fileID: 2064696124}
   - component: {fileID: 2064696123}
+  - component: {fileID: 2064696125}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -22591,6 +24312,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064696121}
   m_CullTransparentMesh: 1
+--- !u!114 &2064696125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064696121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc39e8d47b34b8c9fb7d0e2234ef957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  french: "Les cimeti\xE8res paysagers int\xE8grent la pr\xE9sence de plantes \xE0
+    des fins d\xE9coratives. Ils conservent un paysage d\xE9gag\xE9 mais pr\xE9sentent
+    plus d\u2019arbres et d\u2019herbe. \n\nLes cimeti\xE8res paysagers se d\xE9veloppent
+    \xE0 la fin du XXe si\xE8cle, pour faire revenir de la verdure dans des cimeti\xE8res
+    jug\xE9s trop gris."
+  english: "Les cimeti\xE8res paysagers int\xE8grent la pr\xE9sence de plantes \xE0
+    des fins d\xE9coratives. Ils conservent un paysage d\xE9gag\xE9 mais pr\xE9sentent
+    plus d\u2019arbres et d\u2019herbe. \n\nLes cimeti\xE8res paysagers se d\xE9veloppent
+    \xE0 la fin du XXe si\xE8cle, pour faire revenir de la verdure dans des cimeti\xE8res
+    jug\xE9s trop gris. (EN)"
 --- !u!1 &2066567899
 GameObject:
   m_ObjectHideFlags: 0
@@ -22674,6 +24417,81 @@ Transform:
   - {fileID: 1549805304}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2073739413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2073739414}
+  - component: {fileID: 2073739415}
+  m_Layer: 0
+  m_Name: Request1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2073739414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073739413}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1860941830}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2073739415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073739413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfe8f2e323ed8043a085246c602841c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  description: "One morning, the cemetery\u2019s gardener has something to discuss\u2026\r\n\r\nWe
+    got a wee problem\u2026 A weed problem, actually. Since we can\u2019t use pesticides
+    anymore, it\u2019s tough keeping all of the walks tidy. And gravel is bad for
+    the lawnmower\u2026. \r\n\r\nIf we let the grass grow, it\u2019d be easier for
+    me to mow from time to time, and it sure would be better for nature and all.
+    But it\u2019ll be harder for people in wheelchairs and even for hearses. \n\nSo
+    what do we do, chief? \r"
+  answerA: Refurbish the walks
+  AListHide:
+  - {fileID: 78816505}
+  - {fileID: 978287450}
+  - {fileID: 494751849}
+  - {fileID: 971342740}
+  AListShow:
+  - {fileID: 641270873}
+  AarchitecturalPoints: 2
+  AlandscapedPoints: 0
+  AecologicalPoints: 0
+  AudioClipHideA: {fileID: 8300000, guid: 7a42d08b1a44b434381e56765a38b0e2, type: 3}
+  AudioClipShowA: {fileID: 8300000, guid: 874c89c1441dc114d9e99f4c0fcc30b1, type: 3}
+  answerB: Let grass grow
+  BListHide:
+  - {fileID: 971342740}
+  BListShow:
+  - {fileID: 992754571}
+  BarchitecturalPoints: 0
+  BlandscapedPoints: 1
+  BecologicalPoints: 1
+  AudioClipHideB: {fileID: 8300000, guid: 7a42d08b1a44b434381e56765a38b0e2, type: 3}
+  AudioClipShowB: {fileID: 8300000, guid: 874c89c1441dc114d9e99f4c0fcc30b1, type: 3}
+  idRequest: 1
 --- !u!1 &2077039349
 GameObject:
   m_ObjectHideFlags: 0
@@ -23790,6 +25608,9 @@ SceneRoots:
   - {fileID: 877384866}
   - {fileID: 1872298300}
   - {fileID: 333055262}
+  - {fileID: 90435046}
+  - {fileID: 1860941830}
+  - {fileID: 704002081}
   - {fileID: 243093743}
   - {fileID: 352524472}
   - {fileID: 2114946147}

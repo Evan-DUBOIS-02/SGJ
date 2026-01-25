@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using DefaultNamespace;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,9 +20,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button buttonAUI;
     [SerializeField] private Button buttonBUI;
 
-    [Header("Requests/depedencies")]
-    [SerializeField] private GameObject requestsParent;
-    [SerializeField] private GameObject depedenciesParent;
+    [Header("Requests/depedencies [FR]")]
+    [SerializeField] private GameObject requestsParentFR;
+    [SerializeField] private GameObject depedenciesParentFR;
+    
+    [Header("Requests/depedencies [EN]")]
+    [SerializeField] private GameObject requestsParentEN;
+    [SerializeField] private GameObject depedenciesParentEN;
 
     [Header("Poping animation")]
     [SerializeField] private float waitingTimeBetweenElements = 0.5f;
@@ -31,15 +36,25 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float fadeDuration;
     private bool isFadingOut = false;
 
-    [Header("Ending text")]
+    [Header("Ending text [FR]")]
     [TextArea(7, 10)]
-    public string architecturalEndingDescription;
+    public string architecturalEndingDescriptionFR;
     [TextArea(7, 10)]
-    public string landscapedEndingDescription;
+    public string landscapedEndingDescriptionFR;
     [TextArea(7, 10)]
-    public string ecologicalEndingDescription;
+    public string ecologicalEndingDescriptionFR;
     [TextArea(7, 10)]
-    public string hybridEndingDescription;
+    public string hybridEndingDescriptionFR;
+    
+    [Header("Ending text [EN]")]
+    [TextArea(7, 10)]
+    public string architecturalEndingDescriptionEN;
+    [TextArea(7, 10)]
+    public string landscapedEndingDescriptionEN;
+    [TextArea(7, 10)]
+    public string ecologicalEndingDescriptionEN;
+    [TextArea(7, 10)]
+    public string hybridEndingDescriptionEN;
 
     [Header("Ending button")]
     [SerializeField] private TMP_Text buttonReloadTextUI;
@@ -51,24 +66,31 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject UIMainMenu;
     [SerializeField] private GameObject UIInGame;
 
-    private Requests[] listRequest;
+    private Requests[] listRequestFR;
+    private Requests[] listRequestEN;
+    
     private int currentRequest = 0;
 
-    private Depedencies[] listDepedency;
+    private Depedencies[] listDepedencyFR;
+    private Depedencies[] listDepedencyEN;
 
     private int totalArchitecturalPoints = 0;
     private int totalLandscapedPoints = 0;
     private int totalEcologicalPoints = 0;
 
     [SerializeField] AudioManager audioManager;
-
+    
+    private LanguageManager languageManager;
     private AchievementsManager achievementsManager;
     private void Start()
     {
+        languageManager = GetComponentInParent<LanguageManager>();
         achievementsManager = GetComponent<AchievementsManager>();
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
-        listRequest = requestsParent.GetComponentsInChildren<Requests>();
-        listDepedency = depedenciesParent.GetComponentsInChildren<Depedencies>();
+        listRequestFR = requestsParentFR.GetComponentsInChildren<Requests>();
+        listRequestEN = requestsParentEN.GetComponentsInChildren<Requests>();
+        listDepedencyFR = depedenciesParentFR.GetComponentsInChildren<Depedencies>();
+        listDepedencyEN = depedenciesParentEN.GetComponentsInChildren<Depedencies>();
 
         buttonMenuUI.gameObject.SetActive(false);
         buttonReloadUI.gameObject.SetActive(false);
@@ -106,15 +128,33 @@ public class GameManager : MonoBehaviour
         // disable buttons
         buttonAUI.enabled = false;
         buttonBUI.enabled = false;
-        // getting GO hide/show / sound
+        
         List<GameObject>[] tabGO = new List<GameObject>[2];
-        tabGO = listRequest[currentRequest].SetSA(1);
-        AudioClip clipHide = listRequest[currentRequest].AudioClipHideA;
-        AudioClip clipShow = listRequest[currentRequest].AudioClipShowA;
-        // Adding points
-        totalArchitecturalPoints += listRequest[currentRequest].AarchitecturalPoints;
-        totalLandscapedPoints += listRequest[currentRequest].AlandscapedPoints;
-        totalEcologicalPoints += listRequest[currentRequest].AecologicalPoints;
+        AudioClip clipHide;
+        AudioClip clipShow;
+        if (languageManager.isFrench)
+        {
+            // getting GO hide/show / sound
+            tabGO = listRequestFR[currentRequest].SetSA(1);
+            clipHide = listRequestFR[currentRequest].AudioClipHideA;
+            clipShow = listRequestFR[currentRequest].AudioClipShowA;
+            // Adding points
+            totalArchitecturalPoints += listRequestFR[currentRequest].AarchitecturalPoints;
+            totalLandscapedPoints += listRequestFR[currentRequest].AlandscapedPoints;
+            totalEcologicalPoints += listRequestFR[currentRequest].AecologicalPoints;
+        }
+        else
+        {
+            // getting GO hide/show / sound
+            tabGO = listRequestEN[currentRequest].SetSA(1);
+            clipHide = listRequestEN[currentRequest].AudioClipHideA;
+            clipShow = listRequestEN[currentRequest].AudioClipShowA;
+            // Adding points
+            totalArchitecturalPoints += listRequestEN[currentRequest].AarchitecturalPoints;
+            totalLandscapedPoints += listRequestEN[currentRequest].AlandscapedPoints;
+            totalEcologicalPoints += listRequestEN[currentRequest].AecologicalPoints;
+        }
+
         // UI fade out
         StartCoroutine(TextFade(1.0f, 0.0f, false));
         StartCoroutine(ButtonFade(1.0f, 0.0f));
@@ -129,15 +169,32 @@ public class GameManager : MonoBehaviour
         // disable buttons
         buttonAUI.enabled = false;
         buttonBUI.enabled = false;
-        // getting GO hide/show / sound
         List<GameObject>[] tabGO = new List<GameObject>[2];
-        tabGO = listRequest[currentRequest].SetSA(2);
-        AudioClip clipHide = listRequest[currentRequest].AudioClipHideB;
-        AudioClip clipShow = listRequest[currentRequest].AudioClipShowB;
-        // Adding points
-        totalArchitecturalPoints += listRequest[currentRequest].BarchitecturalPoints;
-        totalLandscapedPoints += listRequest[currentRequest].BlandscapedPoints;
-        totalEcologicalPoints += listRequest[currentRequest].BecologicalPoints;
+        AudioClip clipHide;
+        AudioClip clipShow;
+        if (languageManager.isFrench)
+        {
+            // getting GO hide/show / sound
+            tabGO = listRequestFR[currentRequest].SetSA(2);
+            clipHide = listRequestFR[currentRequest].AudioClipHideB;
+            clipShow = listRequestFR[currentRequest].AudioClipShowB;
+            // Adding points
+            totalArchitecturalPoints += listRequestFR[currentRequest].BarchitecturalPoints;
+            totalLandscapedPoints += listRequestFR[currentRequest].BlandscapedPoints;
+            totalEcologicalPoints += listRequestFR[currentRequest].BecologicalPoints;
+        }
+        else
+        {
+            // getting GO hide/show / sound
+            tabGO = listRequestEN[currentRequest].SetSA(2);
+            clipHide = listRequestEN[currentRequest].AudioClipHideB;
+            clipShow = listRequestEN[currentRequest].AudioClipShowB;
+            // Adding points
+            totalArchitecturalPoints += listRequestEN[currentRequest].BarchitecturalPoints;
+            totalLandscapedPoints += listRequestEN[currentRequest].BlandscapedPoints;
+            totalEcologicalPoints += listRequestEN[currentRequest].BecologicalPoints;
+        }
+
         // UI fade out
         StartCoroutine(TextFade(1.0f, 0.0f, false));
         StartCoroutine(ButtonFade(1.0f, 0.0f));
@@ -149,9 +206,19 @@ public class GameManager : MonoBehaviour
 
     private void CheckDepedencies()
     {
-        foreach(var dep in listDepedency)
+        if (languageManager.isFrench)
         {
-            dep.CheckDepedency();
+            foreach (var dep in listDepedencyFR)
+            {
+                dep.CheckDepedency();
+            }
+        }
+        else
+        {
+            foreach (var dep in listDepedencyEN)
+            {
+                dep.CheckDepedency();
+            }
         }
     }
 
@@ -196,12 +263,26 @@ public class GameManager : MonoBehaviour
                         elem.ResetStatus();
             }
         }
-        // reset request answers
-        foreach(Requests r in listRequest)
-            r.ResetStatus();
-        // reset depedencies status
-        foreach(Depedencies d in listDepedency)
-            d.ResetStatus();
+
+        if (languageManager.isFrench)
+        {
+            // reset request answers
+            foreach(Requests r in listRequestFR)
+                r.ResetStatus();
+            // reset depedencies status
+            foreach(Depedencies d in listDepedencyFR)
+                d.ResetStatus();
+        }
+        else
+        {
+            // reset request answers
+            foreach(Requests r in listRequestEN)
+                r.ResetStatus();
+            // reset depedencies status
+            foreach(Depedencies d in listDepedencyEN)
+                d.ResetStatus();
+        }
+        
         currentRequest = 0;
         totalArchitecturalPoints = 0;
         totalLandscapedPoints = 0;
@@ -215,7 +296,9 @@ public class GameManager : MonoBehaviour
         achievementsManager.CheckAllAchievementsIcon();
 
         currentRequest++;
-        if (currentRequest >= listRequest.Length)
+        if (languageManager.isFrench && currentRequest >= listRequestFR.Length)
+            LoadEndScene();
+        else if(currentRequest >= listRequestEN.Length)
             LoadEndScene();
         else
             LoadRequest();
@@ -225,27 +308,39 @@ public class GameManager : MonoBehaviour
     {
         if (totalArchitecturalPoints > totalEcologicalPoints && totalArchitecturalPoints > totalLandscapedPoints)
         {
-            descriptionUI.text = architecturalEndingDescription;
+            if(languageManager.isFrench)
+                descriptionUI.text = architecturalEndingDescriptionFR;
+            else
+                descriptionUI.text = architecturalEndingDescriptionEN;
             // StartCoroutine(achievementsManager.setArchiUnlock());
             achievementsManager.setArchiUnlockIcon();
         }
 
         else if (totalLandscapedPoints > totalEcologicalPoints && totalLandscapedPoints > totalArchitecturalPoints)
         {
-            descriptionUI.text = landscapedEndingDescription;
+            if(languageManager.isFrench)
+                descriptionUI.text = landscapedEndingDescriptionFR;
+            else
+                descriptionUI.text = landscapedEndingDescriptionEN;
             // StartCoroutine(achievementsManager.setPaysagerUnlock());
             achievementsManager.setPaysagerUnlockIcon();
         }
 
         else if (totalEcologicalPoints > totalLandscapedPoints && totalEcologicalPoints > totalArchitecturalPoints)
         {
-            descriptionUI.text = ecologicalEndingDescription;
+            if(languageManager.isFrench)
+                descriptionUI.text = ecologicalEndingDescriptionFR;
+            else
+                descriptionUI.text = ecologicalEndingDescriptionEN;
             // StartCoroutine(achievementsManager.setEcoloUnlock());
             achievementsManager.setEcoloUnlockIcon();
         }
         else
         {
-            descriptionUI.text = hybridEndingDescription;
+            if(languageManager.isFrench)
+                descriptionUI.text = hybridEndingDescriptionFR;
+            else
+                descriptionUI.text = hybridEndingDescriptionEN;
             // StartCoroutine(achievementsManager.setHybridUnlock());
             achievementsManager.setHybridUnlockIcon();
         }
@@ -295,11 +390,17 @@ public class GameManager : MonoBehaviour
                 while (isFadingOut)
                     yield return null;
             // On change les textes
-            if(currentRequest < listRequest.Length)
+            if(languageManager.isFrench && currentRequest < listRequestFR.Length)
             {
-                descriptionUI.text = listRequest[currentRequest].description;
-                buttonATextUI.text = listRequest[currentRequest].answerA;
-                buttonBTextUI.text = listRequest[currentRequest].answerB;
+                descriptionUI.text = listRequestFR[currentRequest].description;
+                buttonATextUI.text = listRequestFR[currentRequest].answerA;
+                buttonBTextUI.text = listRequestFR[currentRequest].answerB;
+            }
+            else if (currentRequest < listRequestEN.Length)
+            {
+                descriptionUI.text = listRequestEN[currentRequest].description;
+                buttonATextUI.text = listRequestEN[currentRequest].answerA;
+                buttonBTextUI.text = listRequestEN[currentRequest].answerB;
             }
         }
 
