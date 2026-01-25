@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     [Header("UI fade animation")]
     [SerializeField] private float fadeDuration;
+    private bool isFadingOut = false;
 
     [Header("Ending text")]
     [TextArea(7, 10)]
@@ -61,8 +62,10 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] AudioManager audioManager;
 
+    private AchievementsManager achievementsManager;
     private void Start()
     {
+        achievementsManager = GetComponent<AchievementsManager>();
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
         listRequest = requestsParent.GetComponentsInChildren<Requests>();
         listDepedency = depedenciesParent.GetComponentsInChildren<Depedencies>();
@@ -90,18 +93,12 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        LoadRequest();
+        // LoadRequest();
     }
 
     public void LoadRequest()
     {
-        descriptionUI.text = listRequest[currentRequest].description;
-        buttonATextUI.text = listRequest[currentRequest].answerA;
-        buttonBTextUI.text = listRequest[currentRequest].answerB;
-        StartCoroutine(TextFade(0.0f, 1.0f));
-        StartCoroutine(ButtonFade(0.0f, 1.0f));
-        buttonAUI.enabled = true;
-        buttonBUI.enabled = true;
+        StartCoroutine(TextFade(0.0f, 1.0f, false));
     }
 
     public void PressButtonA()
@@ -109,20 +106,22 @@ public class GameManager : MonoBehaviour
         // disable buttons
         buttonAUI.enabled = false;
         buttonBUI.enabled = false;
-        // getting GO hide/show
+        // getting GO hide/show / sound
         List<GameObject>[] tabGO = new List<GameObject>[2];
         tabGO = listRequest[currentRequest].SetSA(1);
+        AudioClip clipHide = listRequest[currentRequest].AudioClipHideA;
+        AudioClip clipShow = listRequest[currentRequest].AudioClipShowA;
         // Adding points
         totalArchitecturalPoints += listRequest[currentRequest].AarchitecturalPoints;
         totalLandscapedPoints += listRequest[currentRequest].AlandscapedPoints;
         totalEcologicalPoints += listRequest[currentRequest].AecologicalPoints;
         // UI fade out
-        StartCoroutine(TextFade(1.0f, 0.0f));
+        StartCoroutine(TextFade(1.0f, 0.0f, false));
         StartCoroutine(ButtonFade(1.0f, 0.0f));
         // Depedencies
         CheckDepedencies();
         // poping
-        StartCoroutine(Poping(tabGO[0], tabGO[1], () => SwitchRequest()));
+        StartCoroutine(Poping(tabGO[0], tabGO[1], clipHide, clipShow, () => SwitchRequest()));
     }
 
     public void PressButtonB()
@@ -130,20 +129,22 @@ public class GameManager : MonoBehaviour
         // disable buttons
         buttonAUI.enabled = false;
         buttonBUI.enabled = false;
-        // getting GO hide/show
+        // getting GO hide/show / sound
         List<GameObject>[] tabGO = new List<GameObject>[2];
         tabGO = listRequest[currentRequest].SetSA(2);
+        AudioClip clipHide = listRequest[currentRequest].AudioClipHideB;
+        AudioClip clipShow = listRequest[currentRequest].AudioClipShowB;
         // Adding points
         totalArchitecturalPoints += listRequest[currentRequest].BarchitecturalPoints;
         totalLandscapedPoints += listRequest[currentRequest].BlandscapedPoints;
         totalEcologicalPoints += listRequest[currentRequest].BecologicalPoints;
         // UI fade out
-        StartCoroutine(TextFade(1.0f, 0.0f));
+        StartCoroutine(TextFade(1.0f, 0.0f, false));
         StartCoroutine(ButtonFade(1.0f, 0.0f));
         // Depedencies
         CheckDepedencies();
         // poping
-        StartCoroutine(Poping(tabGO[0], tabGO[1], () => SwitchRequest()));
+        StartCoroutine(Poping(tabGO[0], tabGO[1], clipHide, clipShow, () => SwitchRequest()));
     }
 
     private void CheckDepedencies()
@@ -169,8 +170,17 @@ public class GameManager : MonoBehaviour
 
     private void ReloadData()
     {
+        achievementsManager.HideAllInGameIcon();
+        // Reset menu button color
         buttonMenuUI.gameObject.SetActive(false);
+        buttonMenuUI.gameObject.GetComponent<UnityEngine.UI.Image>().color = new Color(1, 1, 1, 0);
+        buttonMenuTextUI.color = new Color(1, 1, 1, 0);
+
+        // Reset reload button
         buttonReloadUI.gameObject.SetActive(false);
+        buttonReloadUI.gameObject.GetComponent<UnityEngine.UI.Image>().color = new Color(1, 1, 1, 0);
+        buttonReloadTextUI.color = new Color(1, 1, 1, 0);
+
         // reset all cemetery elements
         foreach (Transform t in cemetery.transform)
         {
@@ -200,6 +210,10 @@ public class GameManager : MonoBehaviour
 
     private void SwitchRequest()
     {
+        // Achievements
+        // StartCoroutine(achievementsManager.CheckAllAchievements());
+        achievementsManager.CheckAllAchievementsIcon();
+
         currentRequest++;
         if (currentRequest >= listRequest.Length)
             LoadEndScene();
@@ -210,22 +224,40 @@ public class GameManager : MonoBehaviour
     private void LoadEndScene()
     {
         if (totalArchitecturalPoints > totalEcologicalPoints && totalArchitecturalPoints > totalLandscapedPoints)
+        {
             descriptionUI.text = architecturalEndingDescription;
-        else if (totalLandscapedPoints > totalEcologicalPoints && totalLandscapedPoints > totalArchitecturalPoints)
-            descriptionUI.text = landscapedEndingDescription;
-        else if (totalEcologicalPoints > totalLandscapedPoints && totalEcologicalPoints > totalArchitecturalPoints)
-            descriptionUI.text = ecologicalEndingDescription;
-        else
-            descriptionUI.text = hybridEndingDescription;
+            // StartCoroutine(achievementsManager.setArchiUnlock());
+            achievementsManager.setArchiUnlockIcon();
+        }
 
-        StartCoroutine(TextFade(0.0f, 1.0f));
-        StartCoroutine(EndingButtonFade(0.0f, 1.0f));
-        buttonMenuUI.gameObject.SetActive(true);
-        buttonReloadUI.gameObject.SetActive(true);
+        else if (totalLandscapedPoints > totalEcologicalPoints && totalLandscapedPoints > totalArchitecturalPoints)
+        {
+            descriptionUI.text = landscapedEndingDescription;
+            // StartCoroutine(achievementsManager.setPaysagerUnlock());
+            achievementsManager.setPaysagerUnlockIcon();
+        }
+
+        else if (totalEcologicalPoints > totalLandscapedPoints && totalEcologicalPoints > totalArchitecturalPoints)
+        {
+            descriptionUI.text = ecologicalEndingDescription;
+            // StartCoroutine(achievementsManager.setEcoloUnlock());
+            achievementsManager.setEcoloUnlockIcon();
+        }
+        else
+        {
+            descriptionUI.text = hybridEndingDescription;
+            // StartCoroutine(achievementsManager.setHybridUnlock());
+            achievementsManager.setHybridUnlockIcon();
+        }
+
+        StartCoroutine(TextFade(0.0f, 1.0f, true));
     }
 
-    private IEnumerator Poping(List<GameObject> hide, List<GameObject> show, System.Action onComplete)
+    private IEnumerator Poping(List<GameObject> hide, List<GameObject> show, AudioClip clipHide, AudioClip clipShow, System.Action onComplete)
     {
+        if(clipHide != null)
+            audioManager.PlaySFX(clipHide);
+
         for (int i = 0; i < hide.Count; i++)
         {
             hide[i].GetComponent<Animator>().SetTrigger("PopDown");
@@ -233,6 +265,12 @@ public class GameManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(waitingTimeBetweenHideShow);
+
+        if(clipShow != null)
+        {
+            audioManager.SFXSource.Stop();
+            audioManager.PlaySFX(clipShow);
+        }
 
         for (int i = 0; i < show.Count; i++)
         {
@@ -244,8 +282,27 @@ public class GameManager : MonoBehaviour
     }
 
     #region elements fading
-    private IEnumerator TextFade(float startAlpha, float endAlpha)
+    private IEnumerator TextFade(float startAlpha, float endAlpha, bool endScene)
     {
+        // On fade out
+        if (startAlpha == 1)
+            isFadingOut = true;
+        // On fade in
+        else if(startAlpha == 0)
+        {
+            // si on est deja en fade out, on attend
+            if (isFadingOut)
+                while (isFadingOut)
+                    yield return null;
+            // On change les textes
+            if(currentRequest < listRequest.Length)
+            {
+                descriptionUI.text = listRequest[currentRequest].description;
+                buttonATextUI.text = listRequest[currentRequest].answerA;
+                buttonBTextUI.text = listRequest[currentRequest].answerB;
+            }
+        }
+
         float elapsedTime = 0f;
 
         // Description text color
@@ -260,10 +317,30 @@ public class GameManager : MonoBehaviour
         }
 
         descriptionUI.color = new Color(descriptionColor.r, descriptionColor.g, descriptionColor.b, endAlpha);
+
+        if (startAlpha == 1)
+            isFadingOut = false;
+
+        if (endAlpha == 1 && !endScene)
+            StartCoroutine(ButtonFade(0, 1));
+        else if(endAlpha == 1 && endScene)
+            StartCoroutine(EndingButtonFade(0, 1));
     }
 
     private IEnumerator ButtonFade(float startAlpha, float endAlpha)
     {
+        if(startAlpha == 1)
+        {
+            buttonAUI.GetComponent<Button>().interactable = false;
+            buttonBUI.GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            buttonAUI.GetComponent<Button>().interactable = true;
+            buttonBUI.GetComponent<Button>().interactable = true;
+            buttonAUI.gameObject.SetActive(true);
+            buttonBUI.gameObject.SetActive(true);
+        }
         float elapsedTime = 0f;
 
         // Button A background color
@@ -295,10 +372,25 @@ public class GameManager : MonoBehaviour
         buttonBImage.color = new Color(buttonBColor.r, buttonBColor.g, buttonBColor.b, endAlpha);
         buttonATextUI.color = new Color(buttonATextColor.r, buttonATextColor.g, buttonATextColor.b, endAlpha);
         buttonBTextUI.color = new Color(buttonBTextColor.r, buttonBTextColor.g, buttonBTextColor.b, endAlpha);
+        if(endAlpha == 1)
+        {
+            buttonAUI.enabled = true;
+            buttonBUI.enabled = true;
+        }
+        else
+        {
+            buttonAUI.gameObject.SetActive(false);
+            buttonBUI.gameObject.SetActive(false);
+        }
     }
 
     private IEnumerator EndingButtonFade(float startAlpha, float endAlpha)
     {
+        buttonMenuUI.enabled = false;
+        buttonReloadUI.enabled = false;
+        buttonMenuUI.gameObject.SetActive(true);
+        buttonReloadUI.gameObject.SetActive(true);
+
         float elapsedTime = 0f;
 
         // Button Reload background color
@@ -306,7 +398,7 @@ public class GameManager : MonoBehaviour
         Color buttonReloadColor = buttonReloadImage.color;
 
         // Button Reload text color
-        Color buttonReloadTextColor = buttonATextUI.color;
+        Color buttonReloadTextColor = buttonReloadTextUI.color;
 
         // Button B background color
         UnityEngine.UI.Image buttonMenuImage = buttonMenuUI.gameObject.GetComponent<UnityEngine.UI.Image>();
@@ -330,6 +422,9 @@ public class GameManager : MonoBehaviour
         buttonMenuImage.color = new Color(buttonMenuColor.r, buttonMenuColor.g, buttonMenuColor.b, endAlpha);
         buttonReloadTextUI.color = new Color(buttonReloadTextColor.r, buttonReloadTextColor.g, buttonReloadTextColor.b, endAlpha);
         buttonMenuTextUI.color = new Color(buttonMenuTextColor.r, buttonMenuTextColor.g, buttonMenuTextColor.b, endAlpha);
+
+        buttonMenuUI.enabled = true;
+        buttonReloadUI.enabled = true;
     }
     #endregion
 }

@@ -6,12 +6,17 @@ public class CemeteryElement : MonoBehaviour
     public GameObject vfx;
     private Vector3 baseScale;
     private Vector3 basePosition;
+    public AudioClip audioClip;
 
+    private AudioManager audioManager;
     private void Start()
     {
         baseScale = transform.localScale;
         basePosition = transform.localPosition;
+        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
     }
+
+
 
     public void TriggerActivation()
     {
@@ -34,8 +39,13 @@ public class CemeteryElement : MonoBehaviour
         if (vfx != null)
         {
             Vector3 pos = transform.position;
-            pos.y = 0.4f;
+            pos.y = -1f;
             Destroy(Instantiate(vfx, pos, Quaternion.Euler(90, 0, 0)), 5f);
         }
+    }
+
+    public void PlayEnvSound()
+    {
+        audioManager.PlaySFX(audioClip);
     }
 }
