@@ -1,5 +1,6 @@
 using Unity.GraphToolkit.Editor;
 using System;
+using UnityEditor.Localization.Plugins.XLIFF.V12;
 
 /*
  * THIS FILE CONTAINS ALL NODE TYPE DEFINITION NEEDED FOR OUT DIALOGUE SYSTEM
@@ -55,30 +56,27 @@ public class DialogueNode : Node
 [Serializable]
 public class ChoiceNode : Node
 {
-    private const string optionID = "portCount";
+    private const string requestData = "requestData";
+    
     protected override void OnDefinePorts(IPortDefinitionContext context)
     {
         // Contains one input for the flow
         context.AddInputPort("in").Build();
-        
-        // Contains some input datas
-        context.AddInputPort<string>("Speaker").Build();
-        context.AddInputPort<string>("Dialogue").Build();
 
-        // Contains variables numbers of choices with both input data and output for the flow
-        var option = GetNodeOptionByName(optionID);
-        option.TryGetValue(out int portCount);
-        for (int i = 0; i < portCount; i++)
+        // Contains variables numbers of choices with output for the flow
+        var option = GetNodeOptionByName(requestData);
+        option.TryGetValue(out RequestData data);
+        if (data == null) return;
+        for (int i = 0; i < data.Choices.Count; i++)
         {
-            context.AddInputPort<string>($"Choice Text {i}").Build();
-            context.AddOutputPort($"Choice {i}").Build();
+            context.AddOutputPort($"Choice {i}").WithDisplayName(data.Choices[i].ChoiceText).Build();
         }
     }
 
     // Allow to define a node option
     protected override void OnDefineOptions(IOptionDefinitionContext context)
     {
-        // Define number of choice available
-        context.AddOption<int>(optionID).WithDefaultValue(2).Delayed();
+        // Define the request data
+        context.AddOption<RequestData>(requestData).Delayed();
     }
 }
