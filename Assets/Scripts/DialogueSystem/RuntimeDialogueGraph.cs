@@ -14,12 +14,12 @@ public class RuntimeDialogueNode
     public string NodeId;
     public string SpeakerName;
     public string DialogueText;
-    public List<ChoiceData> Choices = new List<ChoiceData>();
+    public List<ChoiceNodeData> Choices = new List<ChoiceNodeData>();
     public string NextNodeId;
 }
 
 [Serializable]
-public class ChoiceData
+public class ChoiceNodeData
 {
     public string ChoiceText;
     public string DestinationNodeId;
