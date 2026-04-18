@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4591c3472592458ebc9a03669383a521, type: 3}
+  m_Name: Request5
+  m_EditorClassIdentifier: Assembly-CSharp::RequestData
+  Description: "Au fond du cimeti\xE8re, il y a une partie en friche qui est inutilis\xE9e.
+    Cela fait un moment que vous vous demandez ce que vous pourriez en faire. \r\n\r\nVous
+    pourriez ouvrir un nouveau carr\xE9 de tombes, en pr\xE9vision du remplissage
+    du cimeti\xE8re. Cela \xE9vitera d\u2019avoir \xE0 reprendre des tombes anciennes
+    quand la place viendra \xE0 manquer, et de d\xE9ranger les morts. Alternativement,
+    vous pourriez installer une petite ruche, pour que les abeilles pollinisent les
+    fleurs du cimeti\xE8re."
+  Choices:
+  - ChoiceText: Installer de nouvelles tombes
+    HideObjectGroup: {fileID: 11400000, guid: f377d73f4d719ce45b2035d91e54bd0f, type: 2}
+    ShowObjectGroup: {fileID: 11400000, guid: 9abd8f88b8ca2944aa55799d47e7acf7, type: 2}
+    ArchitecturalPoints: 1
+    LandscapedPoints: 0
+    EcologicalPoints: 0
+  - ChoiceText: Installer une ruche
+    HideObjectGroup: {fileID: 11400000, guid: 25c86355749d809498fa21a7555014f4, type: 2}
+    ShowObjectGroup: {fileID: 11400000, guid: d7cd09b173a5fba4c9545373aca97db9, type: 2}
+    ArchitecturalPoints: 0
+    LandscapedPoints: 1
+    EcologicalPoints: 1

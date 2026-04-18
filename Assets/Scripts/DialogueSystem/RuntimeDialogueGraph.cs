@@ -12,15 +12,15 @@ public class RuntimeDialogueGraph : ScriptableObject
 public class RuntimeDialogueNode
 {
     public string NodeId;
-    public string SpeakerName;
     public string DialogueText;
     public List<ChoiceNodeData> Choices = new List<ChoiceNodeData>();
     public string NextNodeId;
+    public RequestData RequestData;
 }
 
 [Serializable]
 public class ChoiceNodeData
 {
-    public string ChoiceText;
+    public ChoiceData ChoiceData;
     public string DestinationNodeId;
 }
