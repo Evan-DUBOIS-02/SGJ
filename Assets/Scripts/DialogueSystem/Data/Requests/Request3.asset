@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4591c3472592458ebc9a03669383a521, type: 3}
+  m_Name: Request3
+  m_EditorClassIdentifier: Assembly-CSharp::RequestData
+  Description: "Vous recevez un appel du maire. Des \xE9lecteurs se sont plaints
+    de l\u2019herbe, trop haute autour des tombes. C\u2019est difficile de les nettoyer,
+    et les personnes \xE2g\xE9es ont peur de tr\xE9bucher. Vous en parlez avec votre
+    jardinier. \r\n\r\n\"J\u2019aimerais bien l\u2019y voir, le maire, tiens ! Entre
+    les tombes, c\u2019est compliqu\xE9 de passer. C\u2019est trop petit pour la
+    tondeuse ou la d\xE9broussailleuse. Avant, je passais le br\xFBleur, mais en
+    \xE9t\xE9, il fait trop chaud. Qu\u2019il embauche un autre jardinier !\"\r\n\r\nVous
+    pouvez demander au maire de recruter un autre agent, si le budget le permet.
+    Ou votre jardinier peut laisser l\u2019herbe pousser autour des tombes et faucher
+    \xE0 la fin de l\u2019\xE9t\xE9. Ce sera mieux pour les oiseaux, et am\xE8nera
+    un peu de vie au milieu des pierres."
+  Choices:
+  - ChoiceText: Embaucher un autre jardinier
+    HideObjectGroup: {fileID: 11400000, guid: b00157b4d262d2640bcd17880d4923e7, type: 2}
+    ShowObjectGroup: {fileID: 11400000, guid: ec54a895470e3894d8c8445ad6b7e6df, type: 2}
+    ArchitecturalPoints: 1
+    LandscapedPoints: 1
+    EcologicalPoints: 0
+  - ChoiceText: Faire du fauchage tardif
+    HideObjectGroup: {fileID: 11400000, guid: a94c13c4b1981684398800c1a5cf07eb, type: 2}
+    ShowObjectGroup: {fileID: 11400000, guid: 7535809571409924bab283aaa3e0e0ae, type: 2}
+    ArchitecturalPoints: 0
+    LandscapedPoints: 1
+    EcologicalPoints: 2

@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using DefaultNamespace;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance { get; set; }
+    
     [Header("Cemetery")]
     [SerializeField] private GameObject cemetery;
 
@@ -17,14 +20,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Button buttonBUI;
 
     [Header("Requests/depedencies [FR]")]
-    [SerializeField] private GameObject requestsParentFR;
-    [SerializeField] private GameObject depedenciesParentFR;
-    
-    [Header("Requests/depedencies [EN]")]
-    [SerializeField] private GameObject requestsParentEN;
-    [SerializeField] private GameObject depedenciesParentEN;
+    [SerializeField] private List<DependencyData> dependencies;
+    private List<DependencyData> runtimeDependencies;
+    private Dictionary<RequestData, int> choiceMade = new Dictionary<RequestData, int>();
 
-    [Header("Poping animation")]
+    [Header("Popping animation")]
     [SerializeField] private float waitingTimeBetweenElements = 0.5f;
     [SerializeField] private float waitingTimeBetweenHideShow = 0.8f;
 
@@ -41,16 +41,6 @@ public class GameManager : MonoBehaviour
     public string ecologicalEndingDescriptionFR;
     [TextArea(7, 10)]
     public string hybridEndingDescriptionFR;
-    
-    [Header("Ending text [EN]")]
-    [TextArea(7, 10)]
-    public string architecturalEndingDescriptionEN;
-    [TextArea(7, 10)]
-    public string landscapedEndingDescriptionEN;
-    [TextArea(7, 10)]
-    public string ecologicalEndingDescriptionEN;
-    [TextArea(7, 10)]
-    public string hybridEndingDescriptionEN;
 
     [Header("Ending button")]
     [SerializeField] private TMP_Text buttonReloadTextUI;
@@ -62,35 +52,32 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject UIMainMenu;
     [SerializeField] private GameObject UIInGame;
 
-    private Requests[] listRequestFR;
-    private Requests[] listRequestEN;
-    
-    private int currentRequest = 0;
-
-    private Depedencies[] listDepedencyFR;
-    private Depedencies[] listDepedencyEN;
-
     private int totalArchitecturalPoints = 0;
     private int totalLandscapedPoints = 0;
     private int totalEcologicalPoints = 0;
-
-    [SerializeField] AudioManager audioManager;
     
-    private LanguageManager languageManager;
     private AchievementsManager achievementsManager;
+    private DialogueManager dialogueManager;
+    private Dictionary<ChoiceGroup, List<ChoiceObject>> _allChoiceObjects = new Dictionary<ChoiceGroup, List<ChoiceObject>>();
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     private void Start()
     {
-        languageManager = GetComponentInParent<LanguageManager>();
+        runtimeDependencies = new List<DependencyData>(dependencies);
+        
+        // Get some manager
         achievementsManager = GetComponent<AchievementsManager>();
-        audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
-        listRequestFR = requestsParentFR.GetComponentsInChildren<Requests>();
-        listRequestEN = requestsParentEN.GetComponentsInChildren<Requests>();
-        listDepedencyFR = depedenciesParentFR.GetComponentsInChildren<Depedencies>();
-        listDepedencyEN = depedenciesParentEN.GetComponentsInChildren<Depedencies>();
+        dialogueManager = GetComponent<DialogueManager>();
 
+        // Hide UIs
         buttonMenuUI.gameObject.SetActive(false);
         buttonReloadUI.gameObject.SetActive(false);
 
+        // By pass first spawn animations
         foreach(Transform t in cemetery.transform)
         {
             if(!t.gameObject.activeSelf) 
@@ -110,8 +97,15 @@ public class GameManager : MonoBehaviour
                         elem.SetTrigger("ByPassAnim");
             }
         }
+    }
 
-        // LoadRequest();
+    public void RegisterChoiceObject(ChoiceObject choiceObject)
+    {
+        if(!_allChoiceObjects.ContainsKey(choiceObject.group))
+            _allChoiceObjects.Add(choiceObject.group, new List<ChoiceObject>());
+        
+        _allChoiceObjects[choiceObject.group].Add(choiceObject);
+        _allChoiceObjects[choiceObject.group].Sort();
     }
 
     public void LoadRequest()
@@ -119,101 +113,65 @@ public class GameManager : MonoBehaviour
         StartCoroutine(TextFade(0.0f, 1.0f, false));
     }
 
-    public void PressButtonA()
+    public void PressButton(int choiceIndex)
     {
         // disable buttons
         buttonAUI.enabled = false;
         buttonBUI.enabled = false;
         
-        List<GameObject>[] tabGO = new List<GameObject>[2];
-        AudioClip clipHide;
-        AudioClip clipShow;
-        if (languageManager.isFrench)
-        {
-            // getting GO hide/show / sound
-            tabGO = listRequestFR[currentRequest].SetSA(1);
-            clipHide = listRequestFR[currentRequest].AudioClipHideA;
-            clipShow = listRequestFR[currentRequest].AudioClipShowA;
-            // Adding points
-            totalArchitecturalPoints += listRequestFR[currentRequest].AarchitecturalPoints;
-            totalLandscapedPoints += listRequestFR[currentRequest].AlandscapedPoints;
-            totalEcologicalPoints += listRequestFR[currentRequest].AecologicalPoints;
-        }
-        else
-        {
-            // getting GO hide/show / sound
-            tabGO = listRequestEN[currentRequest].SetSA(1);
-            clipHide = listRequestEN[currentRequest].AudioClipHideA;
-            clipShow = listRequestEN[currentRequest].AudioClipShowA;
-            // Adding points
-            totalArchitecturalPoints += listRequestEN[currentRequest].AarchitecturalPoints;
-            totalLandscapedPoints += listRequestEN[currentRequest].AlandscapedPoints;
-            totalEcologicalPoints += listRequestEN[currentRequest].AecologicalPoints;
-        }
+        choiceMade.Add(dialogueManager.CurrentNode.RequestData, choiceIndex);
+
+        // Adding points
+        totalArchitecturalPoints += dialogueManager.CurrentNode.Choices[choiceIndex].ChoiceData.ArchitecturalPoints;
+        totalLandscapedPoints += dialogueManager.CurrentNode.Choices[choiceIndex].ChoiceData.LandscapedPoints;
+        totalEcologicalPoints += dialogueManager.CurrentNode.Choices[choiceIndex].ChoiceData.EcologicalPoints;
 
         // UI fade out
         StartCoroutine(TextFade(1.0f, 0.0f, false));
         StartCoroutine(ButtonFade(1.0f, 0.0f));
+        
         // Depedencies
         CheckDepedencies();
-        // poping
-        StartCoroutine(Poping(tabGO[0], tabGO[1], clipHide, clipShow, () => SwitchRequest()));
-    }
 
-    public void PressButtonB()
-    {
-        // disable buttons
-        buttonAUI.enabled = false;
-        buttonBUI.enabled = false;
-        List<GameObject>[] tabGO = new List<GameObject>[2];
-        AudioClip clipHide;
-        AudioClip clipShow;
-        if (languageManager.isFrench)
+        // Hide and show elements
+        ChoiceGroup hideGroup = dialogueManager.CurrentNode.Choices[choiceIndex].ChoiceData.HideObjectGroup;
+        ChoiceGroup showGroup = dialogueManager.CurrentNode.Choices[choiceIndex].ChoiceData.ShowObjectGroup;
+        List<GameObject> objectsToHide = new List<GameObject>();
+        if (_allChoiceObjects.ContainsKey(hideGroup))
         {
-            // getting GO hide/show / sound
-            tabGO = listRequestFR[currentRequest].SetSA(2);
-            clipHide = listRequestFR[currentRequest].AudioClipHideB;
-            clipShow = listRequestFR[currentRequest].AudioClipShowB;
-            // Adding points
-            totalArchitecturalPoints += listRequestFR[currentRequest].BarchitecturalPoints;
-            totalLandscapedPoints += listRequestFR[currentRequest].BlandscapedPoints;
-            totalEcologicalPoints += listRequestFR[currentRequest].BecologicalPoints;
+            foreach (ChoiceObject obj in _allChoiceObjects[hideGroup])
+                objectsToHide.Add(obj.gameObject);
         }
-        else
+        List<GameObject> objectsToShow = new List<GameObject>();
+        if (_allChoiceObjects.ContainsKey(showGroup))
         {
-            // getting GO hide/show / sound
-            tabGO = listRequestEN[currentRequest].SetSA(2);
-            clipHide = listRequestEN[currentRequest].AudioClipHideB;
-            clipShow = listRequestEN[currentRequest].AudioClipShowB;
-            // Adding points
-            totalArchitecturalPoints += listRequestEN[currentRequest].BarchitecturalPoints;
-            totalLandscapedPoints += listRequestEN[currentRequest].BlandscapedPoints;
-            totalEcologicalPoints += listRequestEN[currentRequest].BecologicalPoints;
+            foreach (ChoiceObject obj in _allChoiceObjects[showGroup])
+                objectsToShow.Add(obj.gameObject);
         }
-
-        // UI fade out
-        StartCoroutine(TextFade(1.0f, 0.0f, false));
-        StartCoroutine(ButtonFade(1.0f, 0.0f));
-        // Depedencies
-        CheckDepedencies();
-        // poping
-        StartCoroutine(Poping(tabGO[0], tabGO[1], clipHide, clipShow, () => SwitchRequest()));
+        
+        // popping
+        StartCoroutine(Poping(objectsToHide, objectsToShow, () => SwitchRequest()));
     }
 
     private void CheckDepedencies()
     {
-        if (languageManager.isFrench)
+        // For each existing dependencies
+        for(int i = runtimeDependencies.Count - 1; i >= 0; i--)
         {
-            foreach (var dep in listDepedencyFR)
+            DependencyData dep = runtimeDependencies[i];
+            
+            // If dependency met conditions
+            if (dep.CheckDependency(choiceMade))
             {
-                dep.CheckDepedency();
-            }
-        }
-        else
-        {
-            foreach (var dep in listDepedencyEN)
-            {
-                dep.CheckDepedency();
+                Debug.Log("New dependency !!");
+                // Show all needed objects
+                if (_allChoiceObjects.TryGetValue(dep.ShowObjectGroup, out var objects))
+                {
+                    foreach (ChoiceObject obj in objects)
+                        obj.gameObject.SetActive(true);
+                }
+                // Do not check dependency anymore
+                runtimeDependencies.RemoveAt(i);
             }
         }
     }
@@ -234,6 +192,21 @@ public class GameManager : MonoBehaviour
     private void ReloadData()
     {
         achievementsManager.HideAllInGameIcon();
+        dialogueManager.Init();
+        choiceMade.Clear();
+        
+        // Reset dependencies
+        runtimeDependencies = new List<DependencyData>(dependencies);
+        foreach (DependencyData dep in dependencies)
+        {
+            // Hide all needed objects
+            if (_allChoiceObjects.TryGetValue(dep.ShowObjectGroup, out var objects))
+            {
+                foreach (ChoiceObject obj in objects)
+                    obj.gameObject.SetActive(false);
+            }
+        }
+        
         // Reset menu button color
         buttonMenuUI.gameObject.SetActive(false);
         buttonMenuUI.gameObject.GetComponent<UnityEngine.UI.Image>().color = new Color(1, 1, 1, 0);
@@ -259,27 +232,7 @@ public class GameManager : MonoBehaviour
                         elem.ResetStatus();
             }
         }
-
-        if (languageManager.isFrench)
-        {
-            // reset request answers
-            foreach(Requests r in listRequestFR)
-                r.ResetStatus();
-            // reset depedencies status
-            foreach(Depedencies d in listDepedencyFR)
-                d.ResetStatus();
-        }
-        else
-        {
-            // reset request answers
-            foreach(Requests r in listRequestEN)
-                r.ResetStatus();
-            // reset depedencies status
-            foreach(Depedencies d in listDepedencyEN)
-                d.ResetStatus();
-        }
         
-        currentRequest = 0;
         totalArchitecturalPoints = 0;
         totalLandscapedPoints = 0;
         totalEcologicalPoints = 0;
@@ -287,14 +240,8 @@ public class GameManager : MonoBehaviour
 
     private void SwitchRequest()
     {
-        // Achievements
-        // StartCoroutine(achievementsManager.CheckAllAchievements());
         achievementsManager.CheckAllAchievementsIcon();
-
-        currentRequest++;
-        if (languageManager.isFrench && currentRequest >= listRequestFR.Length)
-            LoadEndScene();
-        else if(currentRequest >= listRequestEN.Length)
+        if(dialogueManager.CurrentNode == null)
             LoadEndScene();
         else
             LoadRequest();
@@ -304,51 +251,32 @@ public class GameManager : MonoBehaviour
     {
         if (totalArchitecturalPoints > totalEcologicalPoints && totalArchitecturalPoints > totalLandscapedPoints)
         {
-            if(languageManager.isFrench)
-                descriptionUI.text = architecturalEndingDescriptionFR;
-            else
-                descriptionUI.text = architecturalEndingDescriptionEN;
-            // StartCoroutine(achievementsManager.setArchiUnlock());
+            descriptionUI.text = architecturalEndingDescriptionFR;
             achievementsManager.setArchiUnlockIcon();
         }
 
         else if (totalLandscapedPoints > totalEcologicalPoints && totalLandscapedPoints > totalArchitecturalPoints)
         {
-            if(languageManager.isFrench)
-                descriptionUI.text = landscapedEndingDescriptionFR;
-            else
-                descriptionUI.text = landscapedEndingDescriptionEN;
-            // StartCoroutine(achievementsManager.setPaysagerUnlock());
+            descriptionUI.text = landscapedEndingDescriptionFR;
             achievementsManager.setPaysagerUnlockIcon();
         }
 
         else if (totalEcologicalPoints > totalLandscapedPoints && totalEcologicalPoints > totalArchitecturalPoints)
         {
-            if(languageManager.isFrench)
-                descriptionUI.text = ecologicalEndingDescriptionFR;
-            else
-                descriptionUI.text = ecologicalEndingDescriptionEN;
-            // StartCoroutine(achievementsManager.setEcoloUnlock());
+            descriptionUI.text = ecologicalEndingDescriptionFR;
             achievementsManager.setEcoloUnlockIcon();
         }
         else
         {
-            if(languageManager.isFrench)
-                descriptionUI.text = hybridEndingDescriptionFR;
-            else
-                descriptionUI.text = hybridEndingDescriptionEN;
-            // StartCoroutine(achievementsManager.setHybridUnlock());
+            descriptionUI.text = hybridEndingDescriptionFR;
             achievementsManager.setHybridUnlockIcon();
         }
 
         StartCoroutine(TextFade(0.0f, 1.0f, true));
     }
 
-    private IEnumerator Poping(List<GameObject> hide, List<GameObject> show, AudioClip clipHide, AudioClip clipShow, System.Action onComplete)
+    private IEnumerator Poping(List<GameObject> hide, List<GameObject> show, System.Action onComplete)
     {
-        if(clipHide != null)
-            audioManager.PlaySFX(clipHide);
-
         for (int i = 0; i < hide.Count; i++)
         {
             hide[i].GetComponent<Animator>().SetTrigger("PopDown");
@@ -356,12 +284,6 @@ public class GameManager : MonoBehaviour
         }
 
         yield return new WaitForSeconds(waitingTimeBetweenHideShow);
-
-        if(clipShow != null)
-        {
-            audioManager.SFXSource.Stop();
-            audioManager.PlaySFX(clipShow);
-        }
 
         for (int i = 0; i < show.Count; i++)
         {
@@ -385,18 +307,29 @@ public class GameManager : MonoBehaviour
             if (isFadingOut)
                 while (isFadingOut)
                     yield return null;
-            // On change les textes
-            if(languageManager.isFrench && currentRequest < listRequestFR.Length)
+
+            if (!endScene)
             {
-                descriptionUI.text = listRequestFR[currentRequest].description;
-                buttonATextUI.text = listRequestFR[currentRequest].answerA;
-                buttonBTextUI.text = listRequestFR[currentRequest].answerB;
-            }
-            else if (currentRequest < listRequestEN.Length)
-            {
-                descriptionUI.text = listRequestEN[currentRequest].description;
-                buttonATextUI.text = listRequestEN[currentRequest].answerA;
-                buttonBTextUI.text = listRequestEN[currentRequest].answerB;
+                // Change description
+                descriptionUI.text = dialogueManager.CurrentNode.DialogueText;
+                // Change button A
+                buttonATextUI.text = dialogueManager.CurrentNode.Choices[0].ChoiceData.ChoiceText;
+                buttonAUI.onClick.AddListener(() =>
+                {
+                    PressButton(0);
+                    dialogueManager.SetNextNode(dialogueManager.CurrentNode.Choices[0].DestinationNodeId);
+                    buttonAUI.onClick.RemoveAllListeners();
+                    buttonBUI.onClick.RemoveAllListeners();
+                });
+                // Change button B
+                buttonBTextUI.text = dialogueManager.CurrentNode.Choices[1].ChoiceData.ChoiceText;
+                buttonBUI.onClick.AddListener(() =>
+                {
+                    PressButton(1);
+                    dialogueManager.SetNextNode(dialogueManager.CurrentNode.Choices[1].DestinationNodeId);
+                    buttonAUI.onClick.RemoveAllListeners();
+                    buttonBUI.onClick.RemoveAllListeners();
+                });
             }
         }
 

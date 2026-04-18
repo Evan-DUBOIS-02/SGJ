@@ -53,7 +53,6 @@ public class DialogueGraphImporter : ScriptedImporter
     private void ProcessDialogueNode(DialogueNode node, RuntimeDialogueNode runtimeNode,
         Dictionary<INode, string> nodeIDMap)
     {
-        runtimeNode.SpeakerName = GetPortValue<string>(node.GetInputPortByName("Speaker"));
         runtimeNode.DialogueText = GetPortValue<string>(node.GetInputPortByName("Dialogue"));
         
         var nextNodePort = node.GetOutputPortByName("out")?.firstConnectedPort;
@@ -66,18 +65,24 @@ public class DialogueGraphImporter : ScriptedImporter
     {
         node.GetNodeOptionByName("requestData").TryGetValue(out RequestData data);
         if (data == null) return;
-        
+
+        runtimeNode.RequestData = data;
         runtimeNode.DialogueText = data.Description;
-        var choiceOutputPorts = node.GetOutputPorts().Where(p => p.name.StartsWith("Choice "));
-        foreach (var outputPort in choiceOutputPorts)
+        
+        IEnumerable<IPort> choiceOutputPorts = node.GetOutputPorts().Where(p => p.name.StartsWith("Choice "));
+        if (choiceOutputPorts.Count() != data.Choices.Count) return;
+        
+        for(int i = 0; i <  data.Choices.Count; i++)
         {
-            ChoiceNodeData choiceData = new ChoiceNodeData
-            {
-                ChoiceText = outputPort.displayName,
-                DestinationNodeId = outputPort.firstConnectedPort != null ? nodeIDMap[outputPort.firstConnectedPort.GetNode()] : null
-            };
+            ChoiceNodeData choice = new ChoiceNodeData();
+            choice.ChoiceData = data.Choices[i];
             
-            runtimeNode.Choices.Add(choiceData);
+            var outputPort = choiceOutputPorts.ElementAt(i);
+            choice.DestinationNodeId = outputPort.firstConnectedPort != null
+                ? nodeIDMap[outputPort.firstConnectedPort.GetNode()]
+                : null;
+            
+            runtimeNode.Choices.Add(choice);
         }
     }
 

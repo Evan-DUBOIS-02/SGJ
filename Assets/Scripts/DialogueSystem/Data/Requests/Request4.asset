@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4591c3472592458ebc9a03669383a521, type: 3}
+  m_Name: Request4
+  m_EditorClassIdentifier: Assembly-CSharp::RequestData
+  Description: "Vous recevez un courrier de la part d\u2019un usager.\r\n\r\n\"La
+    tombe \xE0 c\xF4t\xE9 de la mienne est une vieille tombe compl\xE8tement abandonn\xE9e,
+    envahie par la v\xE9g\xE9tation. J\u2019ai peur que le lierre ne d\xE9borde,
+    et je suis s\xFBr d\u2019avoir vu un renardeau un soir. Je ne veux pas de salet\xE9s.
+    Enlevez-l\xE0 !\"\r\n\r\nVous avez en effet le droit de reprendre une tombe \xE0
+    l\u2019abandon et de laisser quelqu\u2019un installer une nouvelle tombe \xE0
+    la place. De nombreuses personnes seront contentes d\u2019avoir une place dans
+    cette partie du cimeti\xE8re. En m\xEAme temps, les tombes anciennes accueillent
+    des esp\xE8ces uniques, et ajoutent un certain charme. "
+  Choices:
+  - ChoiceText: "Nettoyer l\u2019emplacement"
+    HideObjectGroup: {fileID: 11400000, guid: 4e07e105fc8dc824e991141d769d9ce9, type: 2}
+    ShowObjectGroup: {fileID: 11400000, guid: b72edc1d45bbc8c4aa6d00f51003c4df, type: 2}
+    ArchitecturalPoints: 1
+    LandscapedPoints: 1
+    EcologicalPoints: 0
+  - ChoiceText: Laisser le monument
+    HideObjectGroup: {fileID: 11400000, guid: fc5fdc6c1ba2c264894382ede09b94cd, type: 2}
+    ShowObjectGroup: {fileID: 11400000, guid: 60280bb9319a6884795e673feb28aa6c, type: 2}
+    ArchitecturalPoints: 0
+    LandscapedPoints: 1
+    EcologicalPoints: 1

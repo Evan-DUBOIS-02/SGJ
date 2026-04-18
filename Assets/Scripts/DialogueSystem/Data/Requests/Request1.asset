@@ -24,16 +24,14 @@ MonoBehaviour:
     ?\" "
   Choices:
   - ChoiceText: "R\xE9nover les all\xE9es"
-    HideObjectGroup:
-    - {fileID: 11400000, guid: 1b7e63502cdf1934c99fc597938da0ec, type: 2}
-    ShowObjectGroup:
-    - {fileID: 11400000, guid: 9b1d43d38970fb446a365472dccf55de, type: 2}
+    HideObjectGroup: {fileID: 11400000, guid: 8f1fb8a9cc4da19458d9d040534ca316, type: 2}
+    ShowObjectGroup: {fileID: 11400000, guid: 37cdcbe6b90a78e47878ac50ec912623, type: 2}
     ArchitecturalPoints: 2
     LandscapedPoints: 0
     EcologicalPoints: 0
   - ChoiceText: "Laisser l\u2019herbe pousser"
-    HideObjectGroup: []
-    ShowObjectGroup: []
+    HideObjectGroup: {fileID: 11400000, guid: 4d8100a755474e14aa39a3d022b768ab, type: 2}
+    ShowObjectGroup: {fileID: 11400000, guid: bb6d280bea76fc84db740ae58bb116d1, type: 2}
     ArchitecturalPoints: 0
     LandscapedPoints: 1
     EcologicalPoints: 1

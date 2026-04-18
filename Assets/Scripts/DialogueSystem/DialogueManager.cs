@@ -5,108 +5,44 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
+    // the graph to process
     public RuntimeDialogueGraph RuntimeGraph;
-
-    [Header("UI Components")] 
-    public GameObject DialoguePanel;
-    public TMP_Text SpeakerNameText;
-    public TMP_Text DialogueText;
-    
-    [Header("Choice Button UI")]
-    public Button ChoiceButtonPrefab;
-    public Transform ChoiceButtonContainer;
-    
+    // list of the nodes in the graph
     private Dictionary<string, RuntimeDialogueNode> _nodeLookup = new Dictionary<string, RuntimeDialogueNode>();
-    private RuntimeDialogueNode _currentNode;
+    // the current node processing
+    private RuntimeDialogueNode _currentNode = null;
+    public RuntimeDialogueNode CurrentNode {get {return _currentNode;}}
 
     private void Start()
     {
+        // Get all runtime nodes and add it into the dictionnary by id
         foreach (var node in RuntimeGraph.AllNodes)
         {
             _nodeLookup[node.NodeId] = node;
         }
+        Init();
+    }
 
+    public void Init()
+    {
+        // If the graph have entry node, start the flow
         if (!string.IsNullOrEmpty(RuntimeGraph.EntryNodeId))
         {
-            ShowNode(RuntimeGraph.EntryNodeId);
-        }
-        else
-        {
-            EndDialogue();
-        }
-    }
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0) && _currentNode != null && _currentNode.Choices.Count == 0)
-        {
-            if (!string.IsNullOrEmpty(_currentNode.NextNodeId))
+            if (_nodeLookup.ContainsKey(RuntimeGraph.EntryNodeId))
             {
-                ShowNode(_currentNode.NextNodeId);
-            }
-            else
-            {
-                EndDialogue();
+                _currentNode = _nodeLookup[RuntimeGraph.EntryNodeId];
             }
         }
     }
 
-    private void ShowNode(string nodeId)
+    public void SetNextNode(string nodeID)
     {
-        if (!_nodeLookup.ContainsKey(nodeId))
+        if (!_nodeLookup.ContainsKey(nodeID))
         {
-            EndDialogue();
+            _currentNode = null;
             return;
         }
         
-        _currentNode = _nodeLookup[nodeId];
-        
-        DialoguePanel.SetActive(true);
-        SpeakerNameText.SetText(_currentNode.SpeakerName);
-        DialogueText.SetText(_currentNode.DialogueText);
-
-        foreach (Transform child in ChoiceButtonContainer)
-        {
-            Destroy(child.gameObject);
-        }
-
-        if (_currentNode.Choices.Count > 0)
-        {
-            foreach (var choice in _currentNode.Choices)
-            {
-                Button button = Instantiate(ChoiceButtonPrefab, ChoiceButtonContainer);
-                TMP_Text buttonText = button.GetComponentInChildren<TMP_Text>();
-                if (buttonText != null)
-                {
-                    buttonText.SetText(choice.ChoiceText);
-                }
-
-                if (button != null)
-                {
-                    button.onClick.AddListener(() =>
-                    {
-                        if (!string.IsNullOrEmpty(choice.DestinationNodeId))
-                        {
-                            ShowNode(choice.DestinationNodeId);
-                        }
-                        else
-                        {
-                            EndDialogue();
-                        }
-                    });
-                }
-            }
-        }
-    }
-
-    private void EndDialogue()
-    {
-        DialoguePanel.SetActive(false);
-        _currentNode = null;
-        
-        foreach (Transform child in ChoiceButtonContainer)
-        {
-            Destroy(child.gameObject);
-        }
+        _currentNode = _nodeLookup[nodeID];
     }
 }

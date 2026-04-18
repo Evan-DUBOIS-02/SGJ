@@ -1,5 +1,7 @@
 using Unity.GraphToolkit.Editor;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics.SymbolStore;
 using UnityEditor.Localization.Plugins.XLIFF.V12;
 
 /*

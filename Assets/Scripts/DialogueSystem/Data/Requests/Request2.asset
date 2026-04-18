@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4591c3472592458ebc9a03669383a521, type: 3}
+  m_Name: Request2
+  m_EditorClassIdentifier: Assembly-CSharp::RequestData
+  Description: "Une apr\xE8s-midi, un usager vous interpelle : \r\n\r\n\"Le pin qui
+    est \xE0 c\xF4t\xE9 de la tombe de ma m\xE8re est malade ! Il est tout sec, et
+    j\u2019aimerais bien qu\u2019il ne s\u2019effondre pas sur maman. D\xE9j\xE0
+    que j\u2019en avais marre de nettoyer les aiguilles qui chutent toute l\u2019ann\xE9e\u2026
+    Faites quelque chose !\u201D\r\n\r\nVous pouvez faire remplacer le pin malade
+    par un nouveau, pour garder un peu de verdure m\xEAme en hiver. Mais si vous
+    coupez le pin, les usagers et votre jardinier n\u2019auront plus \xE0 s\u2019emb\xEAter
+    avec les aiguilles. En plus, le bois mort pourrait \xEAtre utile aux petites
+    b\xEAtes..."
+  Choices:
+  - ChoiceText: Couper le pin
+    HideObjectGroup: {fileID: 11400000, guid: 808e5d1599645274ea3b9901e38b0034, type: 2}
+    ShowObjectGroup: {fileID: 11400000, guid: 9d920c5ba8d54d24d99e56e62c09927b, type: 2}
+    ArchitecturalPoints: 0
+    LandscapedPoints: 0
+    EcologicalPoints: 1
+  - ChoiceText: Replanter un pin
+    HideObjectGroup: {fileID: 11400000, guid: 5c74f4a5f244ec642932c057e206cad6, type: 2}
+    ShowObjectGroup: {fileID: 11400000, guid: 646e12946c35ab3428735c75f36a2640, type: 2}
+    ArchitecturalPoints: 1
+    LandscapedPoints: 0
+    EcologicalPoints: 0

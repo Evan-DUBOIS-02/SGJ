@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Serializable]
 [CreateAssetMenu(fileName = "RequestData", menuName = "Dialogue System/RequestData")]
 public class RequestData: ScriptableObject
 {
@@ -15,8 +16,8 @@ public class RequestData: ScriptableObject
 public struct ChoiceData
 {
     public string ChoiceText;
-    public List<ChoiceGroup> HideObjectGroup;
-    public List<ChoiceGroup> ShowObjectGroup;
+    public ChoiceGroup HideObjectGroup;
+    public ChoiceGroup ShowObjectGroup;
     public int ArchitecturalPoints;
     public int LandscapedPoints;
     public int EcologicalPoints;
