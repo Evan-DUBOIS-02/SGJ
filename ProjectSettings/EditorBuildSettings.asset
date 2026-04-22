@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainScene/MainScene.unity
-    guid: 2962d98b35d4b054080501a132ed5b89
+    path: Assets/Scenes/TinyCemetery/S_MainMenu.unity
+    guid: 087f42e0e31633143a6c5f8ab033758b
+  - enabled: 1
+    path: Assets/Scenes/TinyCemetery/S_CH01.unity
+    guid: 96ba3149b8a69494c8dc7cd552ae02c1
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
