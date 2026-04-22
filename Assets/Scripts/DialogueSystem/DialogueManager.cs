@@ -13,7 +13,7 @@ public class DialogueManager : MonoBehaviour
     private RuntimeDialogueNode _currentNode = null;
     public RuntimeDialogueNode CurrentNode {get {return _currentNode;}}
 
-    private void Start()
+    private void Awake()
     {
         // Get all runtime nodes and add it into the dictionnary by id
         foreach (var node in RuntimeGraph.AllNodes)

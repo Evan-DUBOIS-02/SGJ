@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
@@ -14,14 +13,16 @@ public class GameManager : MonoBehaviour
 
     [Header("In Game UI")]
     [SerializeField] private TMP_Text descriptionUI;
-    [SerializeField] private TMP_Text buttonATextUI;
-    [SerializeField] private TMP_Text buttonBTextUI;
+    private TMP_Text buttonATextUI;
+    private TMP_Text buttonBTextUI;
     [SerializeField] private Button buttonAUI;
     [SerializeField] private Button buttonBUI;
 
-    [Header("Requests/depedencies [FR]")]
+    [Header("Requests/depedencies")]
     [SerializeField] private List<DependencyData> dependencies;
+    // Avoid changing original version
     private List<DependencyData> runtimeDependencies;
+    // Register all choice made by the player
     private Dictionary<RequestData, int> choiceMade = new Dictionary<RequestData, int>();
 
     [Header("Popping animation")]
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float fadeDuration;
     private bool isFadingOut = false;
 
-    [Header("Ending text [FR]")]
+    [Header("Ending text")]
     [TextArea(7, 10)]
     public string architecturalEndingDescriptionFR;
     [TextArea(7, 10)]
@@ -47,10 +48,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text buttonMenuTextUI;
     [SerializeField] private Button buttonReloadUI;
     [SerializeField] private Button buttonMenuUI;
-
-    [Header("Menu")]
-    [SerializeField] private GameObject UIMainMenu;
-    [SerializeField] private GameObject UIInGame;
 
     private int totalArchitecturalPoints = 0;
     private int totalLandscapedPoints = 0;
@@ -67,6 +64,9 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        buttonATextUI = buttonAUI.GetComponentInChildren<TMP_Text>();
+        buttonBTextUI = buttonBUI.GetComponentInChildren<TMP_Text>();
+        
         runtimeDependencies = new List<DependencyData>(dependencies);
         
         // Get some manager
@@ -74,8 +74,8 @@ public class GameManager : MonoBehaviour
         dialogueManager = GetComponent<DialogueManager>();
 
         // Hide UIs
-        buttonMenuUI.gameObject.SetActive(false);
         buttonReloadUI.gameObject.SetActive(false);
+        buttonMenuUI.gameObject.SetActive(false);
 
         // By pass first spawn animations
         foreach(Transform t in cemetery.transform)
@@ -97,15 +97,17 @@ public class GameManager : MonoBehaviour
                         elem.SetTrigger("ByPassAnim");
             }
         }
+        
+        LoadRequest();
     }
 
-    public void RegisterChoiceObject(ChoiceObject choiceObject)
+    public void RegisterChoiceObject(ChoiceObject choiceObject, ChoiceGroup group)
     {
-        if(!_allChoiceObjects.ContainsKey(choiceObject.group))
-            _allChoiceObjects.Add(choiceObject.group, new List<ChoiceObject>());
+        if(!_allChoiceObjects.ContainsKey(group))
+            _allChoiceObjects.Add(group, new List<ChoiceObject>());
         
-        _allChoiceObjects[choiceObject.group].Add(choiceObject);
-        _allChoiceObjects[choiceObject.group].Sort();
+        _allChoiceObjects[group].Add(choiceObject);
+        _allChoiceObjects[group].Sort();
     }
 
     public void LoadRequest()
@@ -184,9 +186,7 @@ public class GameManager : MonoBehaviour
 
     public void PressMenuButton()
     {
-        ReloadData();
-        UIInGame.SetActive(false);
-        UIMainMenu.SetActive(true);
+        SceneManager.LoadScene("S_MainMenu");
     }
 
     private void ReloadData()

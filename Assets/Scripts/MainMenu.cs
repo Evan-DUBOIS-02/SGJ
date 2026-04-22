@@ -1,30 +1,24 @@
-using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject UIMainMenu;
-    [SerializeField] private GameObject UIInGame;
     [SerializeField] private GameObject UICredits;
     [SerializeField] private GameObject UIAchievements;
     [SerializeField] private GameObject cemetery;
 
-    private GameManager gameManager;
     private AudioManager audioManager;
-    private LanguageManager languageManager;
 
     private void Start()
     {
-        gameManager = GetComponent<GameManager>();
         audioManager = GameObject.FindGameObjectWithTag("AudioManager").GetComponent<AudioManager>();
-        languageManager = GetComponent<LanguageManager>();
     }
     public void StartGame()
     {
         audioManager.GenerateSound(2);
         UIMainMenu.SetActive(false);
-        UIInGame.SetActive(true);
-        gameManager.LoadRequest();
+        SceneManager.LoadScene("S_CH01");
     }
 
     public void ShowCredits()
@@ -81,15 +75,5 @@ public class MainMenu : MonoBehaviour
     {
         audioManager.GenerateSound(2);
         Application.Quit();
-    }
-
-    public void SwitchToFrenchMode()
-    {
-        languageManager.SwitchAllTextToFrench();
-    }
-
-    public void SwitchToEnglishMode()
-    {
-        languageManager.SwitchAllTextToEnglish();
     }
 }
