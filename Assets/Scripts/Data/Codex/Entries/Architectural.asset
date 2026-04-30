@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08090060dc94add86e05bded5bba716, type: 3}
+  m_Name: Architectural
+  m_EditorClassIdentifier: Assembly-CSharp::CodexEntryData
+  icon: {fileID: 21300000, guid: cf72f26bb438f8041bb6cf012512da4d, type: 3}
+  title: "Cimeti\xE8re architectural"
+  description: "Les cimeti\xE8res architecturaux privil\xE9gient la pierre et un
+    paysage d\xE9gag\xE9. Ils sont souvent d\xE9crits comme \u201Cpropres\u201D,
+    ce qui veut dire sans faune et sans flore spontan\xE9e. \n\nLa majorit\xE9 des
+    cimeti\xE8res en France sont des cimeti\xE8res architecturaux."

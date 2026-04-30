@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     private int totalLandscapedPoints = 0;
     private int totalEcologicalPoints = 0;
     
-    private AchievementsManager achievementsManager;
+    private CodexManager _codexManager;
     private DialogueManager dialogueManager;
     private Dictionary<ChoiceGroup, List<ChoiceObject>> _allChoiceObjects = new Dictionary<ChoiceGroup, List<ChoiceObject>>();
 
@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
         runtimeDependencies = new List<DependencyData>(dependencies);
         
         // Get some manager
-        achievementsManager = GetComponent<AchievementsManager>();
+        _codexManager = GetComponent<CodexManager>();
         dialogueManager = GetComponent<DialogueManager>();
 
         // Hide UIs
@@ -191,7 +191,7 @@ public class GameManager : MonoBehaviour
 
     private void ReloadData()
     {
-        achievementsManager.HideAllInGameIcon();
+        // _codexManager.HideAllInGameIcon();
         dialogueManager.Init();
         choiceMade.Clear();
         
@@ -240,7 +240,7 @@ public class GameManager : MonoBehaviour
 
     private void SwitchRequest()
     {
-        achievementsManager.CheckAllAchievementsIcon();
+        // _codexManager.CheckAllAchievementsIcon();
         if(dialogueManager.CurrentNode == null)
             LoadEndScene();
         else
@@ -252,24 +252,24 @@ public class GameManager : MonoBehaviour
         if (totalArchitecturalPoints > totalEcologicalPoints && totalArchitecturalPoints > totalLandscapedPoints)
         {
             descriptionUI.text = architecturalEndingDescriptionFR;
-            achievementsManager.setArchiUnlockIcon();
+            // _codexManager.setArchiUnlockIcon();
         }
 
         else if (totalLandscapedPoints > totalEcologicalPoints && totalLandscapedPoints > totalArchitecturalPoints)
         {
             descriptionUI.text = landscapedEndingDescriptionFR;
-            achievementsManager.setPaysagerUnlockIcon();
+            // _codexManager.setPaysagerUnlockIcon();
         }
 
         else if (totalEcologicalPoints > totalLandscapedPoints && totalEcologicalPoints > totalArchitecturalPoints)
         {
             descriptionUI.text = ecologicalEndingDescriptionFR;
-            achievementsManager.setEcoloUnlockIcon();
+            // _codexManager.setEcoloUnlockIcon();
         }
         else
         {
             descriptionUI.text = hybridEndingDescriptionFR;
-            achievementsManager.setHybridUnlockIcon();
+            // _codexManager.setHybridUnlockIcon();
         }
 
         StartCoroutine(TextFade(0.0f, 1.0f, true));

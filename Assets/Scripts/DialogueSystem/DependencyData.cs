@@ -14,6 +14,7 @@ public class DependencyData: ScriptableObject
 {
     public List<ChoiceCondition> conditions;
     public ChoiceGroup ShowObjectGroup;
+    public CodexEntryData codexEntry;
 
     public bool CheckDependency(Dictionary<RequestData, int> choiceMade)
     {
@@ -24,7 +25,8 @@ public class DependencyData: ScriptableObject
             if (choiceMade[condition.requestData] != condition.choice)
                 return false;
         }
-
+        
+        CodexManager.Instance.UnlockEntry(codexEntry);
         return true;
     }
 }
