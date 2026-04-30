@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08090060dc94add86e05bded5bba716, type: 3}
+  m_Name: GraveFlowers
+  m_EditorClassIdentifier: Assembly-CSharp::CodexEntryData
+  icon: {fileID: 21300000, guid: 5be166930cf5ba24e8134b479a1fd20d, type: 3}
+  title: Fleurs en hommage
+  description: "Vous avez fait venir des fleurs sur les tombes ! Il s\u2019agit souvent
+    de chrysanth\xE8mes ou de compositions d\xE9pos\xE9es en hommage aux d\xE9funts. "

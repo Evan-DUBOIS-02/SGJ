@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08090060dc94add86e05bded5bba716, type: 3}
+  m_Name: Cat
+  m_EditorClassIdentifier: Assembly-CSharp::CodexEntryData
+  icon: {fileID: 21300000, guid: 35425583d0b06cd4db345725c12f1ca2, type: 3}
+  title: Chat
+  description: "Vous avez fait venir un chat ! Ils appr\xE9cient autant les monuments
+    o\xF9 ils se pr\xE9lassent en journ\xE9e\u2026 que  les visiteurs qui les nourrissent
+    !"

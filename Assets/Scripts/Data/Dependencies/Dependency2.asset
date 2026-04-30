@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5c88203572d04379869116d5ae0113b6, type: 3}
-  m_Name: Dependency5
+  m_Name: Dependency2
   m_EditorClassIdentifier: Assembly-CSharp::DependencyData
   conditions:
-  - requestData: {fileID: 11400000, guid: 7d79177e1b76b3c42a11e589467699c5, type: 2}
+  - requestData: {fileID: 11400000, guid: 21439a4f6a46f22478f136131e1518ac, type: 2}
+    choice: 1
+  - requestData: {fileID: 11400000, guid: 1146947c5ca91fa418232fc1c99af66b, type: 2}
     choice: 0
-  - requestData: {fileID: 11400000, guid: cbcf719edab58db48b06cd0f0f136a04, type: 2}
-    choice: 0
-  ShowObjectGroup: {fileID: 11400000, guid: 71e9e2a9c7a131e479733cf96bc29c5b, type: 2}
+  ShowObjectGroup: {fileID: 11400000, guid: 6c77c075c7ba04641b474ed485f34c2a, type: 2}
+  codexEntry: {fileID: 11400000, guid: f4927a25dc62f4f4c929ddf3d43a1537, type: 2}

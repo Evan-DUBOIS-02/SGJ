@@ -6,7 +6,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject UIMainMenu;
     [SerializeField] private GameObject UICredits;
-    [SerializeField] private GameObject UIAchievements;
+    [SerializeField] private GameObject UICodex;
     [SerializeField] private GameObject UILevelSelection;
     [SerializeField] private GameObject cemetery;
 
@@ -45,12 +45,12 @@ public class MainMenu : MonoBehaviour
         UICredits.SetActive(true);
     }
 
-    public void ShowAchievements()
+    public void ShowCodex()
     {
         cemetery.SetActive(false);
         audioManager.GenerateSound(2);
         UIMainMenu.SetActive(false);
-        UIAchievements.SetActive(true);
+        UICodex.SetActive(true);
     }
 
     public void BackCreditsButton()
@@ -60,13 +60,12 @@ public class MainMenu : MonoBehaviour
         UIMainMenu.SetActive(true);
     }
 
-    public void BackAchievementsButton()
+    public void BackCodexButton()
     {
         audioManager.GenerateSound(2);
-        UIAchievements.SetActive(false);
+        UICodex.SetActive(false);
         UIMainMenu.SetActive(true);
         cemetery.SetActive(true);
-        GetComponent<AchievementsManager>().HideAllInfo();
     }
 
     public void BackLevelSelection()

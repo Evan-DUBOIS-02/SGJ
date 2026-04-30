@@ -18,3 +18,4 @@ MonoBehaviour:
   - requestData: {fileID: 11400000, guid: 7d79177e1b76b3c42a11e589467699c5, type: 2}
     choice: 1
   ShowObjectGroup: {fileID: 11400000, guid: 9fc4a936a1274de4e8eb55f0ecfc573a, type: 2}
+  codexEntry: {fileID: 11400000, guid: 130aa105f932a4b41ae414740e04c6d4, type: 2}
