@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,6 +7,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject UIMainMenu;
     [SerializeField] private GameObject UICredits;
     [SerializeField] private GameObject UIAchievements;
+    [SerializeField] private GameObject UILevelSelection;
     [SerializeField] private GameObject cemetery;
 
     private AudioManager audioManager;
@@ -19,6 +21,21 @@ public class MainMenu : MonoBehaviour
         audioManager.GenerateSound(2);
         UIMainMenu.SetActive(false);
         SceneManager.LoadScene("S_CH01");
+    }
+
+    public void StartChapter(string sceneName)
+    {
+        audioManager.GenerateSound(2);
+        UIMainMenu.SetActive(false);
+        SceneManager.LoadScene(sceneName);
+    }
+        
+    public void ShowLevelSelection()
+    {
+        cemetery.SetActive(false);
+        audioManager.GenerateSound(2);
+        UILevelSelection.SetActive(true);
+        UIMainMenu.SetActive(false);
     }
 
     public void ShowCredits()
@@ -50,25 +67,14 @@ public class MainMenu : MonoBehaviour
         UIMainMenu.SetActive(true);
         cemetery.SetActive(true);
         GetComponent<AchievementsManager>().HideAllInfo();
-        foreach (Transform t in cemetery.transform)
-        {
-            if (!t.gameObject.activeSelf)
-                continue;
+    }
 
-            Animator elem;
-            if (t.gameObject.TryGetComponent<Animator>(out elem))
-            {
-                elem.SetTrigger("ByPassAnim");
-            }
-            else
-            {
-                foreach (Transform t2 in t.transform)
-                    if (!t2.gameObject.activeSelf)
-                        continue;
-                    else if (t2.gameObject.TryGetComponent<Animator>(out elem))
-                        elem.SetTrigger("ByPassAnim");
-            }
-        }
+    public void BackLevelSelection()
+    {
+        audioManager.GenerateSound(2);
+        UILevelSelection.SetActive(false);
+        UIMainMenu.SetActive(true);
+        cemetery.SetActive(true);
     }
 
     public void QuitGame()
