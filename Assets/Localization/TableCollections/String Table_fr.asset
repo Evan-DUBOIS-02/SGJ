@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: String Table_fr
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: fr
+  m_SharedData: {fileID: 11400000, guid: 246818da80a682e4993ffeaf6c5b5f23, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 1113521573888
+    m_Localized: "Un matin, le jardinier du cimeti\xE8re vient vous voir\u2026  
+      \n\n\"\xC9coutez, on a un petit souci\u2026 Les all\xE9es en gravier sont envahies
+      par les herbes folles. Depuis qu\u2019on n\u2018a plus le droit d\u2019utiliser
+      des pesticides sur la commune, c\u2019est compliqu\xE9 de tout entretenir.
+      Et le gravier, \xE7a ab\xEEme la tondeuse.  \n\nSi on laissait l\u2019herbe
+      pousser, \xE7a serait plus facile pour que je tonde de temps en temps. Et \xE7a
+      serait mieux pour les insectes. En m\xEAme temps, \xE7a risque d\u2019\xEAtre
+      plus compliqu\xE9 pour les corbillards et pour les gens en fauteuil roulant.
+      Ils pr\xE9f\xE9reront sans doute qu\u2019on refasse des all\xE9es.   \n\nQu\u2019est-ce
+      qu\u2019on fait ?\" "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3108328361984
+    m_Localized: Commencer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4109273845760
+    m_Localized: <u><color=#000FF0>Quitter</color></u>
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

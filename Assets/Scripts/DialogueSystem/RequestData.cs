@@ -1,12 +1,15 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
+
 
 [Serializable]
 [CreateAssetMenu(fileName = "RequestData", menuName = "Dialogue System/RequestData")]
 public class RequestData: ScriptableObject
 {
     [Header("Description")]
+    [SerializeField] public LocalizedString localizedDescription;
     [TextArea(7, 20)]
     public string Description;
     public List<ChoiceData> Choices;

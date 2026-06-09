@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4591c3472592458ebc9a03669383a521, type: 3}
   m_Name: Request1
   m_EditorClassIdentifier: Assembly-CSharp::RequestData
+  localizedDescription:
+    m_TableReference:
+      m_TableCollectionName: GUID:246818da80a682e4993ffeaf6c5b5f23
+    m_TableEntryReference:
+      m_KeyId: 1113521573888
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   Description: "Un matin, le jardinier du cimeti\xE8re vient vous voir\u2026   \n\n\"\xC9coutez,
     on a un petit souci\u2026 Les all\xE9es en gravier sont envahies par les herbes
     folles. Depuis qu\u2019on n\u2018a plus le droit d\u2019utiliser des pesticides
@@ -35,3 +44,6 @@ MonoBehaviour:
     ArchitecturalPoints: 0
     LandscapedPoints: 1
     EcologicalPoints: 1
+  references:
+    version: 2
+    RefIds: []
