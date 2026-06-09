@@ -12,13 +12,13 @@ public class SliderVolume : MonoBehaviour
         switch (mixerGroup)
         {
             case MixerGroup.Master:
-                volumeValue = AudioManager.instance.MasterVolume;
+                volumeValue = AudioManagerNEW.instance.MasterVolume;
                 break;
             case MixerGroup.Music:  
-                volumeValue = AudioManager.instance.MusicVolume;
+                volumeValue = AudioManagerNEW.instance.MusicVolume;
                 break;
             case MixerGroup.SFX:
-                volumeValue = AudioManager.instance.SFXVolume;
+                volumeValue = AudioManagerNEW.instance.SFXVolume;
                 break;
             
             default:
@@ -34,13 +34,13 @@ public class SliderVolume : MonoBehaviour
         switch (mixerGroup)
         {
             case MixerGroup.Master:
-                AudioManager.instance.SetMasterVolume(volume);
+                AudioManagerNEW.instance.SetMasterVolume(volume);
                 break;
             case MixerGroup.Music:
-                AudioManager.instance.SetMusicVolume(volume);
+                AudioManagerNEW.instance.SetMusicVolume(volume);
                 break;
             case MixerGroup.SFX:
-                AudioManager.instance.SetSFXVolume(volume);
+                AudioManagerNEW.instance.SetSFXVolume(volume);
                 break;
         }
     }

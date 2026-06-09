@@ -10,7 +10,7 @@ public enum MixerGroup
     SFX
 }
 
-public class AudioManager : MonoBehaviour
+public class AudioManagerNEW : MonoBehaviour
 {
     [Header("---- Audio Source ----")]
     public AudioSource musicSource;
@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour
     
     private float startTimeMusic;
     private bool shouldLoop;
-    public static AudioManager instance;
+    public static AudioManagerNEW instance;
 
     private void Awake()
     {
