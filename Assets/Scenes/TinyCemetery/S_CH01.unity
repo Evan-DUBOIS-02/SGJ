@@ -670,6 +670,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9abd8f88b8ca2944aa55799d47e7acf7, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &89364201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -807,6 +808,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60280bb9319a6884795e673feb28aa6c, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &93051834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1285,6 +1287,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b00157b4d262d2640bcd17880d4923e7, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1 &221311935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 776670bfa01bf794aa80dc1dee949886, type: 3}
@@ -1343,6 +1346,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7535809571409924bab283aaa3e0e0ae, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &242621379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1922,6 +1926,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60280bb9319a6884795e673feb28aa6c, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &360934595 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a93a33b6f816fec478a3e8e5ca00c798, type: 3}
@@ -2126,6 +2131,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6c77c075c7ba04641b474ed485f34c2a, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &419401987
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,6 +2221,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4e07e105fc8dc824e991141d769d9ce9, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1 &463557221 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8aa11bd38b62425468c633794b182574, type: 3}
@@ -2273,6 +2280,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b00157b4d262d2640bcd17880d4923e7, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1001 &479280889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2406,6 +2414,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b00157b4d262d2640bcd17880d4923e7, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1001 &480982104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2691,6 +2700,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f377d73f4d719ce45b2035d91e54bd0f, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!114 &516066065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2706,6 +2716,7 @@ MonoBehaviour:
   groups: []
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1001 &528163067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2950,6 +2961,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9d920c5ba8d54d24d99e56e62c09927b, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &534400103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3666,6 +3678,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d7cd09b173a5fba4c9545373aca97db9, type: 2}
   order: 1
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &641270871
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3819,6 +3832,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 37cdcbe6b90a78e47878ac50ec912623, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &647860058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4266,6 +4280,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d3b26268f4b801a4c850c983f9ae7cb2, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &702372111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4507,6 +4522,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9fc4a936a1274de4e8eb55f0ecfc573a, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &731454324
 GameObject:
   m_ObjectHideFlags: 0
@@ -4760,9 +4776,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 09a9c676dc4dc0d408c9fbdcb99cc5c3, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 09a9c676dc4dc0d408c9fbdcb99cc5c3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 3766627eeb396c041995652a04c2562d, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 09a9c676dc4dc0d408c9fbdcb99cc5c3, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 528bfaf3566cccf45acf483824c9bfb0, type: 2}
     - target: {fileID: 919132149155446097, guid: 09a9c676dc4dc0d408c9fbdcb99cc5c3, type: 3}
       propertyPath: m_Name
       value: SM_Beehive
@@ -4784,6 +4808,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 09a9c676dc4dc0d408c9fbdcb99cc5c3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1481642997}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 09a9c676dc4dc0d408c9fbdcb99cc5c3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1481643000}
   m_SourcePrefab: {fileID: 100100000, guid: 09a9c676dc4dc0d408c9fbdcb99cc5c3, type: 3}
 --- !u!4 &758565330 stripped
 Transform:
@@ -5096,6 +5123,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b72edc1d45bbc8c4aa6d00f51003c4df, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &821114974
 GameObject:
   m_ObjectHideFlags: 0
@@ -5433,6 +5461,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7535809571409924bab283aaa3e0e0ae, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &864325270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5565,6 +5594,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab1feaa996f6c804baf2efc0d7906600, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &873323056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5697,6 +5727,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7535809571409924bab283aaa3e0e0ae, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &891843835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5908,6 +5939,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 646e12946c35ab3428735c75f36a2640, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &916899457 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 776670bfa01bf794aa80dc1dee949886, type: 3}
@@ -6141,6 +6173,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5c74f4a5f244ec642932c057e206cad6, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1 &952615843 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8aa11bd38b62425468c633794b182574, type: 3}
@@ -6199,6 +6232,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b00157b4d262d2640bcd17880d4923e7, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1 &958540490
 GameObject:
   m_ObjectHideFlags: 0
@@ -6292,6 +6326,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7535809571409924bab283aaa3e0e0ae, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &971342738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6442,6 +6477,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4d8100a755474e14aa39a3d022b768ab, type: 2}
   order: 1
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1 &976436579
 GameObject:
   m_ObjectHideFlags: 0
@@ -6788,6 +6824,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60280bb9319a6884795e673feb28aa6c, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &989595044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7201,6 +7238,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bb6d280bea76fc84db740ae58bb116d1, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &1020187511
 GameObject:
   m_ObjectHideFlags: 0
@@ -7630,6 +7668,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7535809571409924bab283aaa3e0e0ae, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &1071690902
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7991,6 +8030,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b00157b4d262d2640bcd17880d4923e7, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1 &1127675534 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8aa11bd38b62425468c633794b182574, type: 3}
@@ -8049,6 +8089,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b00157b4d262d2640bcd17880d4923e7, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1 &1136471420
 GameObject:
   m_ObjectHideFlags: 0
@@ -8280,6 +8321,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab1feaa996f6c804baf2efc0d7906600, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &1204447980
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8589,6 +8631,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6c77c075c7ba04641b474ed485f34c2a, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &1227564616
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8726,6 +8769,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60280bb9319a6884795e673feb28aa6c, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &1284348676
 GameObject:
   m_ObjectHideFlags: 0
@@ -9251,6 +9295,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab1feaa996f6c804baf2efc0d7906600, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &1349242039
 GameObject:
   m_ObjectHideFlags: 0
@@ -9411,6 +9456,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7535809571409924bab283aaa3e0e0ae, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &1368593844 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26dfd7b271e3df8459bbcc4aef058152, type: 3}
@@ -9558,6 +9604,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60280bb9319a6884795e673feb28aa6c, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &1413238135
 GameObject:
   m_ObjectHideFlags: 0
@@ -9854,6 +9901,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b00157b4d262d2640bcd17880d4923e7, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1001 &1424422661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10287,6 +10335,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d7cd09b173a5fba4c9545373aca97db9, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 1
+--- !u!65 &1481643000
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481642990}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.3900739, y: 2.0208888, z: 1.8029903}
+  m_Center: {x: 0, y: 0.00000011920929, z: -0.0000009536743}
 --- !u!1 &1491767265
 GameObject:
   m_ObjectHideFlags: 0
@@ -10587,6 +10657,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60280bb9319a6884795e673feb28aa6c, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &1503744625
 GameObject:
   m_ObjectHideFlags: 0
@@ -10720,6 +10791,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b00157b4d262d2640bcd17880d4923e7, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1 &1518376981
 GameObject:
   m_ObjectHideFlags: 0
@@ -11075,6 +11147,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab1feaa996f6c804baf2efc0d7906600, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &1536767722
 GameObject:
   m_ObjectHideFlags: 0
@@ -11475,6 +11548,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d7cd09b173a5fba4c9545373aca97db9, type: 2}
   order: 1
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &1584327206
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11607,6 +11681,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7535809571409924bab283aaa3e0e0ae, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &1630045179
 GameObject:
   m_ObjectHideFlags: 0
@@ -11819,6 +11894,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60280bb9319a6884795e673feb28aa6c, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &1651481320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11986,6 +12062,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab1feaa996f6c804baf2efc0d7906600, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &1667564505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12123,6 +12200,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60280bb9319a6884795e673feb28aa6c, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &1672962811 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8aa11bd38b62425468c633794b182574, type: 3}
@@ -12181,6 +12259,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b00157b4d262d2640bcd17880d4923e7, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1 &1680428494 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26dfd7b271e3df8459bbcc4aef058152, type: 3}
@@ -12239,6 +12318,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab1feaa996f6c804baf2efc0d7906600, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &1697418280
 GameObject:
   m_ObjectHideFlags: 0
@@ -12470,6 +12550,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab1feaa996f6c804baf2efc0d7906600, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &1713759668
 GameObject:
   m_ObjectHideFlags: 0
@@ -12860,6 +12941,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b00157b4d262d2640bcd17880d4923e7, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1001 &1763170258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13028,6 +13110,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f377d73f4d719ce45b2035d91e54bd0f, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!114 &1774936137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13043,6 +13126,7 @@ MonoBehaviour:
   groups: []
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1 &1791795354
 GameObject:
   m_ObjectHideFlags: 0
@@ -13288,6 +13372,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b00157b4d262d2640bcd17880d4923e7, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1 &1870036947
 GameObject:
   m_ObjectHideFlags: 0
@@ -13755,6 +13840,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ab1feaa996f6c804baf2efc0d7906600, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &1951916740
 GameObject:
   m_ObjectHideFlags: 0
@@ -14420,6 +14506,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7535809571409924bab283aaa3e0e0ae, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &1999677226 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 776670bfa01bf794aa80dc1dee949886, type: 3}
@@ -14478,6 +14565,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7535809571409924bab283aaa3e0e0ae, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &2010874937 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 776670bfa01bf794aa80dc1dee949886, type: 3}
@@ -14536,6 +14624,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7535809571409924bab283aaa3e0e0ae, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &2015848299
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14673,6 +14762,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60280bb9319a6884795e673feb28aa6c, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &2028480323 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8aa11bd38b62425468c633794b182574, type: 3}
@@ -14732,6 +14822,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f377d73f4d719ce45b2035d91e54bd0f, type: 2}
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!114 &2028480331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14747,6 +14838,7 @@ MonoBehaviour:
   groups: []
   order: 0
   defaultVisibility: 0
+  canBeInteracted: 0
 --- !u!1001 &2048754015
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14919,6 +15011,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d7cd09b173a5fba4c9545373aca97db9, type: 2}
   order: 1
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &2066567899
 GameObject:
   m_ObjectHideFlags: 0
@@ -15136,6 +15229,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 71e9e2a9c7a131e479733cf96bc29c5b, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1001 &2112888135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15271,6 +15365,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 71e9e2a9c7a131e479733cf96bc29c5b, type: 2}
   order: 0
   defaultVisibility: 1
+  canBeInteracted: 0
 --- !u!1 &2114946143
 GameObject:
   m_ObjectHideFlags: 0
@@ -15451,9 +15546,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3335067247206379973, guid: a93a33b6f816fec478a3e8e5ca00c798, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335067247206379973, guid: a93a33b6f816fec478a3e8e5ca00c798, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 60e95b084b7b42042932ee338d927f7c, type: 2}
+    - target: {fileID: 3335067247206379973, guid: a93a33b6f816fec478a3e8e5ca00c798, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 53bf3fb7cd795ec4393e929c1985038a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -56,10 +56,15 @@ public class GameManager : MonoBehaviour
     private CodexManager _codexManager;
     private DialogueManager dialogueManager;
     private Dictionary<ChoiceGroup, List<ChoiceObject>> _allChoiceObjects = new Dictionary<ChoiceGroup, List<ChoiceObject>>();
+    
+    // Object interaction
+    private Camera m_Camera;
+    private ChoiceObject lastHoveredObject = null;
 
     private void Awake()
     {
         Instance = this;
+        m_Camera = Camera.main;
     }
 
     private void Start()
@@ -99,6 +104,40 @@ public class GameManager : MonoBehaviour
         }
         
         LoadRequest();
+    }
+
+    private void Update()
+    {
+        // Setup ray cast
+        Vector3 mousePosition = Input.mousePosition;
+        Ray ray = m_Camera.ScreenPointToRay(mousePosition);
+        Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red);
+        // If hit interactable choice object
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity) 
+            && hit.collider.gameObject.TryGetComponent<ChoiceObject>(out ChoiceObject choiceObject)
+            && choiceObject.canBeInteracted)
+        {
+            if (lastHoveredObject == null)
+            {
+                choiceObject.OnHover();
+                lastHoveredObject = choiceObject;
+            }
+            else if (lastHoveredObject != choiceObject)
+            {
+                lastHoveredObject.OnUnhover();
+                choiceObject.OnHover();
+                lastHoveredObject = choiceObject;
+            }
+        }
+        // If no hit interactable choice object
+        else if (lastHoveredObject != null)
+        {
+            if (lastHoveredObject != null)
+            {
+                lastHoveredObject.OnUnhover();
+                lastHoveredObject = null;
+            }
+        }
     }
 
     public void RegisterChoiceObject(ChoiceObject choiceObject, ChoiceGroup group)

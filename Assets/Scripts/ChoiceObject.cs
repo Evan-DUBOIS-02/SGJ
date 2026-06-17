@@ -10,9 +10,20 @@ public enum DefaultVisibility
 
 public class ChoiceObject: MonoBehaviour, IComparable<ChoiceObject>
 {
+    [Header("Setup")]
     public List<ChoiceGroup> groups;
     public int order = 0;
     public DefaultVisibility defaultVisibility = DefaultVisibility.Visible;
+
+    [Header("Interaction")]
+    [SerializeField] public bool canBeInteracted = false;
+
+    private Material mat;
+
+    private void Awake()
+    {
+        mat = GetComponentInChildren<Renderer>().material;
+    }
 
     private void Start()
     {
@@ -29,5 +40,15 @@ public class ChoiceObject: MonoBehaviour, IComparable<ChoiceObject>
     public int CompareTo(ChoiceObject other)
     {
         return order.CompareTo(other.order);
+    }
+
+    public void OnHover()
+    {
+        mat.SetFloat("_FirstOutlineWidth", 0.1f);
+    }
+
+    public void OnUnhover()
+    {
+        mat.SetFloat("_FirstOutlineWidth", 0.0f);
     }
 }
